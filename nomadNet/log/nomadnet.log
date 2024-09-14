@@ -1,0 +1,54 @@
+2024-09-14 03:32:34,108 - NomadNet - INFO - Modem modem1 connected
+2024-09-14 03:32:36,111 - NomadNet - INFO - Modem modem2 connected
+2024-09-14 03:32:38,113 - NomadNet - INFO - Modem modem3 connected
+2024-09-14 03:32:40,115 - NomadNet - INFO - Modem modem4 connected
+2024-09-14 03:32:41,116 - NomadNet - INFO - WiFi connected on interface wlan0
+2024-09-14 03:32:41,117 - NomadNet - INFO - Proxy server started on http://0.0.0.0:8080
+2024-09-14 03:33:35,753 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x104464ef0>
+2024-09-14 03:33:35,754 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x103bff3b0>
+2024-09-14 03:33:35,754 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x104484050>
+2024-09-14 03:33:35,754 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x10497f770>
+2024-09-14 03:34:24,314 - NomadNet - INFO - Modem modem1 connected
+2024-09-14 03:34:26,318 - NomadNet - INFO - Modem modem2 connected
+2024-09-14 03:34:28,320 - NomadNet - INFO - Modem modem3 connected
+2024-09-14 03:34:30,322 - NomadNet - INFO - Modem modem4 connected
+2024-09-14 03:34:31,324 - NomadNet - INFO - WiFi connected on interface wlan0
+2024-09-14 03:34:31,326 - NomadNet - INFO - Proxy server started on http://0.0.0.0:8080
+2024-09-14 03:34:51,630 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:34:51 -0500] "GET /get_proxy HTTP/1.1" 400 209 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:20,065 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:20 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:24,527 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:24 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:25,105 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:25 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:39,664 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:39 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:40,400 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:40 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:41,099 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:41 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:41,669 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:41 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:42,062 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:42 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:42,526 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:42 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:43,047 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:43 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:43,452 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:43 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:43,800 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:43 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:44,213 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:44 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:44,573 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:44 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:45,025 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:45 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:45,348 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:45 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:45,681 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:45 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:46,113 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:46 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:46,464 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:46 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:47,749 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:47 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:48,096 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:48 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:48,438 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:48 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:48,819 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:48 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:49,429 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:49 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:35:50,225 - aiohttp.access - INFO - 127.0.0.1 [14/Sep/2024:02:35:50 -0500] "GET /get_proxy?domain=amazon.com HTTP/1.1" 200 181 "-" "PostmanRuntime/7.41.2"
+2024-09-14 03:59:19,702 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x104b499d0>
+2024-09-14 03:59:19,703 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x1063184a0>
+2024-09-14 03:59:19,703 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x1061c6b40>
+2024-09-14 03:59:19,703 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x1063ef470>
