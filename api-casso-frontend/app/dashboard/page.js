@@ -2,12 +2,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./layout.module.css"; // Assuming you have layout.css for global styles
 
-
 const Layout = () => {
-  const [key, setKey] = useState("");  // State for the API key input
-  const [schema, setSchema] = useState("");  // State for the schema/keywords input
-  const [boxes, setBoxes] = useState([]);  // State to store API boxes
-  const [data, setData] = useState("");  // State for API data
+  const [key, setKey] = useState(""); // State for the API key input
+  const [schema, setSchema] = useState(""); // State for the schema/keywords input
+  const [boxes, setBoxes] = useState([]); // State to store API boxes
+  const [data, setData] = useState(""); // State for API data
 
   // Handle input changes for API key
   const handleKeyChange = (event) => {
@@ -23,14 +22,14 @@ const Layout = () => {
   const handleSubmit = () => {
     if (key.trim() !== "" && schema.trim() !== "") {
       setBoxes((prevBoxes) => [...prevBoxes, { key, schema }]);
-      setKey("");  // Clear API key input after adding
-      setSchema("");  // Clear schema input after adding
+      setKey(""); // Clear API key input after adding
+      setSchema(""); // Clear schema input after adding
     }
   };
 
   // Handle navigation when sidebar buttons are clicked
   const handleNavigation = (route) => {
-    window.location.href = route;  // Navigate to new page
+    window.location.href = route; // Navigate to new page
   };
 
   // Fetch data from the API on component mount
@@ -45,55 +44,76 @@ const Layout = () => {
 
   return (
     <div className={styles.containerspecial}>
-  {/* Top Header */}
-  <header style={{ marginTop: "-80px", marginLeft: "-10px", marginBottom: "25px"}} className="flex justify-between items-center w-full p-4 text-white">
-    {/* Left: APIcasso */}
-    <div className="text-2xl font-bold">
-      <a style={{opacity: "50%"}} href="./">APIcasso</a>
-    </div>
+      {/* Top Header */}
+      <header
+        style={{
+          marginTop: "-80px",
+          marginLeft: "-10px",
+          marginBottom: "25px",
+        }}
+        className="flex justify-between items-center w-full p-4 text-white"
+      >
+        {/* Left: APIcasso */}
+        <div className="text-2xl font-bold">
+          <a style={{ opacity: "50%" }} href="./">
+            APIcasso
+          </a>
+        </div>
 
-    {/* Right: Dashboard and Log out links side by side */}
-    <div className="flex space-x-4">
-      <a href="/dashboard" className="text-gray-400 hover:text-white underline">
-        Dashboard
-      </a>
-      <a href="./" className="text-gray-400 hover:text-white underline">
-        Information
-      </a>
-    </div>
-  </header>
-
+        {/* Right: Dashboard and Log out links side by side */}
+        <div className="flex space-x-4">
+          <a
+            href="/dashboard"
+            className="text-gray-400 hover:text-white underline"
+          >
+            Dashboard
+          </a>
+          <a href="./" className="text-gray-400 hover:text-white underline">
+            Information
+          </a>
+        </div>
+      </header>
 
       {/* Main Section */}
       <div className={styles.mainSection}>
         <header className={styles.header}>
           <div className={styles.headerContent}>
-            <h1 className={styles.title}>My APIs</h1>
+            <h1 className={styles.title}>My schemas</h1>
             <p className={styles.description}>
-              Details for all APIs created on APIcasso. To create a new API, enter the URL, schema, and press "Create New".
+              Provide a URL and an empty JSON schema. Press "Create New".
+              Receive a completed one. ✅
             </p>
 
             {/* Inline fields for API key and Schema */}
-            <div className={styles.inputWrapper}>
+            <div
+              className={styles.inputWrapper}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+                alignItems: "flex-start",
+              }}
+            >
+              {/* URL Input Box */}
               <input
                 type="text"
                 value={key}
                 onChange={handleKeyChange}
                 placeholder="Enter URL"
-                className={styles.inputField}
-              />
-              <input
-                type="text"
-                value={schema}
-                onChange={handleSchemaChange}
-                placeholder="Enter Schema/Keywords"
-                className={styles.inputField}
-                style={{ marginLeft: "10px" }}
+                className="w-1/2 px-4 py-2 text-base text-white bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
               />
 
-              {/* Create new box button */}
+              {/* Schema Input Box */}
+              <textarea
+                value={schema}
+                onChange={handleSchemaChange}
+                placeholder="Enter JSON Schema"
+                className="w-full h-48 px-4 py-2 text-base text-white bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-blue-500 resize-none"
+              />
+
+              {/* Create New Button */}
               <button
-                style={{ marginLeft: "500px", marginTop: "10px", width: "50%" }}
+                style={{ marginTop: "10px", marginBottom: "50px", width: "20%" }}
                 className={styles.createButton}
                 onClick={handleSubmit}
               >
@@ -110,7 +130,7 @@ const Layout = () => {
                   <strong>URL:</strong> {box.key}
                 </p>
                 <p className={styles.apiDetail}>
-                  <strong>Schema/Keywords:</strong> {box.schema}
+                  <strong>Schema:</strong> {box.schema}
                 </p>
               </div>
             ))}
@@ -123,12 +143,16 @@ const Layout = () => {
         </main>
 
         {/* Footer */}
-        <footer className="w-full p-4 fixed bottom-6 left-0 justify-center items-center text-center text-white">
+        <footer className="w-full p-4 fixed bottom-0 left-0 justify-center items-center text-center text-white bg-gradient-to-b from-transparent via-gray-900 to-black">
           <div>
             <p className="text-sm text-gray-400 mb-2">
-              Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary Levesque for Hack the North 2024.
+              Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary
+              Levesque for Hack the North 2024.
             </p>
-            <a href="/info" className="text-sm text-gray-400 hover:text-white underline">
+            <a
+              href="/info"
+              className="text-sm text-gray-400 hover:text-white underline"
+            >
               Project Information →
             </a>
           </div>

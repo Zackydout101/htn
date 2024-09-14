@@ -72,12 +72,13 @@
   margin-bottom: 20px; /* Add space below the description */
 }
 
-/* Grid for API Boxes */
+/* Grid container for API boxes */
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  width: 100%;
+  grid-template-columns: repeat(2, 1fr); /* Two boxes per row */
+  gap: 30px;
+  width: 100%;  /* Ensure grid container takes full width */
+  margin-top: 0px;
 }
 
 .apiBox {
@@ -85,18 +86,18 @@
   color: white;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  display: flex;
+  box-shadow: 0 4px 15px rgb(0,0,0, 0.1);
+  display: inline;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 20px; /* Add space between API boxes */
+  margin-bottom: 0px; /* Add space between API boxes */
 }
 
 /* Grid container for API boxes */
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 20px;
+  grid-template-columns: no-repeat;
+  gap: 30px;
   width: 100%;  /* Ensure grid container takes full width */
   margin-top: 0px;
 }
@@ -107,3 +108,5 @@
   font-size: 1rem;
   color: #fff;
 }
+
+
