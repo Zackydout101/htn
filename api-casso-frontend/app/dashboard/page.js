@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./layout.module.css"; // Assuming you have layout.css for global styles
 
+
 const Layout = () => {
   const [key, setKey] = useState("");  // State for the API key input
   const [schema, setSchema] = useState("");  // State for the schema/keywords input
