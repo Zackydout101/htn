@@ -1,5 +1,31 @@
 /* app/layout.module.css */
 
+/* Button styling */
+.green-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4caf50; /* Solid green background */
+    color: white; /* Text color */
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.green-button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+.green-button:active {
+    transform: scale(0.98); /* Slightly scale down the button on click */
+}
+
+.green-button:focus {
+    box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.5); /* Green outline on focus */
+}
+
 .container {
     display: flex;
     height: 100vh;
@@ -55,6 +81,17 @@
     overflow-y: auto;
   }
   
+
+  .inputField {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #444; /* Dark gray border */
+    border-radius: 4px;
+    background: #1c1c1c; /* Almost black background for the input field */
+    color: #e0e0e0; /* Light text color for the input */
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
 
 

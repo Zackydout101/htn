@@ -1,0 +1,77 @@
+/* MyComponent.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-field {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.boxes-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.curved-box {
+    padding: 15px;
+    margin: 5px 0;
+    width: 60em;
+    height: 3em;
+    max-width: 60em;
+    background-color: #333;
+    color: white;
+    border-radius: 20px; /* Curved corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+
+.big-container {
+    display: flex;
+    justify-content: space-between; /* Space items evenly */
+  
+}
+
+.item {
+    background-color: #555; /* Background color for items */
+   
+    border-radius: 8px;
+    width: 100px; /* Adjust width as needed */
+    text-align: center;
+}
+
+.item-input {
+    border: 2px solid #333;
+    border-radius: 8px;
+    width: 200px; /* Adjust width as needed */
+}
+
+
+.item-container {
+    display: flex;
+    align-items: center;
+}
