@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from './dashboard/layout.module.css';
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -30,7 +31,7 @@ export default function Home() {
         <h1 style={{ marginTop: "-100px" }}  className="text-6xl font-bold text-center mb-8">
           Turn any website into a <br /> well-defined API 🎨
         </h1>
-        
+
         {/* Get Started Button */}
     <a href="/signup">
     <button style={{marginTop: 0 + 'em'}} className={styles.createButton}>
@@ -42,6 +43,16 @@ export default function Home() {
         <p>
           Already have an account?{' '}
           <a href="/login" className="text-gray-400 hover:text-white underline">
+        <Link href="/signup">
+          <button className="px-6 py-3 bg-black rounded-lg text-white font-semibold text-lg mb-4 hover:bg-gray-700 transition shadow-[0_4px_30px_rgba(256,256,256,0.3)]">
+            Get started →
+          </button>
+        </Link>
+
+        {/* Login Link */}
+        <p>
+          Already have an account?{" "}
+          <a href="#" className="text-gray-400 hover:text-white underline">
             Log in →
           </a>
         </p>
@@ -51,11 +62,15 @@ export default function Home() {
       <footer className="w-full p-4 fixed bottom-0 left-0 justify-center items-center text-center text-white bg-gradient-to-b from-transparent via-gray-900 to-black">
       <p className="text-sm text-gray-400 mb-2">
           Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary Levesque for Hack the North 2024.
+      <footer className="absolute bottom-6 text-center">
+        <p className="text-sm text-gray-400 mb-2">
+          Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary
+          Levesque for Hack the North 2024.
         </p>
         <a href="/info" className="text-sm text-gray-400 hover:text-white underline">
           Project Information →
         </a>
       </footer>
     </div>
-  )
+  );
 }
