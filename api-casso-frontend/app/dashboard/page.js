@@ -1,12 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./layout.module.css"; // Assuming you have layout.css for global styles
 
 const Layout = () => {
   const [key, setKey] = useState(""); // State for the API key input
   const [schema, setSchema] = useState(""); // State for the schema/keywords input
   const [boxes, setBoxes] = useState([]); // State to store API boxes
-  const [data, setData] = useState(""); // State for API data
 
   // Handle input changes for API key
   const handleKeyChange = (event) => {
@@ -27,20 +26,37 @@ const Layout = () => {
     }
   };
 
-  // Handle navigation when sidebar buttons are clicked
-  const handleNavigation = (route) => {
-    window.location.href = route; // Navigate to new page
-  };
+  // API Box Component with Expand/Collapse Feature
+  const ApiBox = ({ url, schema }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const schemaRef = useRef(null);
 
-  // Fetch data from the API on component mount
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/hello?key=hola");
-      const result = await response.json();
-      setData(result.value);
+    const toggleExpand = () => {
+      setIsExpanded(!isExpanded);
     };
-    fetchData();
-  }, []);
+
+    return (
+      <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full max-w-none">
+        <p><strong>URL:</strong> {url}</p>
+        <div
+          ref={schemaRef}
+          style={{
+            maxHeight: isExpanded ? `${schemaRef.current.scrollHeight}px` : "80px",
+            overflow: "hidden",
+            transition: "max-height 0.3s ease-in-out"
+          }}
+        >
+          <p><strong>Schema:</strong> {schema}</p>
+        </div>
+        <button
+          onClick={toggleExpand}
+          className="mt-2 text-sm text-blue-400 hover:underline"
+        >
+          {isExpanded ? 'Show Less' : 'Show More'}
+        </button>
+      </div>
+    );
+  };
 
   return (
     <div className={styles.containerspecial}>
@@ -53,14 +69,12 @@ const Layout = () => {
         }}
         className="flex justify-between items-center w-full p-4 text-white"
       >
-        {/* Left: APIcasso */}
         <div className="text-2xl font-bold">
           <a style={{ opacity: "50%" }} href="./">
             APIcasso
           </a>
         </div>
 
-        {/* Right: Dashboard and Log out links side by side */}
         <div className="flex space-x-4">
           <a
             href="/dashboard"
@@ -84,7 +98,6 @@ const Layout = () => {
               Receive a completed one. ✅
             </p>
 
-            {/* Inline fields for API key and Schema */}
             <div
               className={styles.inputWrapper}
               style={{
@@ -94,7 +107,6 @@ const Layout = () => {
                 alignItems: "flex-start",
               }}
             >
-              {/* URL Input Box */}
               <input
                 type="text"
                 value={key}
@@ -103,7 +115,6 @@ const Layout = () => {
                 className="w-1/2 px-4 py-2 text-base text-white bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
               />
 
-              {/* Schema Input Box */}
               <textarea
                 value={schema}
                 onChange={handleSchemaChange}
@@ -111,7 +122,6 @@ const Layout = () => {
                 className="w-full h-48 px-4 py-2 text-base text-white bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-blue-500 resize-none"
               />
 
-              {/* Create New Button */}
               <button
                 style={{ marginTop: "10px", marginBottom: "50px", width: "20%" }}
                 className={styles.createButton}
@@ -123,26 +133,17 @@ const Layout = () => {
           </div>
 
           {/* Grid Section for displaying API boxes */}
-          <div className={styles.gridContainer}>
+          <div className="w-full max-w-4xl mt-8">
             {boxes.map((box, index) => (
-              <div key={index} className={styles.apiBox}>
-                <p className={styles.apiDetail}>
-                  <strong>URL:</strong> {box.key}
-                </p>
-                <p className={styles.apiDetail}>
-                  <strong>Schema:</strong> {box.schema}
-                </p>
-              </div>
+              <ApiBox key={index} url={box.key} schema={box.schema} />
             ))}
           </div>
         </header>
 
-        {/* Main Content Section */}
         <main className={styles.mainContent}>
           {/* Render dynamic content */}
         </main>
 
-        {/* Footer */}
         <footer className="w-full p-4 fixed bottom-0 left-0 justify-center items-center text-center text-white bg-gradient-to-b from-transparent via-gray-900 to-black">
           <div>
             <p className="text-sm text-gray-400 mb-2">

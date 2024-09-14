@@ -72,41 +72,10 @@
   margin-bottom: 20px; /* Add space below the description */
 }
 
-/* Grid container for API boxes */
-.gridContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two boxes per row */
-  gap: 30px;
-  width: 100%;  /* Ensure grid container takes full width */
-  margin-top: 0px;
-}
-
-.apiBox {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgb(0,0,0, 0.1);
-  display: inline;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 0px; /* Add space between API boxes */
-}
-
-/* Grid container for API boxes */
-.gridContainer {
-  display: grid;
-  grid-template-columns: no-repeat;
-  gap: 30px;
-  width: 100%;  /* Ensure grid container takes full width */
-  margin-top: 0px;
-}
 
 
-.apiDetail {
-  margin: 0px 0;
-  font-size: 1rem;
-  color: #fff;
-}
+
+
+
 
 
