@@ -1,5 +1,5 @@
 import logging
-from ..config.settings import LOG_FILE
+from config.settings import LOG_FILE
 
 logging.basicConfig(
     filename=LOG_FILE,
