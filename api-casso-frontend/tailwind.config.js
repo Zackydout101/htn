@@ -1,18 +1,14 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './app/**/*.{js,ts,jsx,tsx}', // Ensure this matches your app structure
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'], // Inter as the default sans
-      },
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        sans: ['var(--font-inter)', 'sans-serif'], // Inter as the default sans font
+        geistSans: ['var(--font-geist-sans)', 'sans-serif'],
+        geistMono: ['var(--font-geist-mono)', 'monospace'],
       },
     },
   },
