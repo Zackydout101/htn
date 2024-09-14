@@ -58,7 +58,7 @@ const Layout = () => {
               type="text"
               value={key}
               onChange={handleKeyChange}
-              placeholder="Enter API key"
+              placeholder="Enter URL"
               className={styles.inputField}  // Assuming you have styling for the input field
             />
             <input
