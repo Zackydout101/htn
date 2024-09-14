@@ -9,12 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "hardhat-deploy": "^0.12.4",
     "next": "14.2.11",
     "react": "^18",
     "react-dom": "^18",
     "redis": "^4.7.0"
   },
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "dotenv": "^16.4.5",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.22.10",
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
   }
