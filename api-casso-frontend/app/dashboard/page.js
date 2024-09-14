@@ -36,7 +36,7 @@ const Layout = () => {
     };
 
     return (
-      <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full max-w-none">
+      <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full">
         <p><strong>URL:</strong> {url}</p>
         <div
           ref={schemaRef}
