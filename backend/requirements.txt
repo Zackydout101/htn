@@ -10,3 +10,4 @@ cohere
 bs4
 pyautogui
 stealth_requests
+flask_cors
