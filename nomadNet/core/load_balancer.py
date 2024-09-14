@@ -1,5 +1,5 @@
 from collections import defaultdict
-from ..config.settings import MAX_CONNECTIONS_PER_MODEM
+from config.settings import MAX_CONNECTIONS_PER_MODEM
 import time
 
 class LoadBalancer:

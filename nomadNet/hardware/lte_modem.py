@@ -1,41 +1,30 @@
-import asyncio
-import aiohttp
+import netifaces
 from utils.logging import logger
 
 class LTEModem:
-    def __init__(self, id, device):
+    def __init__(self, id, interface_name):
         self.id = id
-        self.device = device
-        self.session = None
+        self.interface_name = interface_name
+        self.ip_address = None
 
     async def connect(self):
-        # Simulate modem connection
-        await asyncio.sleep(2)
-        self.session = aiohttp.ClientSession()
-        logger.info(f"Modem {self.id} connected")
+        try:
+            # Get the IP address of the interface
+            addrs = netifaces.ifaddresses(self.interface_name)
+            self.ip_address = addrs[netifaces.AF_INET][0]['addr']
+            logger.info(f"Modem {self.id} connected on interface {self.interface_name} with IP {self.ip_address}")
+        except Exception as e:
+            logger.error(f"Error connecting modem {self.id}: {str(e)}")
+            raise
 
     async def disconnect(self):
-        if self.session:
-            await self.session.close()
-        self.session = None
+        self.ip_address = None
         logger.info(f"Modem {self.id} disconnected")
 
-    async def send_request(self, request_data):
-        if not self.session:
-            await self.connect()
-        
-        try:
-            async with self.session.request(
-                method=request_data['method'],
-                url=request_data['url'],
-                headers=request_data['headers'],
-                data=request_data['data']
-            ) as response:
-                return {
-                    'status': response.status,
-                    'headers': dict(response.headers),
-                    'content': await response.read()
-                }
-        except Exception as e:
-            logger.error(f"Error in modem {self.id}: {str(e)}")
-            return {'error': str(e)}
+    async def refresh_ip(self):
+        # This method would typically involve interacting with the modem to get a new IP
+        # For Ethernet-connected LTE modems, this might involve sending AT commands
+        # or using a modem-specific API. The exact implementation will depend on your modem.
+        await self.disconnect()
+        await self.connect()
+        logger.info(f"IP refreshed for modem {self.id}. New IP: {self.ip_address}")
