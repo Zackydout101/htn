@@ -1,157 +1,120 @@
-// app/layout.tsx
-"use client"
-import React from 'react';
-import styles from './layout.module.css'; // Import CSS module
-import  "./boxes.css";
-import { useEffect, useState } from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
+import styles from "./layout.module.css"; // Assuming you have layout.css for global styles
 
 const Layout = () => {
+  const [key, setKey] = useState("");  // State for the API key input
+  const [schema, setSchema] = useState("");  // State for the schema/keywords input
+  const [boxes, setBoxes] = useState([]);  // State to store API boxes
+  const [data, setData] = useState("");  // State for API data
 
+  // Handle input changes for API key
+  const handleKeyChange = (event) => {
+    setKey(event.target.value);
+  };
 
- 
+  // Handle input changes for schema/keywords
+  const handleSchemaChange = (event) => {
+    setSchema(event.target.value);
+  };
 
-    const [key, setKey] = useState('');
-    const [boxes, setBoxes] = useState([]);
-    const [data, setData] = useState('');
+  // Handle adding new box when submit button is clicked
+  const handleSubmit = () => {
+    if (key.trim() !== "" && schema.trim() !== "") {
+      setBoxes((prevBoxes) => [...prevBoxes, { key, schema }]);
+      setKey("");  // Clear API key input after adding
+      setSchema("");  // Clear schema input after adding
+    }
+  };
 
-    const handleKeyChange = (event) => {
-        setKey(event.target.value);
+  // Handle navigation when sidebar buttons are clicked
+  const handleNavigation = (route) => {
+    window.location.href = route;  // Navigate to new page
+  };
+
+  // Fetch data from the API on component mount
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/api/hello?key=hola");
+      const result = await response.json();
+      setData(result.value);
     };
-
-
-    const handleSubmit = () => {
-        const newBox = {
-            key: key,
-            value: { 
-                url: '',    
-                api: '',
-                param: ''
-            },
-            timestamp: new Date().toISOString() // Optional: add timestamp or other fields if needed
-        };
-    
-        setBoxes(prevBoxes => [newBox, ...prevBoxes]);
-        setKey(''); 
-        setValue(''); 
-    };
-    
-   
-
-    const handleBlur = async (event, field, index) => {
-        const value = event.target.value;
-
-        // Define the updated data based on the field and index
-        const updatedData = { [field]: value };
-        const boxToUpdate = boxes[index];
-
-        // Prepare the updated box object
-        const updatedBox = {
-            ...boxToUpdate,
-            value: {
-                ...boxToUpdate.value,
-                ...updatedData
-            }
-        };
-
-        // Send updated data to the API
-        try {
-            const response = await fetch('/api/update', { // Ensure this is the correct API route
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ key: updatedBox.key, value: updatedBox.value })
-            });
-
-            if (response.ok) {
-                console.log('Data updated successfully');
-                // Update the local state with the updated box
-                setBoxes(prevBoxes => {
-                    const newBoxes = [...prevBoxes];
-                    newBoxes[index] = updatedBox;
-                    return newBoxes;
-                });
-            } else {
-                console.error('Error updating data');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
-    
-    useEffect(() => {
-        // Fetch data from the API route
-        const fetchData = async () => {
-            const response = await fetch('/api/hello?key=hola');
-            
-            const result = await response.json();
-         
-            setData(result.value);
-        };
-
-        fetchData();
-    }, []);
-
+    fetchData();
+  }, []);
 
   return (
     <div className={styles.container}>
+      {/* Header Section */}
       <header className={styles.header}>
-        <h1>Dashboard</h1>
+        <div className={styles.headerContent}>
+          <h1 className={styles.title}>My APIs</h1>
+          <p className={styles.description}>
+            Details for all APIs created on APIcasso.
+          </p>
 
+          {/* Inline fields for API key and Schema */}
+          <div className={styles.inputWrapper}>
+            <input
+              type="text"
+              value={key}
+              onChange={handleKeyChange}
+              placeholder="Enter API key"
+              className={styles.inputField}  // Assuming you have styling for the input field
+            />
+            <input
+              type="text"
+              value={schema}
+              onChange={handleSchemaChange}
+              placeholder="Enter Schema/Keywords"
+              className={styles.inputField}  // Assuming you have styling for the input field
+              style={{ marginLeft: "10px" }}  // Inline spacing between the two fields
+            />
 
+            {/* Create new box button */}
+            <button
+              style={{ marginLeft: "650px", marginTop: "10px", width: "60%"}}
+              className={styles.createButton}
+              onClick={handleSubmit}
+            >
+              Create new <span className={styles.arrow}>→</span>
+            </button>
+          </div>
+        </div>
 
-        <input
-        type="text"
-     
-        className={styles.inputField}
-      
-      />
-
-   
-        <p>
-            {data}
-        </p>
-
-        <div className="container">
-          
-            <button onClick={handleSubmit} className="submit-button">Submit</button>
-            <div className="boxes-container">
-                {boxes.map((box, index) => (
-                    <div className="curved-box">
-                    {box}
-                    <div className='big-container'>
-                        <div className='item-container'>
-                            <div className='item'>url</div>
-                            <input  className='item-input' placeholder='Enter URL' />
-                        </div>
-                        <div className='item-container'>
-                            <div className='item'>api</div>
-                            <input className='item-input' placeholder='Enter API' />
-                        </div>
-                        <div className='item-container'>
-                            <div className='item'>param</div>
-                            <input className='item-input' placeholder='Enter Param' />
-                        </div>
-                </div>
-               </div>
-                ))}
+        {/* Grid Section for displaying API boxes */}
+        <div className={styles.gridContainer}>
+          {boxes.map((box, index) => (
+            <div key={index} className={styles.apiBox}>
+              <p className={styles.apiDetail}>
+                <strong>URL:</strong> {box.key}  {/* Display the entered key */}
+              </p>
+              <p className={styles.apiDetail}>
+                <strong>Schema/Keywords:</strong> {box.schema}  {/* Display the schema/keywords */}
+              </p>
             </div>
+          ))}
         </div>
       </header>
-      
-      <nav className={styles.sidebar}>
-        <ul>
-          <li><button onClick={() => handleNavigation('/dashboard')}>Dashboard</button></li>
-          <li><button onClick={() => handleNavigation('/profile')}>Profile</button></li>
-          <li><button onClick={() => handleNavigation('/settings')}>Settings</button></li>
-          <li><button onClick={() => handleNavigation('/reports')}>Reports</button></li>
-          <li><button onClick={() => handleNavigation('/help')}>Help</button></li>
-        </ul>
-      </nav>
+
+      {/* Main Content Section */}
       <main className={styles.mainContent}>
-         
+        {/* Render dynamic content */}
       </main>
-    </div>
+
+      {/* Footer */}
+      
+      <footer className="absolute bottom-6">
+        <p style={{ marginBottom: "0px" }}  className="text-sm text-gray-400 mb-2">
+          Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary Levesque for Hack the North 2024.
+        </p>
+        <a href="#" style={{ marginBottom: "20px" }}  className="text-sm text-gray-400 hover:text-white underline">
+          Project Information →
+        </a>
+      </footer>
+      </div>
+    
+
+    
   );
 };
 

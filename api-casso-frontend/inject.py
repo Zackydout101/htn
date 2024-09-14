@@ -24,5 +24,5 @@ def add_to_redis(key, value):
 
 # Example usage
 key = 'hola'
-value = 'JohnDoe'
+value = 'jjnjnjnjnjnj'
 add_to_redis(key, value)

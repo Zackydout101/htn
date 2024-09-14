@@ -1,98 +1,106 @@
-/* app/layout.module.css */
-
-/* Button styling */
-.green-button {
-    padding: 12px 24px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    background-color: #4caf50; /* Solid green background */
-    color: white; /* Text color */
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.green-button:hover {
-    background-color: #45a049; /* Slightly darker green on hover */
-}
-
-.green-button:active {
-    transform: scale(0.98); /* Slightly scale down the button on click */
-}
-
-.green-button:focus {
-    box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.5); /* Green outline on focus */
-}
-
+/* General container styling */
 .container {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-  }
-  
-  .header {
-    background: linear-gradient(to right, #333333, #000000); /* Gradient from gray to black */
-    color: white;
-    padding: 16px;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .sidebar {
-    width: 240px;
-    background-color: #f4f4f4;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #ddd;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin: 10px 0;
-  }
-  
-  .sidebar button {
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 10px;
-    text-align: left;
-    width: 100%;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-  }
-  
-  .sidebar button:hover {
-    background-color: #ddd;
-  }
-  
-  .mainContent {
-    flex-grow: 1;
-    padding: 16px;
-    overflow-y: auto;
-  }
-  
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #111;
+  padding: 100px 300px; /* Add padding around the content */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align the content to the left */
+  justify-content: flex-start;
+}
 
-  .inputField {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #444; /* Dark gray border */
-    border-radius: 4px;
-    background: #1c1c1c; /* Almost black background for the input field */
-    color: #e0e0e0; /* Light text color for the input */
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+/* Header Content */
+.header-content {
+  text-align: left;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0px; /* Add space below the title */
+}
+
+.createButton {
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  margin: 20px 0; /* Space between the button and surrounding elements */
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.createButton:hover {
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.5);
+}
+
+/* Input Wrapper */
+.inputWrapper {
+  display: flex;
+  align-items: center; /* Align inputs and button inline */
+  margin-top: 20px;
+}
+
+/* Styling for input fields */
+.inputField {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #222;
+  color: white;
+  width: 100%;
+  max-width: 300px;  /* You can adjust the width */
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #ccc;
+  font-size: 1rem;
+  margin-top: 0px;
+  margin-bottom: 20px; /* Add space below the description */
+}
+
+/* Grid for API Boxes */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.apiBox {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px; /* Add space between API boxes */
+}
+
+/* Grid container for API boxes */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;  /* Ensure grid container takes full width */
+  margin-top: 0px;
 }
 
 
-
-  
+.apiDetail {
+  margin: 0px 0;
+  font-size: 1rem;
+  color: #fff;
+}
