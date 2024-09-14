@@ -1,7 +1,9 @@
 module.exports = {
+  darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx}', // Ensure this matches your app structure
     './components/**/*.{js,ts,jsx,tsx}',
+    
   ],
   theme: {
     extend: {
