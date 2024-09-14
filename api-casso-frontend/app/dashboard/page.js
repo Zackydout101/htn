@@ -46,10 +46,10 @@ const Layout = () => {
   return (
     <div className={styles.containerspecial}>
   {/* Top Header */}
-  <header style={{ marginTop: "-80px", marginLeft: "-10px", marginBottom: "25px", opacity: "50%" }} className="flex justify-between items-center w-full p-4 text-white">
+  <header style={{ marginTop: "-80px", marginLeft: "-10px", marginBottom: "25px"}} className="flex justify-between items-center w-full p-4 text-white">
     {/* Left: APIcasso */}
     <div className="text-2xl font-bold">
-      <a href="./">APIcasso</a>
+      <a style={{opacity: "50%"}} href="./">APIcasso</a>
     </div>
 
     {/* Right: Dashboard and Log out links side by side */}

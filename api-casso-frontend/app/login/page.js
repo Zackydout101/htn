@@ -5,6 +5,23 @@ export default function Signup() {
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
   
         {/* Top Header */}
+   <header className="flex max-w-screen-xl mx-auto justify-between items-center w-full p-4 text-white fixed top-5 z-10">
+        {/* Left: APIcasso */}
+        <div style={{opacity: "50%"}} className="text-2xl font-bold">
+          <a href="./">APIcasso</a>
+        </div>
+
+        {/* Right: Dashboard and Log out links side by side */}
+        <div className="flex space-x-4">
+          <a href="/dashboard" className="text-gray-400 hover:text-white underline">
+            Dashboard
+          </a>
+          <a href="./" className="text-gray-400 hover:text-white underline">
+            Log out
+          </a>
+        </div>
+      </header>
+
   
   
         <h1 className="text-4xl font-bold mb-8">Welcome back 👋</h1>

@@ -5,6 +5,24 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white font-sans">
 
+    {/* Top Header */}
+   <header className="flex max-w-screen-xl mx-auto justify-between items-center w-full p-4 text-white fixed top-5 z-10">
+        {/* Left: APIcasso */}
+        <div style={{opacity: "50%"}} className="text-2xl font-bold">
+          <a href="./">APIcasso</a>
+        </div>
+
+        {/* Right: Dashboard and Log out links side by side */}
+        <div className="flex space-x-4">
+          <a href="/dashboard" className="text-gray-400 hover:text-white underline">
+            Dashboard
+          </a>
+          <a href="/info" className="text-gray-400 hover:text-white underline">
+            Information
+          </a>
+        </div>
+      </header>
+
   
       
       {/* Main Section */}
