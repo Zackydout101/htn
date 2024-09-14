@@ -58,7 +58,7 @@ const Layout = () => {
         Dashboard
       </a>
       <a href="./" className="text-gray-400 hover:text-white underline">
-        Log out
+        Information
       </a>
     </div>
   </header>
@@ -123,13 +123,15 @@ const Layout = () => {
         </main>
 
         {/* Footer */}
-        <footer className="absolute bottom-6">
-          <p style={{ marginBottom: "0px" }} className="text-sm text-gray-400 mb-2">
-            Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary Levesque for Hack the North 2024.
-          </p>
-          <a href="#" style={{ marginBottom: "20px" }} className="text-sm text-gray-400 hover:text-white underline">
-            Project Information →
-          </a>
+        <footer className="w-full p-4 fixed bottom-6 left-0 justify-center items-center text-center text-white">
+          <div>
+            <p className="text-sm text-gray-400 mb-2">
+              Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary Levesque for Hack the North 2024.
+            </p>
+            <a href="#" className="text-sm text-gray-400 hover:text-white underline">
+              Project Information →
+            </a>
+          </div>
         </footer>
       </div>
     </div>
