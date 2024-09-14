@@ -15,11 +15,9 @@ def getSchemaByWebsiteAndUser() -> dict:
   website_url = data["website_url"]
   user_id = supabase.auth.get_user().user.id
   response = supabase.table(query_constants.RESPONSE_SCHEMA_TABLE).select("*").eq(query_constants.WEBSITE_URL_COLUMN, website_url).eq(query_constants.USER_ID_COLUMN, user_id).execute()
-  json = dict()
-  if len(response.data) != 0:
-    json = response.data[0]['json_schema']
-  print(json)
-  return json
+  if response.data:
+    return response.data[0]['json_schema']
+  return None
 
 @app.route('/schema/insert', methods=['POST'])
 def insertSchema() -> bool:
@@ -29,20 +27,15 @@ def insertSchema() -> bool:
   schema_string = data["schema_string"]
   try:
     schema = json.loads(schema_string)
-    response = supabase.table(query_constants.RESPONSE_SCHEMA_TABLE).insert({query_constants.WEBSITE_URL_COLUMN:website_url, query_constants.USER_ID_COLUMN:user_id, query_constants.RESPONSE_SCHEMA_COLUMN:schema}).execute()
-    print(response) 
-  
-  except Exception as e: 
+    response = supabase.table(query_constants.RESPONSE_SCHEMA_TABLE).insert({
+      query_constants.WEBSITE_URL_COLUMN: website_url,
+      query_constants.USER_ID_COLUMN: user_id,
+      query_constants.RESPONSE_SCHEMA_COLUMN: schema
+    }).execute()
+    return Response("Success", status=200)
+  except Exception as e:
     print(e)
-    return Response(
-        "database error",
-        status=400,
-    )
-  
-  return Response(
-      "Success",
-      status=200,
-  )
+    return Response("Database error", status=400)
 
 # testschema = '{"name": "John", "age"": 30, "city": "New York"}'
 # print(insertSchema("nofrills.com2", "kevin223", testschema))

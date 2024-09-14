@@ -15,10 +15,9 @@ def getPageDataByWebsite() -> str:
   website_url = data["website_url"]
   user_id = supabase.auth.get_user().user.id
   response = supabase.table(query_constants.PAGE_DATA_TABLE).select("*").eq(query_constants.WEBSITE_URL_COLUMN, website_url).eq(query_constants.USER_ID_COLUMN, user_id).execute()
-  pageData = dict()
-  pageData[website_url] = response.data[0][query_constants.PAGE_DATA_COLUMN]
-  print(pageData)
-  return pageData
+  if response.data:
+      return response.data[0][query_constants.PAGE_DATA_COLUMN]
+  return None
 
 @app.route('/data/user', methods=['GET'])
 def getPageDataForUser() -> List[str]:
@@ -47,17 +46,10 @@ def insertPageData() -> bool:
   page_data = data["page_data"]
   try:
     response = supabase.table(query_constants.PAGE_DATA_TABLE).insert({query_constants.WEBSITE_URL_COLUMN:website_url, query_constants.PAGE_DATA_COLUMN: page_data, query_constants.USER_ID_COLUMN:user_id}).execute()
-    print(response)
+    return Response("Success", status=200)
   except Exception as e:
     print(e)
-    return Response(
-        "database error",
-        status=400,
-    )
-  return Response(
-        "Succcess",
-        status=200,
-    )
+    return Response("Database error", status=400)
 
 # insertPageData("walmart.com", "kevin", "new data")
 # insertPageData("bestbuy.com", "kevin", "new data")
