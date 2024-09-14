@@ -52,7 +52,7 @@ export default function Home() {
         <p className="text-sm text-gray-400 mb-2">
           Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary Levesque for Hack the North 2024.
         </p>
-        <a href="#" className="text-sm text-gray-400 hover:text-white underline">
+        <a href="/info" className="text-sm text-gray-400 hover:text-white underline">
           Project Information →
         </a>
       </footer>

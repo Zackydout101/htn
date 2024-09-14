@@ -93,7 +93,7 @@ const Layout = () => {
 
               {/* Create new box button */}
               <button
-                style={{ marginLeft: "650px", marginTop: "10px", width: "60%" }}
+                style={{ marginLeft: "500px", marginTop: "10px", width: "50%" }}
                 className={styles.createButton}
                 onClick={handleSubmit}
               >
@@ -128,7 +128,7 @@ const Layout = () => {
             <p className="text-sm text-gray-400 mb-2">
               Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary Levesque for Hack the North 2024.
             </p>
-            <a href="#" className="text-sm text-gray-400 hover:text-white underline">
+            <a href="/info" className="text-sm text-gray-400 hover:text-white underline">
               Project Information →
             </a>
           </div>
