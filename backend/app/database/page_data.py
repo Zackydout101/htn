@@ -23,9 +23,14 @@ def getPageDataForUser(user_id:str) -> List[str]:
 
   return pageData
 
-def insertPageData(website_url:str, user_id:str, page_data:str):
-  response = supabase.table(query_constants.PAGE_DATA_TABLE).insert({query_constants.WEBSITE_URL_COLUMN:website_url, query_constants.PAGE_DATA_COLUMN: page_data, query_constants.USER_ID_COLUMN:user_id}).execute()
-  print(response)
+def insertPageData(website_url:str, user_id:str, page_data:str) -> bool:
+  try:
+    response = supabase.table(query_constants.PAGE_DATA_TABLE).insert({query_constants.WEBSITE_URL_COLUMN:website_url, query_constants.PAGE_DATA_COLUMN: page_data, query_constants.USER_ID_COLUMN:user_id}).execute()
+    print(response)
+  except Exception as e:
+    print(e)
+    return False
+  return True
 
 # insertPageData("walmart.com", "kevin", "new data")
 # insertPageData("bestbuy.com", "kevin", "new data")
