@@ -1,5 +1,5 @@
 from supabase import create_client, Client
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 from run import app
 
 import constants
@@ -21,11 +21,18 @@ def signUp():
         'email_redirect_to': "http://localhost:3000",
       },
     })
-    print(data)
-    return jsonify({'result': data})
+    print(supabase.auth.get_user().user.id)
+
+    return Response(
+        "success",
+        status=200,
+    )
   except Exception as e:
     print(e)
-  return jsonify({'result': "data"})
+    return Response(
+        "invalid credentials",
+        status=400,
+    )
 
 @app.route('/auth/signin', methods=['POST'])
 def signIn():
@@ -36,13 +43,29 @@ def signIn():
       'email': data['email'],
       'password': data['password'],
     })
-    return ""
+    print(supabase.auth.get_user())
+    return Response(
+        "success",
+        status=200,
+    )
   except Exception as e:
     print(e)
-    return e
+    return Response(
+        "invalid credentials",
+        status=400,
+    )
 
+@app.route('/auth/signout', methods=['POST'])
 def signOut():
   try:
     supabase.auth.sign_out()
+    return Response(
+        "success",
+        status=200,
+    )
   except Exception as e:
     print(e)
+    return Response(
+        "invalid credentials",
+        status=400,
+    )
