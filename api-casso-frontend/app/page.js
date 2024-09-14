@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white font-sans">
 
+  
       
       {/* Main Section */}
       <div className="flex flex-col items-center justify-center">

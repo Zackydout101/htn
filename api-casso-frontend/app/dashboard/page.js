@@ -43,78 +43,95 @@ const Layout = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      {/* Header Section */}
-      <header className={styles.header}>
-        <div className={styles.headerContent}>
-          <h1 className={styles.title}>My APIs</h1>
-          <p className={styles.description}>
-            Details for all APIs created on APIcasso.
-          </p>
+    <div className={styles.containerspecial}>
+  {/* Top Header */}
+  <header style={{ marginTop: "-80px", marginLeft: "-10px", marginBottom: "25px", opacity: "50%" }} className="flex justify-between items-center w-full p-4 text-white">
+    {/* Left: APIcasso */}
+    <div className="text-2xl font-bold">
+      <a href="./">APIcasso</a>
+    </div>
 
-          {/* Inline fields for API key and Schema */}
-          <div className={styles.inputWrapper}>
-            <input
-              type="text"
-              value={key}
-              onChange={handleKeyChange}
-              placeholder="Enter URL"
-              className={styles.inputField}  // Assuming you have styling for the input field
-            />
-            <input
-              type="text"
-              value={schema}
-              onChange={handleSchemaChange}
-              placeholder="Enter Schema/Keywords"
-              className={styles.inputField}  // Assuming you have styling for the input field
-              style={{ marginLeft: "10px" }}  // Inline spacing between the two fields
-            />
+    {/* Right: Dashboard and Log out links side by side */}
+    <div className="flex space-x-4">
+      <a href="/dashboard" className="text-gray-400 hover:text-white underline">
+        Dashboard
+      </a>
+      <a href="./" className="text-gray-400 hover:text-white underline">
+        Log out
+      </a>
+    </div>
+  </header>
 
-            {/* Create new box button */}
-            <button
-              style={{ marginLeft: "650px", marginTop: "10px", width: "60%"}}
-              className={styles.createButton}
-              onClick={handleSubmit}
-            >
-              Create new <span className={styles.arrow}>→</span>
-            </button>
-          </div>
-        </div>
 
-        {/* Grid Section for displaying API boxes */}
-        <div className={styles.gridContainer}>
-          {boxes.map((box, index) => (
-            <div key={index} className={styles.apiBox}>
-              <p className={styles.apiDetail}>
-                <strong>URL:</strong> {box.key}  {/* Display the entered key */}
-              </p>
-              <p className={styles.apiDetail}>
-                <strong>Schema/Keywords:</strong> {box.schema}  {/* Display the schema/keywords */}
-              </p>
+      {/* Main Section */}
+      <div className={styles.mainSection}>
+        <header className={styles.header}>
+          <div className={styles.headerContent}>
+            <h1 className={styles.title}>My APIs</h1>
+            <p className={styles.description}>
+              Details for all APIs created on APIcasso.
+            </p>
+
+            {/* Inline fields for API key and Schema */}
+            <div className={styles.inputWrapper}>
+              <input
+                type="text"
+                value={key}
+                onChange={handleKeyChange}
+                placeholder="Enter URL"
+                className={styles.inputField}
+              />
+              <input
+                type="text"
+                value={schema}
+                onChange={handleSchemaChange}
+                placeholder="Enter Schema/Keywords"
+                className={styles.inputField}
+                style={{ marginLeft: "10px" }}
+              />
+
+              {/* Create new box button */}
+              <button
+                style={{ marginLeft: "650px", marginTop: "10px", width: "60%" }}
+                className={styles.createButton}
+                onClick={handleSubmit}
+              >
+                Create new <span className={styles.arrow}>→</span>
+              </button>
             </div>
-          ))}
-        </div>
-      </header>
+          </div>
 
-      {/* Main Content Section */}
-      <main className={styles.mainContent}>
-        {/* Render dynamic content */}
-      </main>
+          {/* Grid Section for displaying API boxes */}
+          <div className={styles.gridContainer}>
+            {boxes.map((box, index) => (
+              <div key={index} className={styles.apiBox}>
+                <p className={styles.apiDetail}>
+                  <strong>URL:</strong> {box.key}
+                </p>
+                <p className={styles.apiDetail}>
+                  <strong>Schema/Keywords:</strong> {box.schema}
+                </p>
+              </div>
+            ))}
+          </div>
+        </header>
 
-      {/* Footer */}
-      
-      <footer className="absolute bottom-6">
-        <p style={{ marginBottom: "0px" }}  className="text-sm text-gray-400 mb-2">
-          Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary Levesque for Hack the North 2024.
-        </p>
-        <a href="#" style={{ marginBottom: "20px" }}  className="text-sm text-gray-400 hover:text-white underline">
-          Project Information →
-        </a>
-      </footer>
+        {/* Main Content Section */}
+        <main className={styles.mainContent}>
+          {/* Render dynamic content */}
+        </main>
+
+        {/* Footer */}
+        <footer className="absolute bottom-6">
+          <p style={{ marginBottom: "0px" }} className="text-sm text-gray-400 mb-2">
+            Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary Levesque for Hack the North 2024.
+          </p>
+          <a href="#" style={{ marginBottom: "20px" }} className="text-sm text-gray-400 hover:text-white underline">
+            Project Information →
+          </a>
+        </footer>
       </div>
-    
-
-    
+    </div>
   );
 };
 
