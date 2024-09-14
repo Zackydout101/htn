@@ -1,16 +1,17 @@
 import Image from "next/image";
 
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white">
       {/* Main Section */}
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-5xl font-bold text-center mb-8">
+        <h1 className="text-6xl font-bold text-center mb-8">
           Turn any website into a <br /> well-defined API 🎨
         </h1>
         
         {/* Get Started Button */}
-        <button className="px-6 py-3 bg-black rounded-lg text-white font-semibold text-lg mb-4 hover:bg-gray-700 transition">
+        <button className="px-6 py-3 bg-black rounded-lg text-white font-semibold text-lg mb-4 hover:bg-gray-700 transition shadow-[0_4px_30px_rgba(256,256,256,0.3)]">
           Get started →
         </button>
 
@@ -35,4 +36,3 @@ export default function Home() {
     </div>
   )
 }
-
