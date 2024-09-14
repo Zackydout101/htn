@@ -11,9 +11,11 @@ export default function Home() {
         </h1>
         
         {/* Get Started Button */}
+    <Link href="/signup">
         <button className="px-6 py-3 bg-black rounded-lg text-white font-semibold text-lg mb-4 hover:bg-gray-700 transition shadow-[0_4px_30px_rgba(256,256,256,0.3)]">
           Get started →
         </button>
+      </Link>
 
         {/* Login Link */}
         <p>
