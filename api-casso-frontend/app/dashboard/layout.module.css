@@ -1,0 +1,61 @@
+/* app/layout.module.css */
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    background: linear-gradient(to right, #333333, #000000); /* Gradient from gray to black */
+    color: white;
+    padding: 16px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .sidebar {
+    width: 240px;
+    background-color: #f4f4f4;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 10px 0;
+  }
+  
+  .sidebar button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .sidebar button:hover {
+    background-color: #ddd;
+  }
+  
+  .mainContent {
+    flex-grow: 1;
+    padding: 16px;
+    overflow-y: auto;
+  }
+  
+
+
+
+  
