@@ -70,7 +70,7 @@ const Layout = () => {
           <div className={styles.headerContent}>
             <h1 className={styles.title}>My APIs</h1>
             <p className={styles.description}>
-              Details for all APIs created on APIcasso.
+              Details for all APIs created on APIcasso. To create a new API, enter the URL, schema, and press "Create New".
             </p>
 
             {/* Inline fields for API key and Schema */}

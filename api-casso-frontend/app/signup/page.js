@@ -22,7 +22,7 @@ export default function Signup() {
         </div>
       </header>
 
-      <h1 className="text-4xl font-bold mb-8">Create Your Account</h1>
+      <h1 style={{marginTop: "-100px"}} className="text-4xl font-bold mb-8">Create an account ⬇️</h1>
       <form className="flex flex-col space-y-4 w-80">
         <input
           type="text"
