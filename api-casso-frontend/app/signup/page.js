@@ -28,10 +28,11 @@ export default function Signup() {
     })
       .then((response) => {
         console.log(response);
+        if (response.status == 200) {
+          navigate("/dashboard");
+        }
       })
       .catch((error) => console.error("Error:", error));
-
-    navigate("/dashboard");
   };
 
   return (
