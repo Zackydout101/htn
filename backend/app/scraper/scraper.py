@@ -38,6 +38,7 @@ class Scraper():
         try:
             chrome_options = uc.ChromeOptions()
             chrome_options.add_argument("--start-maximized")
+            chrome_options.headless = True
             
             self.driver = uc.Chrome(options=chrome_options)
             self.driver.get(url)
