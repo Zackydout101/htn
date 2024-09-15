@@ -4,4 +4,7 @@ PAGE_DATA_COLUMN = 'page_data'
 USER_ID_COLUMN = 'user_id'
 WEBSITE_URL_COLUMN = 'website_url'
 RESPONSE_SCHEMA_COLUMN = 'json_schema'
+API_TABLE = 'api_table'
+API_NAME_COLUMN = 'api_name'
+API_JSON_COLUMN = 'api_json_response'
 

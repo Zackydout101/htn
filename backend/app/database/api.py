@@ -1,0 +1,55 @@
+from supabase import create_client, Client
+import constants, query_constants
+from typing import List
+from run import app
+from flask import Flask, request, Response
+
+url: str = constants.SUPABASE_URL
+key: str = constants.SUPABASE_KEY
+
+supabase: Client = create_client(url, key)
+
+@app.route('/apis/api', methods=['POST'])
+def getAPI() -> str:
+  data = request.json  # Get the JSON data sent in the request
+  api_name = data["api_name"]
+  user_id = supabase.auth.get_user().user.id
+  response = supabase.table(query_constants.API_TABLE).select("*").eq(query_constants.API_NAME_COLUMN, api_name).eq(query_constants.USER_ID_COLUMN, user_id).execute()
+  if response.data:
+      return response.data[0][query_constants.API_JSON_COLUMN]
+  return None
+
+@app.route('/apis/user', methods=['GET'])
+def getAPIsForUser() -> List[str]:
+  try:
+    user_id = supabase.auth.get_user().user.id
+    response = supabase.table(query_constants.API_TABLE).select("*").eq(query_constants.USER_ID_COLUMN, user_id).execute()
+    pageData = dict()
+
+    for data in response.data:
+      pageData[data[query_constants.WEBSITE_URL_COLUMN]] = data[query_constants.PAGE_DATA_COLUMN]
+    print(pageData)
+    return pageData
+  except Exception as e:
+    print(e)
+    return Response(
+        "database error",
+        status=400,
+    )
+
+@app.route('/apis/insert', methods=['POST'])
+def insertGeneratedAPI() -> bool:
+  data = request.json  # Get the JSON data sent in the request
+  user_id = supabase.auth.get_user().user.id
+  api_name = data["api_name"]
+  json_data = data["json_data"]
+  try:
+    response = supabase.table(query_constants.API_TABLE).insert({query_constants.API_NAME_COLUMN:api_name, query_constants.API_JSON_COLUMN: json_data, query_constants.USER_ID_COLUMN:user_id}).execute()
+    return Response("Success", status=200)
+  except Exception as e:
+    print(e)
+    return Response("Database error", status=400)
+
+# insertPageData("walmart.com", "kevin", "new data")
+# insertPageData("bestbuy.com", "kevin", "new data")
+# getPageDataForUser("kevin")
