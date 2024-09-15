@@ -12,7 +12,9 @@ from bs4 import BeautifulSoup
 import re
 import html
 import stealth_requests as requests
-    
+import json
+import logging
+
 class Scraper():
     def __init__(self):
         load_dotenv()
@@ -113,4 +115,31 @@ class Scraper():
             message=f"Return data from the following html with the following json scheme {schema}. Only give the data, no yapping. {html_content}",
             connectors=[{"id": "web-search"}],
         )
-        return response.text
+        logging.info(f"AI response: {response.text[:500]}...")  # Log first 500 characters of AI response
+        
+        # Clean the AI response
+        cleaned_response = self.clean_ai_response(response.text)
+        
+        # The cleaned_response is now guaranteed to be a valid JSON string
+        return cleaned_response
+
+    def clean_ai_response(self, response):
+        # Remove any leading/trailing whitespace
+        cleaned = response.strip()
+        
+        # Remove any markdown code block indicators
+        cleaned = re.sub(r'^```json\s*|\s*```$', '', cleaned, flags=re.MULTILINE)
+        
+        # Check if the cleaned response starts with a curly brace
+        if cleaned.startswith('{'):
+            # If it starts with a curly brace, it might be multiple JSON objects
+            # Wrap them in square brackets to create a JSON array
+            cleaned = f'[{cleaned}]'
+        
+        # Attempt to parse the JSON to ensure it's valid
+        try:
+            json_data = json.loads(cleaned)
+            return json.dumps(json_data)  # Return a properly formatted JSON string
+        except json.JSONDecodeError:
+            # If parsing fails, return an error JSON
+            return json.dumps({"error": "Unable to parse AI response into valid JSON"})
