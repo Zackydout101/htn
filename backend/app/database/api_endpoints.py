@@ -1,6 +1,6 @@
 from supabase import create_client, Client
-from . import constants, query_constants
-from ..run import app
+from app.database import constants, query_constants
+from app import app
 from flask import request, Response, jsonify
 import uuid
 
@@ -12,13 +12,7 @@ supabase: Client = create_client(url, key)
 def generate_api_endpoint():
     return str(uuid.uuid4())
 
-@app.route('/api_endpoint/create', methods=['POST'])
-def create_api_endpoint():
-    data = request.json
-    website_url = data["website_url"]
-    user_id = supabase.auth.get_user().user.id
-    page_data = data["page_data"]
-    
+def create_api_endpoint(website_url: str, user_id: str, page_data: str) -> str:
     api_endpoint = generate_api_endpoint()
     
     try:
