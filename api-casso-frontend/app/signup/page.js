@@ -97,6 +97,14 @@ export default function Signup() {
           Sign Up
         </button>
       </form>
+      
+      {/* Add this new paragraph for the login link */}
+      <p className="mt-4 text-sm">
+        Already have an account?{" "}
+        <a href="/login" className="text-blue-400 hover:underline">
+          Log in here
+        </a>
+      </p>
 
       {/* Footer */}
       <footer className="w-full p-4 fixed bottom-0 left-0 justify-center items-center text-center text-white bg-gradient-to-b from-transparent via-gray-900 to-black">

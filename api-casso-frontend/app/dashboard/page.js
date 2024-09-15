@@ -9,6 +9,10 @@ const Layout = () => {
   const [boxes, setBoxes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
+  const [view, setView] = useState("schemas"); // New state for view toggle
+  const [automationUrl, setAutomationUrl] = useState(""); // New state for automation URL
+  const [automationPrompt, setAutomationPrompt] = useState(""); // New state for automation prompt
+  const [automations, setAutomations] = useState([]); // New state to store automations
 
   const handleKeyChange = (event) => {
     setKey(event.target.value);
@@ -60,6 +64,53 @@ const Layout = () => {
       });
   };
 
+  const handleAutomationUrlChange = (event) => {
+    setAutomationUrl(event.target.value);
+  };
+
+  const handleAutomationPromptChange = (event) => {
+    setAutomationPrompt(event.target.value);
+  };
+
+  const handleAutomationSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setLoadingProgress(0);
+
+    const loadingInterval = setInterval(() => {
+      setLoadingProgress((prevProgress) => {
+        const newProgress = prevProgress + 2;
+        return newProgress > 100 ? 100 : newProgress;
+      });
+    }, 1000);
+
+    // Replace this with your actual API endpoint for automations
+    fetch("http://127.0.0.1:5000/automate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ website_url: automationUrl, prompt: automationPrompt }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        clearInterval(loadingInterval);
+        setIsLoading(false);
+        setLoadingProgress(100);
+        if (automationUrl.trim() !== "" && automationPrompt.trim() !== "") {
+          setAutomations((prevAutomations) => [...prevAutomations, { url: automationUrl, prompt: automationPrompt, api_endpoint: data.api_endpoint }]);
+          setAutomationUrl("");
+          setAutomationPrompt("");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        clearInterval(loadingInterval);
+        setIsLoading(false);
+        setLoadingProgress(0);
+      });
+  };
+
   const ApiBox = ({ url, schema, api_endpoint }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const schemaRef = useRef(null);
@@ -81,40 +132,105 @@ const Layout = () => {
 
     return (
       <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full">
-        <div className="flex items-center">
-          <p>
-            <strong>PermaURL:</strong> http://127.0.0.1:5000/{api_endpoint}
-          </p>
-          <button
-            onClick={copyToClipboard}
-            className="ml-2 text-sm text-blue-400 hover:underline bg-transparent border-none cursor-pointer"
-          >
-            {isCopied ? "Copied!" : "Copy"}
-          </button>
-        </div>
-        <p>
-          <strong>URL:</strong> {url}
-        </p>
-        <div
-          ref={schemaRef}
-          style={{
-            maxHeight: isExpanded
-              ? `${schemaRef.current.scrollHeight}px`
-              : "80px",
-            overflow: "hidden",
-            transition: "max-height 0.3s ease-in-out",
-          }}
-        >
-          <p>
-            <strong>Schema:</strong> {schema}
-          </p>
-        </div>
-        <button
-          onClick={toggleExpand}
-          className="mt-2 text-sm text-blue-400 hover:underline"
-        >
-          {isExpanded ? "Show Less" : "Show More"}
-        </button>
+        <table className="w-full border-collapse">
+          <tbody>
+            <tr className="border-b border-gray-700">
+              <td className="py-2 pr-4 font-bold whitespace-nowrap">PermaURL:</td>
+              <td className="py-2 flex justify-between items-center">
+                <div className="max-w-[calc(100%-80px)] overflow-x-auto">
+                  <span className="break-all">http://127.0.0.1:5000{api_endpoint}</span>
+                </div>
+                <button
+                  onClick={copyToClipboard}
+                  className="ml-2 px-3 py-1 text-sm bg-white text-black rounded hover:bg-gray-300 transition-colors duration-200 whitespace-nowrap"
+                >
+                  {isCopied ? "Copied!" : "Copy"}
+                </button>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-700">
+              <td className="py-2 pr-4 font-bold whitespace-nowrap">URL:</td>
+              <td className="py-2">
+                <div className="max-h-20 overflow-y-auto">
+                  <span className="break-all">{url}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-4 font-bold align-top whitespace-nowrap">Schema:</td>
+              <td className="py-2">
+                <div
+                  ref={schemaRef}
+                  style={{
+                    maxHeight: isExpanded
+                      ? `${schemaRef.current?.scrollHeight}px`
+                      : "80px",
+                    overflow: "hidden",
+                    transition: "max-height 0.3s ease-in-out",
+                  }}
+                  className="break-all"
+                >
+                  {schema}
+                </div>
+                <button
+                  onClick={toggleExpand}
+                  className="mt-2 text-sm text-blue-400 hover:underline"
+                >
+                  {isExpanded ? "Show Less" : "Show More"}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+
+  const AutomationBox = ({ url, prompt, api_endpoint }) => {
+    const [isCopied, setIsCopied] = useState(false);
+
+    const copyToClipboard = () => {
+      navigator.clipboard
+        .writeText(`http://127.0.0.1:5000${api_endpoint}`)
+        .then(() => {
+          setIsCopied(true);
+          setTimeout(() => setIsCopied(false), 1500);
+        })
+        .catch((err) => console.error("Failed to copy!", err));
+    };
+
+    return (
+      <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full">
+        <table className="w-full border-collapse">
+          <tbody>
+            <tr className="border-b border-gray-700">
+              <td className="py-2 pr-4 font-bold whitespace-nowrap">API Endpoint:</td>
+              <td className="py-2 flex justify-between items-center">
+                <div className="max-w-[calc(100%-80px)] overflow-x-auto">
+                  <span className="break-all">http://127.0.0.1:5000{api_endpoint}</span>
+                </div>
+                <button
+                  onClick={copyToClipboard}
+                  className="ml-2 px-3 py-1 text-sm bg-white text-black rounded hover:bg-gray-300 transition-colors duration-200 whitespace-nowrap"
+                >
+                  {isCopied ? "Copied!" : "Copy"}
+                </button>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-700">
+              <td className="py-2 pr-4 font-bold whitespace-nowrap">URL:</td>
+              <td className="py-2">
+                <div className="max-h-20 overflow-y-auto">
+                  <span className="break-all">{url}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-4 font-bold whitespace-nowrap">Prompt:</td>
+              <td className="py-2 break-words">{prompt}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   };
@@ -135,7 +251,7 @@ const Layout = () => {
           </a>
         </div>
 
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 items-center">
           <a
             href="/dashboard"
             className="text-gray-400 hover:text-white underline"
@@ -145,16 +261,31 @@ const Layout = () => {
           <a href="./" className="text-gray-400 hover:text-white underline">
             Information
           </a>
+          <div className="flex items-center bg-gray-700 rounded-full p-1">
+            <button
+              className={`px-3 py-1 rounded-full ${view === 'schemas' ? 'bg-blue-500 text-white' : 'text-gray-300'}`}
+              onClick={() => setView('schemas')}
+            >
+              Schemas
+            </button>
+            <button
+              className={`px-3 py-1 rounded-full ${view === 'automations' ? 'bg-blue-500 text-white' : 'text-gray-300'}`}
+              onClick={() => setView('automations')}
+            >
+              Automations
+            </button>
+          </div>
         </div>
       </header>
 
       <div className={styles.mainSection}>
         <header className={styles.header}>
           <div className={styles.headerContent}>
-            <h1 className={styles.title}>My schemas</h1>
+            <h1 className={styles.title}>{view === 'schemas' ? 'My schemas' : 'My automations'}</h1>
             <p className={styles.description}>
-              Provide a URL and an empty JSON schema. Press "Create New".
-              Receive a completed one. ✅
+              {view === 'schemas' 
+                ? "Provide a URL and an empty JSON schema. Press \"Create New\". Receive a completed one. ✅"
+                : "Provide a URL and a prompt for automation. Press \"Create New\". Receive an API endpoint. ✅"}
             </p>
 
             <div
@@ -168,16 +299,16 @@ const Layout = () => {
             >
               <input
                 type="text"
-                value={key}
-                onChange={handleKeyChange}
+                value={view === 'schemas' ? key : automationUrl}
+                onChange={view === 'schemas' ? handleKeyChange : handleAutomationUrlChange}
                 placeholder="Enter URL"
                 className="w-1/2 px-4 py-2 text-base text-white bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
               />
 
               <textarea
-                value={schema}
-                onChange={handleSchemaChange}
-                placeholder="Enter JSON Schema"
+                value={view === 'schemas' ? schema : automationPrompt}
+                onChange={view === 'schemas' ? handleSchemaChange : handleAutomationPromptChange}
+                placeholder={view === 'schemas' ? "Enter JSON Schema" : "Enter automation prompt"}
                 className="w-full h-48 px-4 py-2 text-base text-white bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-blue-500 resize-none"
               />
 
@@ -188,7 +319,7 @@ const Layout = () => {
                   width: "20%",
                 }}
                 className={styles.createButton}
-                onClick={handleSubmit}
+                onClick={view === 'schemas' ? handleSubmit : handleAutomationSubmit}
                 disabled={isLoading}
               >
                 {isLoading ? "Loading..." : "Create new"} <span className={styles.arrow}>→</span>
@@ -206,9 +337,14 @@ const Layout = () => {
           </div>
 
           <div className="w-full max-w-4xl mt-8">
-            {boxes.map((box, index) => (
-              <ApiBox key={index} url={box.key} schema={box.schema} api_endpoint={box.api_endpoint} />
-            ))}
+            {view === 'schemas' 
+              ? boxes.map((box, index) => (
+                  <ApiBox key={index} url={box.key} schema={box.schema} api_endpoint={box.api_endpoint} />
+                ))
+              : automations.map((automation, index) => (
+                  <AutomationBox key={index} url={automation.url} prompt={automation.prompt} api_endpoint={automation.api_endpoint} />
+                ))
+            }
           </div>
         </header>
 

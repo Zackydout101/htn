@@ -41,9 +41,9 @@ export default function Home() {
         {/* Login Link */}
         <p>
           Already have an account?{" "}
-          <a href="#" className="text-gray-400 hover:text-white underline">
+          <Link href="/login" className="text-gray-400 hover:text-white underline">
             Log in →
-          </a>
+          </Link>
         </p>
       </div>
       {/* Footer */}
