@@ -19,7 +19,7 @@ def get_schema_by_user(user_id: str) -> dict:
     response = supabaseCli.table(query_constants.RESPONSE_SCHEMA_TABLE).select("*").eq(query_constants.USER_ID_COLUMN, user_id).execute()
     schema_data = {}
     for data in response.data:
-        schema_data[data[query_constants.WEBSITE_URL_COLUMN]] = data[query_constants.PAGE_DATA_COLUMN]
+        schema_data.append([data[query_constants.RESPONSE_SCHEMA_COLUMN], data[query_constants.WEBSITE_URL_COLUMN]])
     return schema_data
 
 def insert_schema(website_url: str, user_id: str, schema_string: str) -> bool:
@@ -45,13 +45,14 @@ def get_schema_by_website_and_user_route():
         return jsonify(schema)
     return jsonify({"error": "No schema found"}), 404
 
-@app.route('/schema/user', methods=['POST'])
+@app.route('/schema/user', methods=['GET'])
 def get_schema_by_user_route():
-    data = request.json
     user_id = supabaseCli.auth.get_user().user.id
-    schema = get_schema_by_website_and_user(user_id)
+    schema = get_schema_by_user(user_id)
+    res = dict()
+    res["schemas"] = schema
     if schema:
-        return jsonify(schema)
+        return res
     return jsonify({"error": "No schema found"}), 404
 
 @app.route('/schema/insert', methods=['POST'])

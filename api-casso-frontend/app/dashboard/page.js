@@ -22,6 +22,38 @@ const Layout = () => {
     setSchema(event.target.value);
   };
 
+  useEffect(() => {
+    // Function to update the `boxes` state
+    const updateBoxes = () => {
+      fetch("http://127.0.0.1:5000/apis/user", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Update the `boxes` state
+          data = data["data"];
+          console.log(data);
+          setBoxes([]);
+          data.map((row) => {
+            console.log(row);
+            setBoxes((prevBoxes) => [
+              ...prevBoxes,
+              { key: row[0], schema: row[1], api_endpoint: "/api/" + row[2] },
+            ]);
+          });
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    };
+
+    // Call the function to update the `boxes` state
+    updateBoxes();
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("User submitted:");
@@ -51,7 +83,10 @@ const Layout = () => {
         setLoadingProgress(100);
         setAPIUUID(data.api_endpoint);
         if (key.trim() !== "" && schema.trim() !== "") {
-          setBoxes((prevBoxes) => [...prevBoxes, { key, schema, api_endpoint: data.api_endpoint }]);
+          setBoxes((prevBoxes) => [
+            ...prevBoxes,
+            { key, schema, api_endpoint: data.api_endpoint },
+          ]);
           setKey("");
           setSchema("");
         }
@@ -90,7 +125,10 @@ const Layout = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ website_url: automationUrl, prompt: automationPrompt }),
+      body: JSON.stringify({
+        website_url: automationUrl,
+        prompt: automationPrompt,
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -98,7 +136,14 @@ const Layout = () => {
         setIsLoading(false);
         setLoadingProgress(100);
         if (automationUrl.trim() !== "" && automationPrompt.trim() !== "") {
-          setAutomations((prevAutomations) => [...prevAutomations, { url: automationUrl, prompt: automationPrompt, api_endpoint: data.api_endpoint }]);
+          setAutomations((prevAutomations) => [
+            ...prevAutomations,
+            {
+              url: automationUrl,
+              prompt: automationPrompt,
+              api_endpoint: data.api_endpoint,
+            },
+          ]);
           setAutomationUrl("");
           setAutomationPrompt("");
         }
@@ -135,10 +180,14 @@ const Layout = () => {
         <table className="w-full border-collapse">
           <tbody>
             <tr className="border-b border-gray-700">
-              <td className="py-2 pr-4 font-bold whitespace-nowrap">PermaURL:</td>
+              <td className="py-2 pr-4 font-bold whitespace-nowrap">
+                PermaURL:
+              </td>
               <td className="py-2 flex justify-between items-center">
                 <div className="max-w-[calc(100%-80px)] overflow-x-auto">
-                  <span className="break-all">http://127.0.0.1:5000{api_endpoint}</span>
+                  <span className="break-all">
+                    http://127.0.0.1:5000{api_endpoint}
+                  </span>
                 </div>
                 <button
                   onClick={copyToClipboard}
@@ -157,7 +206,9 @@ const Layout = () => {
               </td>
             </tr>
             <tr>
-              <td className="py-2 pr-4 font-bold align-top whitespace-nowrap">Schema:</td>
+              <td className="py-2 pr-4 font-bold align-top whitespace-nowrap">
+                Schema:
+              </td>
               <td className="py-2">
                 <div
                   ref={schemaRef}
@@ -204,10 +255,14 @@ const Layout = () => {
         <table className="w-full border-collapse">
           <tbody>
             <tr className="border-b border-gray-700">
-              <td className="py-2 pr-4 font-bold whitespace-nowrap">API Endpoint:</td>
+              <td className="py-2 pr-4 font-bold whitespace-nowrap">
+                API Endpoint:
+              </td>
               <td className="py-2 flex justify-between items-center">
                 <div className="max-w-[calc(100%-80px)] overflow-x-auto">
-                  <span className="break-all">http://127.0.0.1:5000{api_endpoint}</span>
+                  <span className="break-all">
+                    http://127.0.0.1:5000{api_endpoint}
+                  </span>
                 </div>
                 <button
                   onClick={copyToClipboard}
@@ -263,14 +318,20 @@ const Layout = () => {
           </a>
           <div className="flex items-center bg-gray-700 rounded-full p-1">
             <button
-              className={`px-3 py-1 rounded-full ${view === 'schemas' ? 'bg-blue-500 text-white' : 'text-gray-300'}`}
-              onClick={() => setView('schemas')}
+              className={`px-3 py-1 rounded-full ${
+                view === "schemas" ? "bg-blue-500 text-white" : "text-gray-300"
+              }`}
+              onClick={() => setView("schemas")}
             >
               Schemas
             </button>
             <button
-              className={`px-3 py-1 rounded-full ${view === 'automations' ? 'bg-blue-500 text-white' : 'text-gray-300'}`}
-              onClick={() => setView('automations')}
+              className={`px-3 py-1 rounded-full ${
+                view === "automations"
+                  ? "bg-blue-500 text-white"
+                  : "text-gray-300"
+              }`}
+              onClick={() => setView("automations")}
             >
               Automations
             </button>
@@ -281,11 +342,13 @@ const Layout = () => {
       <div className={styles.mainSection}>
         <header className={styles.header}>
           <div className={styles.headerContent}>
-            <h1 className={styles.title}>{view === 'schemas' ? 'My schemas' : 'My automations'}</h1>
+            <h1 className={styles.title}>
+              {view === "schemas" ? "My schemas" : "My automations"}
+            </h1>
             <p className={styles.description}>
-              {view === 'schemas' 
-                ? "Provide a URL and an empty JSON schema. Press \"Create New\". Receive a completed one. ✅"
-                : "Provide a URL and a prompt for automation. Press \"Create New\". Receive an API endpoint. ✅"}
+              {view === "schemas"
+                ? 'Provide a URL and an empty JSON schema. Press "Create New". Receive a completed one. ✅'
+                : 'Provide a URL and a prompt for automation. Press "Create New". Receive an API endpoint. ✅'}
             </p>
 
             <div
@@ -299,16 +362,28 @@ const Layout = () => {
             >
               <input
                 type="text"
-                value={view === 'schemas' ? key : automationUrl}
-                onChange={view === 'schemas' ? handleKeyChange : handleAutomationUrlChange}
+                value={view === "schemas" ? key : automationUrl}
+                onChange={
+                  view === "schemas"
+                    ? handleKeyChange
+                    : handleAutomationUrlChange
+                }
                 placeholder="Enter URL"
                 className="w-1/2 px-4 py-2 text-base text-white bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
               />
 
               <textarea
-                value={view === 'schemas' ? schema : automationPrompt}
-                onChange={view === 'schemas' ? handleSchemaChange : handleAutomationPromptChange}
-                placeholder={view === 'schemas' ? "Enter JSON Schema" : "Enter automation prompt"}
+                value={view === "schemas" ? schema : automationPrompt}
+                onChange={
+                  view === "schemas"
+                    ? handleSchemaChange
+                    : handleAutomationPromptChange
+                }
+                placeholder={
+                  view === "schemas"
+                    ? "Enter JSON Schema"
+                    : "Enter automation prompt"
+                }
                 className="w-full h-48 px-4 py-2 text-base text-white bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-blue-500 resize-none"
               />
 
@@ -319,10 +394,13 @@ const Layout = () => {
                   width: "20%",
                 }}
                 className={styles.createButton}
-                onClick={view === 'schemas' ? handleSubmit : handleAutomationSubmit}
+                onClick={
+                  view === "schemas" ? handleSubmit : handleAutomationSubmit
+                }
                 disabled={isLoading}
               >
-                {isLoading ? "Loading..." : "Create new"} <span className={styles.arrow}>→</span>
+                {isLoading ? "Loading..." : "Create new"}{" "}
+                <span className={styles.arrow}>→</span>
               </button>
 
               {isLoading && (
@@ -337,14 +415,23 @@ const Layout = () => {
           </div>
 
           <div className="w-full max-w-4xl mt-8">
-            {view === 'schemas' 
+            {view === "schemas"
               ? boxes.map((box, index) => (
-                  <ApiBox key={index} url={box.key} schema={box.schema} api_endpoint={box.api_endpoint} />
+                  <ApiBox
+                    key={index}
+                    url={box.key}
+                    schema={box.schema}
+                    api_endpoint={box.api_endpoint}
+                  />
                 ))
               : automations.map((automation, index) => (
-                  <AutomationBox key={index} url={automation.url} prompt={automation.prompt} api_endpoint={automation.api_endpoint} />
-                ))
-            }
+                  <AutomationBox
+                    key={index}
+                    url={automation.url}
+                    prompt={automation.prompt}
+                    api_endpoint={automation.api_endpoint}
+                  />
+                ))}
           </div>
         </header>
 

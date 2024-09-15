@@ -10,3 +10,4 @@ CORS(app)  # This will allow all origins by default
 import page_data
 import schemas
 import user_auth
+import api
