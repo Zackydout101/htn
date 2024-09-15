@@ -1,0 +1,812 @@
+<!DOCTYPE html><html lang="en-CA" dir="ltr"><head><title>Checkout - NRML</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, user-scalable=0"/><meta name="referrer" content="origin"/><link rel="preconnect" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/" crossorigin/><link rel="dns-prefetch" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/" crossorigin/><link rel="preconnect" href="https://checkout.shopifycs.com" crossorigin/><link rel="dns-prefetch" href="https://checkout.shopifycs.com" crossorigin/><link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin/><link rel="dns-prefetch" href="https://fonts.shopifycdn.com" crossorigin/><link rel="preload" href="https://fonts.shopifycdn.com/poppins/poppins_n4.934accbf9f5987aa89334210e6c1e9151f37d3b6.woff2?h1=bnJtbC5jYQ&amp;hmac=0076b680e362ddf16e7121ca97b5e8f2e2a9934b7ef33df40511b18a46ff405f" as="font" type="font/woff2" crossorigin/><style>@font-face { font-family: 'Poppins'; src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.shopifycdn.com/poppins/poppins_n4.934accbf9f5987aa89334210e6c1e9151f37d3b6.woff2?h1=bnJtbC5jYQ&hmac=0076b680e362ddf16e7121ca97b5e8f2e2a9934b7ef33df40511b18a46ff405f) format('woff2'),url(https://fonts.shopifycdn.com/poppins/poppins_n4.ee28d4489eaf5de9cf6e17e696991b5e9148c716.woff?h1=bnJtbC5jYQ&hmac=9254b2ce4be25f61f3e3d9b5786c2e646bf7b136078fc5152ff45b4379195d96) format('woff'); font-style: normal; font-weight: 400; font-display: auto; }</style></head><body class="Loading"><script>
+    try {
+    Function('const [result] = ((abc = 1) => [Promise.resolve(abc)])();');
+  } catch (err) {
+    document.documentElement.innerHTML = "<div class=\"error-container\"><style>* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml {\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  background: #F1F1F1;\n  font-size: 62.5%;\n  color: #303030;\n  min-height: 100%;\n}\n\nbody {\n  padding: 0;\n  margin: 0;\n  line-height: 2.7rem;\n}\n\nh1 {\n  font-size: 1.8rem;\n  font-weight: 400;\n  margin: 0 0 1.4rem 0;\n}\n\np {\n  font-size: 1.5rem;\n  margin: 0;\n}\n\n.error-container {\n  padding: 4rem 3.5rem;\n}\n\n@media all and (min-width:500px) {\n  .error-container {\n    padding: 7.5rem 10.5rem;\n    align-items: center;\n  }\n}</style><div><h1>It looks like your browser version isn't supported.</h1><p>Please update your browser to access the checkout and complete your purchase.</p></div></div>";
+  }</script><style>
+    
+    :root {
+      
+    
+    --x-skeleton-color-global-accent: hsl(204, 77%, 39%);
+    --x-skeleton-color-global-background: hsl(0, 0%, 100%);
+    --x-skeleton-color-global-backgroundSubdued: hsl(0, 0%, 96%);
+    --x-skeleton-color-global-border: hsl(0, 0%, 87%);
+    --x-skeleton-color-global-text: hsl(0, 0%, 0%);
+    --x-skeleton-color-global-textContrast: hsl(0, 0%, 100%);
+    --x-skeleton-color-global-textSubdued: hsl(0, 0%, 44%);
+    --x-skeleton-color-global-textSubdued200: hsl(0, 0%, 90%);
+
+    --x-skeleton-color-schemes-scheme2-base-background: hsl(0, 0%, 96%);
+    --x-skeleton-color-schemes-scheme2-base-backgroundSubdued: hsl(0, 0%, 93%);
+    --x-skeleton-color-schemes-scheme2-base-border: hsl(0, 0%, 84%);
+    --x-skeleton-color-schemes-scheme2-base-text: hsl(0, 0%, 0%);
+    --x-skeleton-color-schemes-scheme2-base-textContrast: hsl(0, 0%, 96%);
+    --x-skeleton-color-schemes-scheme2-base-textSubdued: hsl(0, 0%, 40%);
+    --x-skeleton-color-schemes-scheme2-base-textSubdued200: hsl(0, 0%, 80%);
+  
+    --x-skeleton-color-global-accent: #343536;
+    --x-skeleton-color-schemes-scheme1-base-accent: #000000;
+--x-skeleton-color-schemes-scheme1-base-background: #ffffff;
+--x-skeleton-color-schemes-scheme1-base-backgroundSubdued: #f6f6f6;
+--x-skeleton-color-schemes-scheme1-base-border: #dfdfdf;
+--x-skeleton-color-schemes-scheme1-base-text: #343536;
+--x-skeleton-color-schemes-scheme1-base-textContrast: #ffffff;
+--x-skeleton-color-schemes-scheme1-base-textSubdued: #3435368f;
+--x-skeleton-color-schemes-scheme1-base-textSubdued200: #3435361a;
+--x-skeleton-color-schemes-scheme2-base-accent: #0f100f;
+--x-skeleton-color-schemes-scheme2-base-background: #f5f5f5;
+--x-skeleton-color-schemes-scheme2-base-backgroundSubdued: #ececec;
+--x-skeleton-color-schemes-scheme2-base-border: #d5d5d5;
+--x-skeleton-color-schemes-scheme2-base-text: #343536;
+--x-skeleton-color-schemes-scheme2-base-textContrast: #ffffff;
+--x-skeleton-color-schemes-scheme2-base-textSubdued: #3435368f;
+--x-skeleton-color-schemes-scheme2-base-textSubdued200: #3435361a;
+
+
+  
+
+      --x-skeleton-typography-line-small: 1.2;
+      --x-skeleton-typography-line-base: 1.5;
+      --x-skeleton-line-quantity-size: 2.1rem;
+
+      --x-skeleton-typography-size-small: 1.2rem;
+      --x-skeleton-typography-size-default: 1.4rem;
+      --x-skeleton-typography-size-medium: 1.6rem;
+      --x-skeleton-typography-size-large: 2rem;
+      --x-skeleton-typography-size-extra-large: 2.2rem;
+      --x-skeleton-typography-size-extra-extra-large: 2.7rem;
+
+      --x-skeleton-typography-primary-weight-bold: 400;
+      --x-skeleton-typography-primary-fonts: Poppins;
+
+      --x-skeleton-typography-secondary-weight-bold: 400;
+      --x-skeleton-typography-secondary-fonts: -apple-system;
+
+      --x-skeleton-spacing-none: 0;
+      --x-skeleton-spacing-small-100: 1.1rem;
+      --x-skeleton-spacing-small-200: 0.9rem;
+      --x-skeleton-spacing-small-300: 0.7rem;
+      --x-skeleton-spacing-small-400: 0.5rem;
+      --x-skeleton-spacing-small-500: 0.3rem;
+      --x-skeleton-spacing-base: 1.4rem;
+      --x-skeleton-spacing-large-100: 1.7rem;
+      --x-skeleton-spacing-large-200: 2.1rem;
+      --x-skeleton-spacing-large-300: 2.6rem;
+      --x-skeleton-spacing-large-400: 3.2rem;
+      --x-skeleton-spacing-large-500: 3.8rem;
+
+      --x-skeleton-border-radius-none: 0;
+      --x-skeleton-border-radius-base: 5px;
+      --x-skeleton-border-radius-small: 2px;
+      --x-skeleton-border-radius-large: 10px;
+    }
+
+    
+
+    @keyframes SkeletonPulse {
+      50% {
+        opacity: 1;
+      }
+      75% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    *,
+    :after,
+    :before {
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      width: 100%;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      font-size: 62.5%;
+      font-family: var(--x-skeleton-typography-primary-fonts);
+      line-height: var(--x-skeleton-typography-line-base);
+    }
+
+    body {
+      -webkit-font-smoothing: subpixel-antialiased;
+      overflow-wrap: break-word;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+
+    body.Loading {
+      position: fixed;
+    }
+
+    /* TODO: need to take it out of the accessibility tree, too? */
+    body.Loading > .LoadingShell {
+      opacity: 1;
+    }
+  
+    
+    .BlockStack {
+      display: grid;
+    }
+
+    .BlockStack--spacing-small500 {
+      gap: var(--x-skeleton-spacing-small-500);
+    }
+    .BlockStack--spacing-small300 {
+      gap: var(--x-skeleton-spacing-small-300);
+    }
+    .BlockStack--spacing-small100 {
+      gap: var(--x-skeleton-spacing-small-100);
+    }
+    .BlockStack--spacing-base {
+      gap: var(--x-skeleton-spacing-base);
+    }
+    .BlockStack--spacing-large100 {
+      gap: var(--x-skeleton-spacing-large-100);
+    }
+    .BlockStack--spacing-large200 {
+      gap: var(--x-skeleton-spacing-large-200);
+    }
+    .BlockStack--min-inline-size-full {
+      flex: 1;
+    }
+    .BlockStack--inline-alignment-center {
+      justify-items: center;
+    }
+    .BlockStack--inline-alignment-end {
+      justify-items: end;
+    }
+
+    .LoadingHeaderHeading {
+      margin: 0;
+      font-size: var(--x-skeleton-typography-size-extra-large);
+      font-weight: var(--x-skeleton-typography-secondary-weight-bold);
+      font-family: var(--x-skeleton-typography-secondary-fonts);
+      line-height: var(--x-skeleton-typography-line-small);
+    }
+
+    .LoadingHeaderImage {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .InlineStack {
+      display: flex;
+      min-height: 100%;
+      min-width: 100%;
+    }
+    .InlineStack--spacing-base {
+      column-gap: var(--x-skeleton-spacing-base);
+    }
+
+    .InlineStack--spacing-small100 {
+      column-gap: var(--x-skeleton-spacing-small-100);
+    }
+
+    .InlineStack--spacing-large200 {
+      column-gap: var(--x-skeleton-spacing-large-200);
+    }
+    .InlineStack--inline-alignment-spaceBetween {
+      justify-content: space-between;
+    }
+    .InlineStack--block-alignment-start {
+      align-items: start;
+    }
+    .InlineStack--block-alignment-center {
+      align-items: center;
+    }
+
+    .Divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--x-skeleton-default-color-border);
+    }
+
+    .SkeletonButton {
+      background-color: var(--x-skeleton-default-color-textSubdued200);
+      border-radius: var(--x-skeleton-border-radius-base);
+      animation: SkeletonPulse 4000ms ease infinite;
+      width: 100%;
+    }
+    .SkeletonButtonInner {
+      width: 100%;
+      height: 4.8rem;
+    }
+
+    .SkeletonImage {
+      background-color: var(--x-skeleton-default-color-textSubdued200);
+      animation: SkeletonPulse 4000ms ease infinite;
+      width: 100%;
+    }
+    .SkeletonImage--corner-radius-small {
+      border-radius: var(--x-skeleton-border-radius-small);
+    }
+    .SkeletonImage--corner-radius-base {
+      border-radius: var(--x-skeleton-border-radius-base);
+    }
+    .SkeletonImage--corner-radius-large {
+      border-radius: var(--x-skeleton-border-radius-large);
+    }
+    .SkeletonImage--corner-radius-rounded {
+      border-radius: 100%;
+    }
+
+    .SkeletonImageInner {
+      width: 100%;
+      height: 100%;
+    }
+
+    @supports (aspect-ratio: 1) {
+      .SkeletonImage {
+        aspect-ratio: 1;
+      }
+    }
+    @supports not (aspect-ratio: 1) {
+      .SkeletonImage::before {
+        content: "";
+        height: 0;
+        display: block;
+        padding-bottom: 100%;
+        padding-bottom: calc(100% / 1);
+      }
+    }
+
+    .SkeletonText {
+      background-color: var(--x-skeleton-default-color-textSubdued200);
+      border-radius: var(--x-skeleton-border-radius-base);
+      animation: SkeletonPulse 4000ms ease infinite;
+    }
+    .SkeletonTextInner {
+      display: inline-block;
+    }
+    .SkeletonTextInner--inline-size-small {
+      width: 10ch;
+    }
+    .SkeletonTextInner--inline-size-base {
+      width: 20ch;
+    }
+    .SkeletonTextInner--inline-size-large {
+      width: 30ch;
+    }
+    .SkeletonTextInner--inline-size-full {
+      width: 100%;
+    }
+
+    .Icon {
+      fill: none;
+      color: var(--x-skeleton-default-color-border);
+      stroke: currentColor;
+    }
+
+    .Icon path {
+      vector-effect: non-scaling-stroke;
+      stroke-width: 1.4px;
+    }
+
+    .LoadingShellLineItems {
+      display: grid;
+      grid-auto-flow: row;
+      align-items: stretch;
+      gap: var(--x-skeleton-spacing-base);
+    }
+
+    .LoadingShellLine {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: var(--x-skeleton-spacing-base);
+      align-items: center;
+      font-size: var(--x-type-size-base);
+    }
+
+    .LoadingShellLineImageWrapper {
+      width: 6.4rem;
+      height: 6.4rem;
+      position: relative;
+    }
+
+    .LoadingShellImageWrapper--Small {
+      width: 3.2rem;
+      height: 3.2rem;
+      position: relative;
+    }
+
+    .LoadingShellLineImage {
+      width: 6.4rem;
+      height: 6.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      object-fit: contain;
+      background: var(--x-skeleton-default-color-backgroundSubdued);
+    }
+    .LoadingShellLineImage--border-full {
+      border: 1px solid var(--x-skeleton-default-color-border);
+    }
+    .LoadingShellLineImage--corner-radius-small {
+      border-radius: var(--x-skeleton-border-radius-small);
+    }
+    .LoadingShellLineImage--corner-radius-base {
+      border-radius: var(--x-skeleton-border-radius-base);
+    }
+    .LoadingShellLineImage--corner-radius-large {
+      border-radius: var(--x-skeleton-border-radius-large);
+    }
+    .LoadingShellLineImage--corner-radius-rounded {
+      border-radius: 100%;
+    }
+
+    .LoadingShellLineImageIcon {
+      width: 3.3rem;
+      height: 3.3rem;
+    }
+
+    .LoadingShellLineQuantity {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(25%, -50%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.2rem;
+      min-height: 2.2rem;
+      padding: 0 var(--x-skeleton-spacing-small-300);
+      border-radius: 1.1rem;
+      background: var(--x-skeleton-default-color-textSubdued);
+      color: var(--x-skeleton-default-color-textContrast);
+      font-size: var(--x-skeleton-typography-size-small);
+      font-weight: 500;
+    }
+
+    .LoadingShellLineQuantity--corner-radius-none {
+      border-radius: 0;
+    }
+
+    .LoadingShellLineContent {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .LoadingShellLinePrice {
+      min-height: 6.4rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .Text {
+      font-size: var(--x-skeleton-typography-size-default);
+    }
+    .Text--size-small {
+      font-size: var(--x-skeleton-typography-size-small);
+    }
+    .Text--size-large {
+      font-size: var(--x-skeleton-typography-size-large);
+    }
+    .Text--size-extraExtraLarge {
+      font-size: var(--x-skeleton-typography-size-extra-extra-large);
+    }
+    .Text--appearance-subdued {
+      color: var(--x-skeleton-default-color-textSubdued);
+    }
+
+    .SkeletonExpressCheckoutButtons {
+      display: grid;
+      gap: var(--x-skeleton-spacing-small-100);
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .SkeletonExpressCheckoutButtons > *:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .SkeletonExpressCheckout {
+      margin-bottom: var(--x-skeleton-spacing-large-500);
+    }
+
+    .ExpressCheckoutDivider {
+      display: flex;
+      place-items: center;
+      height: 21px;
+      padding-top: calc(var(--x-skeleton-spacing-large-500) - 1px);
+    }
+
+    @media screen and (min-width: 1000px) {
+      .SkeletonExpressCheckoutButtons {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .SkeletonExpressCheckoutButtons > *:first-child {
+        grid-column: auto;
+      }
+
+      .SkeletonExpressCheckoutButtons {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .SkeletonExpressCheckoutButtons > *:first-child {
+        grid-column: auto;
+      }
+    }
+
+    .LoadingShellHeader--banner {
+      background-position: 50% 50%;
+      background-size: cover;
+      background-image: var(--x-skeleton-banner-image);
+      --x-skeleton-header-shop-name-color: #fff;
+      --x-skeleton-cart-color: #fff;
+    }
+
+
+    .VisuallyHidden {
+      border-width: 0;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+      white-space: nowrap;
+    }
+
+    .FadeIn {
+      opacity: 0;
+      animation: 400ms FadeIn 150ms forwards;
+    }
+
+    @keyframes FadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  
+    
+    
+        .colorSchemeScheme1 {
+          --x-skeleton-default-color-background: var(--x-skeleton-color-schemes-scheme1-base-background, var(--x-skeleton-color-global-background));
+          --x-skeleton-default-color-accent: var(--x-skeleton-color-schemes-scheme1-base-accent, var(--x-skeleton-color-global-accent));
+          --x-skeleton-default-color-backgroundSubdued: var(--x-skeleton-color-schemes-scheme1-base-backgroundSubdued, var(--x-skeleton-color-global-backgroundSubdued));
+          --x-skeleton-default-color-border: var(--x-skeleton-color-schemes-scheme1-base-border, var(--x-skeleton-color-global-border));
+          --x-skeleton-default-color-text: var(--x-skeleton-color-schemes-scheme1-base-text, var(--x-skeleton-color-global-text));
+          --x-skeleton-default-color-textContrast: var(--x-skeleton-color-schemes-scheme2-base-textContrast, var(--x-skeleton-color-global-textContrast));
+          --x-skeleton-default-color-textSubdued: var(--x-skeleton-color-schemes-scheme1-base-textSubdued, var(--x-skeleton-color-global-textSubdued));
+          --x-skeleton-default-color-textSubdued200: var(--x-skeleton-color-schemes-scheme1-base-textSubdued200, var(--x-skeleton-color-global-textSubdued200));
+        }
+      
+        .colorSchemeScheme2 {
+          --x-skeleton-default-color-background: var(--x-skeleton-color-schemes-scheme2-base-background, var(--x-skeleton-color-global-background));
+          --x-skeleton-default-color-accent: var(--x-skeleton-color-schemes-scheme2-base-accent, var(--x-skeleton-color-global-accent));
+          --x-skeleton-default-color-backgroundSubdued: var(--x-skeleton-color-schemes-scheme2-base-backgroundSubdued, var(--x-skeleton-color-global-backgroundSubdued));
+          --x-skeleton-default-color-border: var(--x-skeleton-color-schemes-scheme2-base-border, var(--x-skeleton-color-global-border));
+          --x-skeleton-default-color-text: var(--x-skeleton-color-schemes-scheme2-base-text, var(--x-skeleton-color-global-text));
+          --x-skeleton-default-color-textContrast: var(--x-skeleton-color-schemes-scheme2-base-textContrast, var(--x-skeleton-color-global-textContrast));
+          --x-skeleton-default-color-textSubdued: var(--x-skeleton-color-schemes-scheme2-base-textSubdued, var(--x-skeleton-color-global-textSubdued));
+          --x-skeleton-default-color-textSubdued200: var(--x-skeleton-color-schemes-scheme2-base-textSubdued200, var(--x-skeleton-color-global-textSubdued200));
+        }
+      
+        .colorSchemeScheme3 {
+          --x-skeleton-default-color-background: var(--x-skeleton-color-schemes-scheme3-base-background, var(--x-skeleton-color-global-background));
+          --x-skeleton-default-color-accent: var(--x-skeleton-color-schemes-scheme3-base-accent, var(--x-skeleton-color-global-accent));
+          --x-skeleton-default-color-backgroundSubdued: var(--x-skeleton-color-schemes-scheme3-base-backgroundSubdued, var(--x-skeleton-color-global-backgroundSubdued));
+          --x-skeleton-default-color-border: var(--x-skeleton-color-schemes-scheme3-base-border, var(--x-skeleton-color-global-border));
+          --x-skeleton-default-color-text: var(--x-skeleton-color-schemes-scheme3-base-text, var(--x-skeleton-color-global-text));
+          --x-skeleton-default-color-textContrast: var(--x-skeleton-color-schemes-scheme2-base-textContrast, var(--x-skeleton-color-global-textContrast));
+          --x-skeleton-default-color-textSubdued: var(--x-skeleton-color-schemes-scheme3-base-textSubdued, var(--x-skeleton-color-global-textSubdued));
+          --x-skeleton-default-color-textSubdued200: var(--x-skeleton-color-schemes-scheme3-base-textSubdued200, var(--x-skeleton-color-global-textSubdued200));
+        }
+      
+        .colorSchemeScheme4 {
+          --x-skeleton-default-color-background: var(--x-skeleton-color-schemes-scheme4-base-background, var(--x-skeleton-color-global-background));
+          --x-skeleton-default-color-accent: var(--x-skeleton-color-schemes-scheme4-base-accent, var(--x-skeleton-color-global-accent));
+          --x-skeleton-default-color-backgroundSubdued: var(--x-skeleton-color-schemes-scheme4-base-backgroundSubdued, var(--x-skeleton-color-global-backgroundSubdued));
+          --x-skeleton-default-color-border: var(--x-skeleton-color-schemes-scheme4-base-border, var(--x-skeleton-color-global-border));
+          --x-skeleton-default-color-text: var(--x-skeleton-color-schemes-scheme4-base-text, var(--x-skeleton-color-global-text));
+          --x-skeleton-default-color-textContrast: var(--x-skeleton-color-schemes-scheme2-base-textContrast, var(--x-skeleton-color-global-textContrast));
+          --x-skeleton-default-color-textSubdued: var(--x-skeleton-color-schemes-scheme4-base-textSubdued, var(--x-skeleton-color-global-textSubdued));
+          --x-skeleton-default-color-textSubdued200: var(--x-skeleton-color-schemes-scheme4-base-textSubdued200, var(--x-skeleton-color-global-textSubdued200));
+        }
+      
+
+    .backgroundColorBase {
+      background-color: var(--x-skeleton-default-color-background);
+      color: var(--x-skeleton-default-color-text);
+    }
+
+    .backgroundColorSubdued {
+      background-color: var(--x-skeleton-default-color-backgroundSubdued);
+      color: var(--x-skeleton-default-color-text);
+    }
+  
+
+    
+
+
+    .LoadingShell {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100000;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      will-change: opacity;
+
+      min-height: 100dvh;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas:
+        'header'
+        'disclosure'
+        'shell-content';
+      background-image: var(--x-skeleton-shell-background-image);
+
+      --x-skeleton-shell-inline-size: 57rem;
+      --x-skeleton-shell-background-image: var(--skeleton-config-shell-background-image);
+
+      --x-skeleton-shell-header-inline-size: var(--x-skeleton-shell-inline-size);
+
+      --x-skeleton-shell-header-padding: var(--skeleton-config-header-padding, var(--x-skeleton-spacing-large-200));
+
+      --x-skeleton-shell-header-background-image: var(--skeleton-config-header-background-image);
+
+      --x-skeleton-shell-disclosure-inline-size: var(--x-skeleton-shell-inline-size);
+      --x-skeleton-shell-disclosure-padding: var(--x-skeleton-spacing-large-100) var(--x-skeleton-spacing-large-200);
+      --x-skeleton-shell-disclosure-display: block;
+
+      --x-skeleton-shell-main-inline-size: var(--x-skeleton-shell-inline-size);
+      --x-skeleton-shell-main-justify-content: center;
+      --x-skeleton-shell-main-padding: var(--x-skeleton-spacing-large-200);
+      --x-skeleton-shell-main-border: none;
+
+      --x-skeleton-shell-order-summary-display: none;
+      --x-skeleton-shell-order-summary-background-image: var(--skeleton-config-order-summary-background-image);
+
+      @media screen and (min-width: 1000px) {
+        --x-skeleton-shell-main-inline-size: 66rem;
+        --x-skeleton-shell-order-summary-inline-size: 52rem;
+        --x-skeleton-shell-section-columns-offset: 7rem;
+
+        --x-skeleton-shell-content-display: grid;
+        --x-skeleton-shell-content-template-areas: 'main order-summary';
+
+        --x-skeleton-shell-content-template-columns: minmax(
+            min-content, calc(50% + var(--x-skeleton-shell-section-columns-offset))
+          )
+          1fr;
+
+        --x-skeleton-shell-inline-size: 118rem;
+        --x-skeleton-shell-header-padding: var(--skeleton-config-header-padding, 0);
+
+        --x-skeleton-shell-disclosure-display: none;
+
+        --x-skeleton-shell-main-justify-content: flex-end;
+        --x-skeleton-shell-main-padding: var(--x-skeleton-spacing-large-500);
+        --x-skeleton-shell-main-border: 1px solid var(--x-skeleton-default-color-border);
+
+        --x-skeleton-shell-order-summary-display: block;
+        --x-skeleton-shell-order-summary-padding: var(--x-skeleton-spacing-large-500);
+      }
+    }
+
+    @supports (width: min(0px, 100px)) {
+      /* mobile header padding is clamped at large-200 like Sections */
+      @media screen and (max-width: 999px) {
+        .LoadingShell {
+          --x-skeleton-shell-header-padding: min(
+            var(--skeleton-config-header-padding, var(--x-skeleton-spacing-large-200)),
+            var(--x-skeleton-spacing-large-200)
+          );
+        }
+      }
+    }
+
+    @media screen and (min-width: 1000px) {
+      .LoadingShell.LoadingShellConfig-Header-positionStart {
+        --x-skeleton-shell-header-padding: var(--skeleton-config-header-padding,
+            calc(var(--x-skeleton-spacing-large-500) * 2) var(--x-skeleton-spacing-large-500)
+              var(--x-skeleton-spacing-large-500)
+          );
+      }
+
+      .LoadingShell.LoadingShellConfig-Header-positionStart.LoadingShell-variantOneStepCheckout {
+        --x-skeleton-shell-header-padding: var(--skeleton-config-header-padding, var(--x-skeleton-spacing-large-200) var(--x-skeleton-spacing-large-500));
+      }
+    }
+
+    .LoadingShellHeader {
+      grid-area: header;
+    }
+
+    .LoadingShellHeaderContent {
+      padding: var(--x-skeleton-shell-header-padding);
+      width: 100%;
+      max-width: var(--x-skeleton-shell-header-inline-size);
+    }
+
+    @media screen and (min-width: 1000px) {
+      .LoadingShell:not(.LoadingShellConfig-Header-positionStart) .LoadingShellHeader-positionStart {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 999px) {
+      .LoadingShellConfig-Header-positionInline .LoadingShellHeader-positionInline,
+      .LoadingShellConfig-Header-positionInlineSecondary .LoadingShellHeader-positionInlineSecondary {
+        display: none;
+      }
+
+      .LoadingShellConfig-Header-positionInlineSecondary .LoadingShellHeader-positionStart {
+        background-image: var(
+          --x-skeleton-shell-header-background-image,
+          var(--x-skeleton-shell-order-summary-background-image)
+        );
+      }
+    }
+
+    .LoadingShellHeader-positionStart {
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid var(--x-skeleton-default-color-border);
+      background-image: var(--x-skeleton-shell-header-background-image);
+      background-position: 50% 50%;
+      background-size: cover;
+    }
+
+    .LoadingShellHeader-positionStart.LoadingShellHeader-hasBackgroundImage {
+      --header-shop-name-color: #ffffff;
+      --x-skeleton-default-color-accent: #ffffff;
+    }
+
+    .LoadingShellBuyerJourneyContent {
+      width: 100%;
+      width: var(--x-skeleton-shell-buyer-journey-inline-size);
+      padding: var(--x-skeleton-shell-buyer-journey-padding);
+    }
+
+    .LoadingShellDisclosure {
+      grid-area: disclosure;
+      display: var(--x-skeleton-shell-disclosure-display);
+      border-bottom: 1px solid var(--x-skeleton-default-color-border);
+    }
+
+    .LoadingShellDisclosureButton {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .LoadingShellDisclosureButton {
+      text-align: start;
+      background: var(--x-skeleton-default-color-backgroundSubdued);
+      color: var(--x-skeleton-default-color-accent);
+      position: relative;
+      z-index: 2;
+    }
+
+    .LoadingShellConfig-Shell-hasBackgroundImage .LoadingShellDisclosureButton {
+      background: transparent;
+      color: inherit;
+    }
+
+    .LoadingShellDisclosureButtonContent {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--x-skeleton-spacing-small-200);
+      align-content: center;
+      align-items: center;
+    }
+
+    .LoadingShellDisclosureButtonContent {
+      padding: var(--x-skeleton-shell-disclosure-padding);
+      width: 100%;
+      max-width: var(--x-skeleton-shell-disclosure-inline-size);
+    }
+
+    .LoadingShellContent {
+      grid-area: shell-content;
+      display: var(--x-skeleton-shell-content-display);
+      grid-template-areas: var(--x-skeleton-shell-content-template-areas);
+      grid-template-columns: var(--x-skeleton-shell-content-template-columns);
+    }
+
+    .LoadingShellMain {
+      grid-area: main;
+      display: flex;
+      justify-content: var(--x-skeleton-shell-main-justify-content);
+      height: 100%;
+    }
+
+    .LoadingShellMain .LoadingShellMainContent {
+      height: 100%;
+      width: 100%;
+      max-width: var(--x-skeleton-shell-main-inline-size);
+      padding: var(--x-skeleton-shell-main-padding);
+      border-inline-end: var(--x-skeleton-shell-main-border);
+
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'header'
+        'buyer-journey'
+        'main-content-primary';
+    }
+
+    .LoadingShellMainContentPrimary {
+      grid-area: main-content-primary;
+    }
+
+
+    .LoadingShellMainContent .LoadingShellHeader {
+      margin-bottom: var(--x-skeleton-spacing-large-100);
+    }
+    .LoadingShellMainContent .LoadingShellBuyerJourney {
+      margin-bottom: var(--x-skeleton-spacing-large-300);
+    }
+
+    .LoadingShell-variantOneStepCheckout .LoadingShellMainContent .LoadingShellHeader {
+      margin-bottom: calc(var(--x-skeleton-spacing-large-300) * 2);
+    }
+
+    .LoadingShellOrderSummary {
+      display: var(--x-skeleton-shell-order-summary-display);
+      grid-area: order-summary;
+    }
+
+    .LoadingShellOrderSummary .LoadingShellOrderSummaryContent {
+      position: sticky;
+      padding: var(--x-skeleton-shell-order-summary-padding);
+      width: 100%;
+      max-width: var(--x-skeleton-shell-order-summary-inline-size);
+      top: 0;
+      right: auto;
+      bottom: 0;
+      left: auto;
+    }
+
+    .LoadingShellOrderSummaryContent .LoadingShellHeader {
+      margin-bottom: var(--x-skeleton-spacing-large-200);
+    }
+
+    /* Header */
+    .LoadingHeader {
+      display: flex;
+      width: 100%;
+    }
+
+    .LoadingHeader-alignmentStart {
+      justify-content: flex-start;
+    }
+
+    .LoadingHeader-alignmentCenter {
+      justify-content: center;
+    }
+
+    .LoadingHeader-alignmentEnd {
+      justify-content: flex-end;
+    }
+
+    .LoadingShell-variantOneStepCheckout .LoadingHeader-alignmentCenter .LoadingHeaderHeading {
+      display: flex;
+      justify-content: center;
+    }
+    .LoadingShell-variantOneStepCheckout .LoadingHeader-alignmentEnd .LoadingHeaderHeading {
+      display: flex;
+      justify-content: flex-end;
+    }
+  </style><div class="LoadingShell LoadingShellConfig-Header-positionInline LoadingShell-variantOneStepCheckout colorSchemeScheme1 backgroundColorBase"><header role="banner" class="LoadingShellHeader LoadingShellHeader-containerFill LoadingShellHeader-positionStart"><div class="LoadingShellHeaderContent"><div class="LoadingHeader LoadingHeader-alignmentStart"><h1 class="LoadingHeaderHeading"><img alt="NRML" src="https://cdn.shopify.com/s/files/1/1334/3831/files/logo_x320.png?v=1613742322" width="60" height="52.264808362369344" class="LoadingHeaderImage"/></h1></div></div></header><div class="LoadingShellDisclosure ShopPay"><div class="LoadingShellDisclosureButton LoadingShellDisclosureButton-containerFill"><span class="LoadingShellDisclosureButtonContent FadeIn"><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-base"><span></span></span></span></span><span><span class="Text Text--size-large"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span></span></span></div></div><div class="LoadingShellContent LoadingShellContent-containerFill"><div class="LoadingShellMain"><div class="LoadingShellMainContent"><header role="banner" class="LoadingShellHeader LoadingShellHeader-containerFill LoadingShellHeader-positionInline"><div class="LoadingShellHeaderContent"><div class="LoadingHeader LoadingHeader-alignmentStart"><h1 class="LoadingHeaderHeading"><img alt="NRML" src="https://cdn.shopify.com/s/files/1/1334/3831/files/logo_x320.png?v=1613742322" width="60" height="52.264808362369344" class="LoadingHeaderImage"/></h1></div></div></header><main class="LoadingShellMainContentPrimary FadeIn"><div class="SkeletonExpressCheckout"><div class="BlockStack BlockStack--spacing-base"><div class="BlockStack BlockStack--inline-alignment-center BlockStack--spacing-base"><span class="Text"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-base"><span></span></span></span></span></div><div class="SkeletonExpressCheckoutButtons"><div class="SkeletonButton"><div class="SkeletonButtonInner"></div></div><div class="SkeletonButton"><div class="SkeletonButtonInner"></div></div><div class="SkeletonButton"><div class="SkeletonButtonInner"></div></div></div></div><div class="ExpressCheckoutDivider"><div class="Divider"></div></div></div><div class="BlockStack BlockStack--spacing-large200"><div class="BlockStack BlockStack--spacing-base"><span class="Text Text--size-large"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span><div class="BlockStack BlockStack--spacing-small300"><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-full"><span></span></span></span></span><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-full"><span></span></span></span></span></div></div><div class="Divider"></div><div class="BlockStack BlockStack--spacing-base"><span class="Text Text--size-large"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span><div class="BlockStack BlockStack--spacing-small300"><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-full"><span></span></span></span></span><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-full"><span></span></span></span></span></div></div></div></main></div></div><div class="LoadingShellOrderSummary colorSchemeScheme2 backgroundColorBase"><div class="LoadingShellOrderSummaryContent"><aside class="LoadingShellOrderSummaryContentPrimary FadeIn"><div class="BlockStack BlockStack--spacing-large200"><h2 class="VisuallyHidden"></h2><div class="LoadingShellLineItems"><div class="LoadingShellLine"><div class="LoadingShellLineImageWrapper"><div class="SkeletonImage SkeletonImage--corner-radius-large"><span class="SkeletonImageInner"></span></div></div><div class="LoadingShellLineContent"><div class="BlockStack BlockStack--spacing-small500"><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-base"><span></span></span></span></span><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span></div></div><div class="LoadingShellLinePrice"><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span></div></div></div><div class="BlockStack BlockStack--spacing-small100"><div class="InlineStack InlineStack--spacing-base InlineStack--block-alignment-start InlineStack--inline-alignment-spaceBetween"><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span></div><div class="InlineStack InlineStack--spacing-base InlineStack--block-alignment-start InlineStack--inline-alignment-spaceBetween"><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span></div><div class="InlineStack InlineStack--spacing-base InlineStack--block-alignment-start InlineStack--inline-alignment-spaceBetween"><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span><span class="Text Text--size-small"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span></div><div class="InlineStack InlineStack--spacing-base InlineStack--block-alignment-start InlineStack--inline-alignment-spaceBetween"><span class="Text Text--size-large"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span><span class="Text Text--size-large"><span class="SkeletonText"><span class="SkeletonTextInner SkeletonTextInner--inline-size-small"><span></span></span></span></span></div></div></div></aside></div></div></div></div><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/polyfills-legacy.DJR37O4y.js" defer crossorigin></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/app-legacy.Dk4ftW_q.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/VaultedContact-legacy.axaT-9jz.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/DeliveryMethodSelectorSection-legacy.cP3czI_R.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/PurchaseOptionsAgreement-legacy.B5P2f3qo.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/useUnauthenticatedErrorModal-legacy.-PQxPDFu.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/RageClickCapture-legacy.DCVan-Pb.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/ShopPayLogo-legacy.Cqx_5rwb.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/Option-legacy.DWd6dt0x.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/PickupPointCarrierLogo-legacy.Dcis_kVQ.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/hooks-legacy.CPwLJQfC.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/LocalizationExtensionField-legacy.DDeEw_O2.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/LegacyVaultedShippingMethods-legacy.BEo-7grK.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/Rollup-legacy.DujK-_gC.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/useSessionExchange-legacy.DRi7W5w6.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/VaultedDeliveryAddress-legacy.CgpnLJdj.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/useShowShopPayOptin-legacy.Nz4wIbiR.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/Section-legacy.B1z2PI42.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/google-pay-legacy.DIVvWhzI.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/PayButtonSection-legacy.C-zZsBdy.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/context-legacy.2zfbuM3L.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/constants-legacy.B3NxiEqF.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/ButtonWithRegisterWebPixel-legacy.QFZmAyTc.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/NoAddressLocationFullDetour-legacy.DhGIAiDb.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/DutyOptions-legacy.CtmxrFGX.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/SubscriptionPriceBreakdown-legacy.NrGTkjF2.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/StockProblemsLineItemList-legacy.Bht89UwU.js" defer crossorigin type="systemjs-module"></script><script src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/component-ShopPayVerificationSwitch-legacy.B4bHCqu5.js" defer crossorigin type="systemjs-module"></script><meta name="serialized-session-token" content="&quot;OTk4TnFTREo2U1B0cTJNSDljWG1UR0VXVEF6MjgzRWxyZ0VsN0pRUSs1WjkyaFNzTE1BZVlaMm5SaTcvamYyeEJuWHZxQnVQOUF3ZWRlS25HcEpoWlh3cTczWlJTbWhyU3ZKVysrb2VXOTE5Q3JHQ09oempNSWJoc2doY3BTeE1aUDNWVkFya09taUFVRXdJZyttVVZoMXRTc1hkUjNHNDlETHRTazMwbWZuWitHa2UwbU1yL1NwVXlXaEJmRUJJQVk0Sy92NFBMNEVNS2k5d3g3cnZRUllZVGFtZUxLeTg4cm41Nm9LWVJaSExaYWlQaGNER1pueXY3WFdQMWw1cE0ySnZFUjJUczFUMC0tSExLVEUyMmZBM0dGb2kyRi0tdjJsenl5QlBSNkg1UlhpYjVIc1krdz09&quot;"/><meta name="serialized-source-token" content="&quot;Z2NwLXVzLWVhc3QxOjAxSjdURUswUldOWEtIM0pZTlZGMFdZQzFI&quot;"/><meta name="serialized-checkout-session-identifier" content="&quot;42a3399e14b508b96e24ca67d8787a50&quot;"/><meta name="serialized-graphql" content="{&quot;5638616fb05cb50fa18d4cba4335a74898a1bfebfdc79a784e07dacd23898e17{}&quot;:{&quot;shop&quot;:{&quot;id&quot;:&quot;gid://shopify/Shop/13343831&quot;,&quot;shippingCountries&quot;:[{&quot;value&quot;:&quot;AD&quot;,&quot;label&quot;:&quot;Andorra&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;AM&quot;,&quot;label&quot;:&quot;Armenia&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;AU&quot;,&quot;label&quot;:&quot;Australia&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;AT&quot;,&quot;label&quot;:&quot;Austria&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;BB&quot;,&quot;label&quot;:&quot;Barbados&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;BY&quot;,&quot;label&quot;:&quot;Belarus&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;BE&quot;,&quot;label&quot;:&quot;Belgium&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;BA&quot;,&quot;label&quot;:&quot;Bosnia and Herzegovina&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;CA&quot;,&quot;label&quot;:&quot;Canada&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;HR&quot;,&quot;label&quot;:&quot;Croatia&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;CZ&quot;,&quot;label&quot;:&quot;Czechia&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;DK&quot;,&quot;label&quot;:&quot;Denmark&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;EE&quot;,&quot;label&quot;:&quot;Estonia&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;FI&quot;,&quot;label&quot;:&quot;Finland&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;GE&quot;,&quot;label&quot;:&quot;Georgia&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;DE&quot;,&quot;label&quot;:&quot;Germany&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;HU&quot;,&quot;label&quot;:&quot;Hungary&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;IS&quot;,&quot;label&quot;:&quot;Iceland&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;IE&quot;,&quot;label&quot;:&quot;Ireland&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;IT&quot;,&quot;label&quot;:&quot;Italy&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;JE&quot;,&quot;label&quot;:&quot;Jersey&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;LI&quot;,&quot;label&quot;:&quot;Liechtenstein&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;LT&quot;,&quot;label&quot;:&quot;Lithuania&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;LU&quot;,&quot;label&quot;:&quot;Luxembourg&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;MT&quot;,&quot;label&quot;:&quot;Malta&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;MX&quot;,&quot;label&quot;:&quot;Mexico&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;ME&quot;,&quot;label&quot;:&quot;Montenegro&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;MA&quot;,&quot;label&quot;:&quot;Morocco&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;NL&quot;,&quot;label&quot;:&quot;Netherlands&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;MK&quot;,&quot;label&quot;:&quot;North Macedonia&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;NO&quot;,&quot;label&quot;:&quot;Norway&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;PL&quot;,&quot;label&quot;:&quot;Poland&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;PT&quot;,&quot;label&quot;:&quot;Portugal&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;SA&quot;,&quot;label&quot;:&quot;Saudi Arabia&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;RS&quot;,&quot;label&quot;:&quot;Serbia&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;ES&quot;,&quot;label&quot;:&quot;Spain&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;SE&quot;,&quot;label&quot;:&quot;Sweden&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;CH&quot;,&quot;label&quot;:&quot;Switzerland&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;TR&quot;,&quot;label&quot;:&quot;TÃ¼rkiye&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;GB&quot;,&quot;label&quot;:&quot;United Kingdom&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;US&quot;,&quot;label&quot;:&quot;United States&quot;,&quot;__typename&quot;:&quot;Country&quot;}],&quot;__typename&quot;:&quot;CheckoutShopConfig&quot;}},&quot;448648011825ae0ecfc5d4dc81e6dcf177b2598c764407179289d6ed11a2766e{}&quot;:{&quot;shop&quot;:{&quot;defaultShippingDetails&quot;:{&quot;country&quot;:{&quot;name&quot;:&quot;Canada&quot;,&quot;code&quot;:&quot;CA&quot;,&quot;localizationKeys&quot;:{&quot;address2&quot;:&quot;apt_unit_number_label&quot;,&quot;postalCode&quot;:null,&quot;zone&quot;:&quot;province_label&quot;,&quot;neighborhood&quot;:null,&quot;__typename&quot;:&quot;AddressLocalizationKeys&quot;},&quot;labels&quot;:{&quot;firstName&quot;:&quot;First name&quot;,&quot;lastName&quot;:&quot;Last name&quot;,&quot;company&quot;:&quot;Company&quot;,&quot;address1&quot;:&quot;Address&quot;,&quot;address2&quot;:&quot;Apartment, suite, etc&quot;,&quot;city&quot;:&quot;City&quot;,&quot;country&quot;:&quot;Country/region&quot;,&quot;zone&quot;:&quot;Province&quot;,&quot;postalCode&quot;:&quot;Postal code&quot;,&quot;phone&quot;:&quot;Phone&quot;,&quot;__typename&quot;:&quot;AddressLabels&quot;},&quot;zones&quot;:[{&quot;code&quot;:&quot;AB&quot;,&quot;name&quot;:&quot;Alberta&quot;,&quot;nameWithAlternates&quot;:[&quot;Alberta&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;BC&quot;,&quot;name&quot;:&quot;British Columbia&quot;,&quot;nameWithAlternates&quot;:[&quot;British Columbia&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;MB&quot;,&quot;name&quot;:&quot;Manitoba&quot;,&quot;nameWithAlternates&quot;:[&quot;Manitoba&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NB&quot;,&quot;name&quot;:&quot;New Brunswick&quot;,&quot;nameWithAlternates&quot;:[&quot;New Brunswick&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NL&quot;,&quot;name&quot;:&quot;Newfoundland and Labrador&quot;,&quot;nameWithAlternates&quot;:[&quot;Newfoundland and Labrador&quot;,&quot;Newfoundland&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NT&quot;,&quot;name&quot;:&quot;Northwest Territories&quot;,&quot;nameWithAlternates&quot;:[&quot;Northwest Territories&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NS&quot;,&quot;name&quot;:&quot;Nova Scotia&quot;,&quot;nameWithAlternates&quot;:[&quot;Nova Scotia&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NU&quot;,&quot;name&quot;:&quot;Nunavut&quot;,&quot;nameWithAlternates&quot;:[&quot;Nunavut&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;ON&quot;,&quot;name&quot;:&quot;Ontario&quot;,&quot;nameWithAlternates&quot;:[&quot;Ontario&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;PE&quot;,&quot;name&quot;:&quot;Prince Edward Island&quot;,&quot;nameWithAlternates&quot;:[&quot;Prince Edward Island&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;QC&quot;,&quot;name&quot;:&quot;Quebec&quot;,&quot;nameWithAlternates&quot;:[&quot;Quebec&quot;,&quot;QuÃ©bec&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;SK&quot;,&quot;name&quot;:&quot;Saskatchewan&quot;,&quot;nameWithAlternates&quot;:[&quot;Saskatchewan&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;YT&quot;,&quot;name&quot;:&quot;Yukon&quot;,&quot;nameWithAlternates&quot;:[&quot;Yukon&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;}],&quot;formatting&quot;:{&quot;edit&quot;:&quot;{country}_{firstName}{lastName}_{company}_{address1}_{address2}_{city}{province}{zip}_{phone}&quot;,&quot;show&quot;:&quot;{firstName} {lastName}_{company}_{address1}_{address2}_{city} {province} {zip}_{country}_{phone}&quot;,&quot;__typename&quot;:&quot;AddressFormat&quot;},&quot;extendedFormatting&quot;:null,&quot;autocompletionField&quot;:&quot;ADDRESS1&quot;,&quot;neighborhoodRequired&quot;:false,&quot;streetNumberRequired&quot;:false,&quot;buildingNumberRequired&quot;:true,&quot;buildingNumberMayBeInAddress2&quot;:false,&quot;pureNumericPostalCode&quot;:false,&quot;postalCodeRequired&quot;:true,&quot;__typename&quot;:&quot;Country&quot;},&quot;zone&quot;:{&quot;code&quot;:&quot;ON&quot;,&quot;__typename&quot;:&quot;AddressZone&quot;},&quot;__typename&quot;:&quot;DefaultShippingDetails&quot;},&quot;__typename&quot;:&quot;CheckoutShopConfig&quot;},&quot;httpRequestInfo&quot;:{&quot;locale&quot;:&quot;en-CA&quot;,&quot;localeDirection&quot;:&quot;ltr&quot;,&quot;geolocation&quot;:{&quot;country&quot;:{&quot;code&quot;:&quot;CA&quot;,&quot;name&quot;:&quot;Canada&quot;,&quot;localizationKeys&quot;:{&quot;address2&quot;:&quot;apt_unit_number_label&quot;,&quot;postalCode&quot;:null,&quot;zone&quot;:&quot;province_label&quot;,&quot;neighborhood&quot;:null,&quot;__typename&quot;:&quot;AddressLocalizationKeys&quot;},&quot;labels&quot;:{&quot;firstName&quot;:&quot;First name&quot;,&quot;lastName&quot;:&quot;Last name&quot;,&quot;company&quot;:&quot;Company&quot;,&quot;address1&quot;:&quot;Address&quot;,&quot;address2&quot;:&quot;Apartment, suite, etc&quot;,&quot;city&quot;:&quot;City&quot;,&quot;country&quot;:&quot;Country/region&quot;,&quot;zone&quot;:&quot;Province&quot;,&quot;postalCode&quot;:&quot;Postal code&quot;,&quot;phone&quot;:&quot;Phone&quot;,&quot;__typename&quot;:&quot;AddressLabels&quot;},&quot;zones&quot;:[{&quot;code&quot;:&quot;AB&quot;,&quot;name&quot;:&quot;Alberta&quot;,&quot;nameWithAlternates&quot;:[&quot;Alberta&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;BC&quot;,&quot;name&quot;:&quot;British Columbia&quot;,&quot;nameWithAlternates&quot;:[&quot;British Columbia&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;MB&quot;,&quot;name&quot;:&quot;Manitoba&quot;,&quot;nameWithAlternates&quot;:[&quot;Manitoba&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NB&quot;,&quot;name&quot;:&quot;New Brunswick&quot;,&quot;nameWithAlternates&quot;:[&quot;New Brunswick&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NL&quot;,&quot;name&quot;:&quot;Newfoundland and Labrador&quot;,&quot;nameWithAlternates&quot;:[&quot;Newfoundland and Labrador&quot;,&quot;Newfoundland&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NT&quot;,&quot;name&quot;:&quot;Northwest Territories&quot;,&quot;nameWithAlternates&quot;:[&quot;Northwest Territories&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NS&quot;,&quot;name&quot;:&quot;Nova Scotia&quot;,&quot;nameWithAlternates&quot;:[&quot;Nova Scotia&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NU&quot;,&quot;name&quot;:&quot;Nunavut&quot;,&quot;nameWithAlternates&quot;:[&quot;Nunavut&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;ON&quot;,&quot;name&quot;:&quot;Ontario&quot;,&quot;nameWithAlternates&quot;:[&quot;Ontario&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;PE&quot;,&quot;name&quot;:&quot;Prince Edward Island&quot;,&quot;nameWithAlternates&quot;:[&quot;Prince Edward Island&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;QC&quot;,&quot;name&quot;:&quot;Quebec&quot;,&quot;nameWithAlternates&quot;:[&quot;Quebec&quot;,&quot;QuÃ©bec&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;SK&quot;,&quot;name&quot;:&quot;Saskatchewan&quot;,&quot;nameWithAlternates&quot;:[&quot;Saskatchewan&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;YT&quot;,&quot;name&quot;:&quot;Yukon&quot;,&quot;nameWithAlternates&quot;:[&quot;Yukon&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;}],&quot;formatting&quot;:{&quot;edit&quot;:&quot;{country}_{firstName}{lastName}_{company}_{address1}_{address2}_{city}{province}{zip}_{phone}&quot;,&quot;show&quot;:&quot;{firstName} {lastName}_{company}_{address1}_{address2}_{city} {province} {zip}_{country}_{phone}&quot;,&quot;__typename&quot;:&quot;AddressFormat&quot;},&quot;extendedFormatting&quot;:null,&quot;autocompletionField&quot;:&quot;ADDRESS1&quot;,&quot;neighborhoodRequired&quot;:false,&quot;streetNumberRequired&quot;:false,&quot;buildingNumberRequired&quot;:true,&quot;buildingNumberMayBeInAddress2&quot;:false,&quot;pureNumericPostalCode&quot;:false,&quot;postalCodeRequired&quot;:true,&quot;__typename&quot;:&quot;Country&quot;},&quot;zone&quot;:{&quot;code&quot;:&quot;ON&quot;,&quot;name&quot;:&quot;Ontario&quot;,&quot;__typename&quot;:&quot;AddressZone&quot;},&quot;coordinates&quot;:{&quot;latitude&quot;:43.6909,&quot;longitude&quot;:-79.3098,&quot;__typename&quot;:&quot;GeographicalCoordinates&quot;},&quot;__typename&quot;:&quot;Geolocation&quot;},&quot;__typename&quot;:&quot;HttpRequestInfo&quot;},&quot;mobileCheckoutSdkConfig&quot;:{&quot;checkoutAuthenticationResult&quot;:null,&quot;colorScheme&quot;:&quot;LIGHT&quot;,&quot;version&quot;:null,&quot;schema&quot;:null,&quot;variant&quot;:null,&quot;suppressPixels&quot;:true,&quot;__typename&quot;:&quot;MobileCheckoutSdkConfig&quot;},&quot;checkoutSheetProtocolConfig&quot;:null},&quot;54add39b967c6fc588edf09c96eee7576fe1f8f175efa06fdb4f083aebca9fe4{}&quot;:{&quot;shop&quot;:{&quot;id&quot;:&quot;gid://shopify/Shop/13343831&quot;,&quot;designSystem&quot;:{&quot;colors&quot;:{&quot;global&quot;:{&quot;brand&quot;:&quot;hsl(0.0, 0.0%, 0.0%)&quot;,&quot;accent&quot;:&quot;hsl(235.867, 3.64%, 22.098%)&quot;,&quot;decorative&quot;:null,&quot;success&quot;:null,&quot;warning&quot;:null,&quot;critical&quot;:&quot;hsl(12.177, 91.679%, 47.42%)&quot;,&quot;info&quot;:null,&quot;__typename&quot;:&quot;ColorGlobal&quot;},&quot;schemes&quot;:{&quot;scheme1&quot;:{&quot;base&quot;:{&quot;background&quot;:&quot;hsl(0.0, 0.0%, 100.0%)&quot;,&quot;text&quot;:&quot;hsl(235.867, 3.64%, 22.098%)&quot;,&quot;border&quot;:null,&quot;icon&quot;:null,&quot;accent&quot;:&quot;hsl(0.0, 0.0%, 0.0%)&quot;,&quot;decorative&quot;:&quot;hsl(0.0, 0.0%, 0.0%)&quot;,&quot;__typename&quot;:&quot;ColorRoles&quot;},&quot;control&quot;:{&quot;background&quot;:&quot;hsl(0.0, 0.0%, 100.0%)&quot;,&quot;text&quot;:&quot;hsl(235.867, 3.64%, 22.098%)&quot;,&quot;border&quot;:null,&quot;icon&quot;:null,&quot;accent&quot;:&quot;hsl(0.0, 0.0%, 0.0%)&quot;,&quot;decorative&quot;:null,&quot;selected&quot;:null,&quot;__typename&quot;:&quot;ControlColorRoles&quot;},&quot;primaryButton&quot;:{&quot;background&quot;:null,&quot;text&quot;:&quot;hsl(0.0, 0.0%, 100.0%)&quot;,&quot;border&quot;:null,&quot;icon&quot;:null,&quot;accent&quot;:null,&quot;decorative&quot;:null,&quot;hover&quot;:null,&quot;__typename&quot;:&quot;ButtonColorRoles&quot;},&quot;secondaryButton&quot;:{&quot;background&quot;:null,&quot;text&quot;:&quot;hsl(0.0, 0.0%, 100.0%)&quot;,&quot;border&quot;:null,&quot;icon&quot;:null,&quot;accent&quot;:null,&quot;decorative&quot;:null,&quot;hover&quot;:null,&quot;__typename&quot;:&quot;ButtonColorRoles&quot;},&quot;__typename&quot;:&quot;ColorScheme&quot;},&quot;scheme2&quot;:{&quot;base&quot;:{&quot;background&quot;:&quot;hsl(0.0, 0.0%, 96.537%)&quot;,&quot;text&quot;:&quot;hsl(235.867, 3.64%, 22.098%)&quot;,&quot;border&quot;:null,&quot;icon&quot;:null,&quot;accent&quot;:&quot;hsl(127.715, 4.801%, 4.576%)&quot;,&quot;decorative&quot;:&quot;hsl(127.715, 4.801%, 4.576%)&quot;,&quot;__typename&quot;:&quot;ColorRoles&quot;},&quot;control&quot;:{&quot;background&quot;:&quot;hsl(0.0, 0.0%, 100.0%)&quot;,&quot;text&quot;:&quot;hsl(235.867, 3.64%, 22.098%)&quot;,&quot;border&quot;:null,&quot;icon&quot;:null,&quot;accent&quot;:&quot;hsl(0.0, 0.0%, 0.0%)&quot;,&quot;decorative&quot;:null,&quot;selected&quot;:null,&quot;__typename&quot;:&quot;ControlColorRoles&quot;},&quot;primaryButton&quot;:{&quot;background&quot;:null,&quot;text&quot;:&quot;hsl(0.0, 0.0%, 100.0%)&quot;,&quot;border&quot;:null,&quot;icon&quot;:null,&quot;accent&quot;:null,&quot;decorative&quot;:null,&quot;hover&quot;:null,&quot;__typename&quot;:&quot;ButtonColorRoles&quot;},&quot;secondaryButton&quot;:{&quot;background&quot;:null,&quot;text&quot;:&quot;hsl(0.0, 0.0%, 100.0%)&quot;,&quot;border&quot;:null,&quot;icon&quot;:null,&quot;accent&quot;:null,&quot;decorative&quot;:null,&quot;hover&quot;:null,&quot;__typename&quot;:&quot;ButtonColorRoles&quot;},&quot;__typename&quot;:&quot;ColorScheme&quot;},&quot;scheme3&quot;:null,&quot;scheme4&quot;:null,&quot;__typename&quot;:&quot;ColorSchemes&quot;},&quot;__typename&quot;:&quot;Colors&quot;},&quot;typography&quot;:{&quot;size&quot;:{&quot;base&quot;:14,&quot;ratio&quot;:1.2,&quot;__typename&quot;:&quot;TypographyScale&quot;},&quot;primary&quot;:{&quot;name&quot;:&quot;Poppins&quot;,&quot;loadingStrategy&quot;:&quot;AUTO&quot;,&quot;base&quot;:{&quot;weight&quot;:400,&quot;sources&quot;:&quot;local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.shopifycdn.com/poppins/poppins_n4.934accbf9f5987aa89334210e6c1e9151f37d3b6.woff2?valid_until=MTcyNjM5Mjk1NA&amp;hmac=356b25c1644d0278003e4d81cf3670f824c1fd12ada045f46fbdeb23faa817bc) format('woff2'),url(https://fonts.shopifycdn.com/poppins/poppins_n4.ee28d4489eaf5de9cf6e17e696991b5e9148c716.woff?valid_until=MTcyNjM5Mjk1NA&amp;hmac=7d0f53d1a6028deb1a7a1c6d23c7b7d5266f84ec64a118df8837514967ca59c7) format('woff')&quot;,&quot;preloadUrl&quot;:&quot;https://fonts.shopifycdn.com/poppins/poppins_n4.934accbf9f5987aa89334210e6c1e9151f37d3b6.woff2?valid_until=MTcyNjM5Mjk1NA&amp;hmac=356b25c1644d0278003e4d81cf3670f824c1fd12ada045f46fbdeb23faa817bc&quot;,&quot;style&quot;:&quot;normal&quot;,&quot;__typename&quot;:&quot;Font&quot;},&quot;bold&quot;:{&quot;weight&quot;:400,&quot;sources&quot;:&quot;local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.shopifycdn.com/poppins/poppins_n4.934accbf9f5987aa89334210e6c1e9151f37d3b6.woff2?valid_until=MTcyNjM5Mjk1NA&amp;hmac=356b25c1644d0278003e4d81cf3670f824c1fd12ada045f46fbdeb23faa817bc) format('woff2'),url(https://fonts.shopifycdn.com/poppins/poppins_n4.ee28d4489eaf5de9cf6e17e696991b5e9148c716.woff?valid_until=MTcyNjM5Mjk1NA&amp;hmac=7d0f53d1a6028deb1a7a1c6d23c7b7d5266f84ec64a118df8837514967ca59c7) format('woff')&quot;,&quot;preloadUrl&quot;:&quot;https://fonts.shopifycdn.com/poppins/poppins_n4.934accbf9f5987aa89334210e6c1e9151f37d3b6.woff2?valid_until=MTcyNjM5Mjk1NA&amp;hmac=356b25c1644d0278003e4d81cf3670f824c1fd12ada045f46fbdeb23faa817bc&quot;,&quot;style&quot;:&quot;normal&quot;,&quot;__typename&quot;:&quot;Font&quot;},&quot;__typename&quot;:&quot;FontGroup&quot;},&quot;secondary&quot;:{&quot;name&quot;:&quot;-apple-system&quot;,&quot;loadingStrategy&quot;:&quot;AUTO&quot;,&quot;base&quot;:{&quot;weight&quot;:400,&quot;sources&quot;:null,&quot;preloadUrl&quot;:null,&quot;style&quot;:&quot;normal&quot;,&quot;__typename&quot;:&quot;Font&quot;},&quot;bold&quot;:{&quot;weight&quot;:400,&quot;sources&quot;:null,&quot;preloadUrl&quot;:null,&quot;style&quot;:&quot;normal&quot;,&quot;__typename&quot;:&quot;Font&quot;},&quot;__typename&quot;:&quot;FontGroup&quot;},&quot;__typename&quot;:&quot;Typography&quot;},&quot;cornerRadius&quot;:{&quot;small&quot;:2,&quot;base&quot;:5,&quot;large&quot;:10,&quot;__typename&quot;:&quot;CornerRadiusVariables&quot;},&quot;__typename&quot;:&quot;DesignSystem&quot;},&quot;customizations&quot;:{&quot;global&quot;:{&quot;cornerRadius&quot;:null,&quot;typography&quot;:{&quot;letterCase&quot;:&quot;NONE&quot;,&quot;kerning&quot;:&quot;BASE&quot;,&quot;__typename&quot;:&quot;TypographyStyleGlobalCustomizations&quot;},&quot;__typename&quot;:&quot;GlobalCustomizations&quot;},&quot;divider&quot;:null,&quot;favicon&quot;:{&quot;image&quot;:null,&quot;__typename&quot;:&quot;FaviconCustomizations&quot;},&quot;content&quot;:null,&quot;main&quot;:{&quot;backgroundImage&quot;:null,&quot;colorScheme&quot;:null,&quot;divider&quot;:null,&quot;section&quot;:null,&quot;__typename&quot;:&quot;MainCustomizations&quot;},&quot;expressCheckout&quot;:null,&quot;orderSummary&quot;:{&quot;defaultState&quot;:null,&quot;backgroundImage&quot;:null,&quot;colorScheme&quot;:null,&quot;divider&quot;:null,&quot;section&quot;:null,&quot;__typename&quot;:&quot;OrderSummaryCustomizations&quot;},&quot;header&quot;:{&quot;alignment&quot;:&quot;START&quot;,&quot;position&quot;:&quot;INLINE&quot;,&quot;blockPadding&quot;:null,&quot;background&quot;:null,&quot;colorScheme&quot;:null,&quot;padding&quot;:null,&quot;divided&quot;:null,&quot;logo&quot;:{&quot;image&quot;:{&quot;main&quot;:&quot;https://cdn.shopify.com/s/files/1/1334/3831/files/logo_x320.png?v=1613742322&quot;,&quot;height&quot;:122,&quot;width&quot;:140,&quot;altText&quot;:&quot;&quot;,&quot;__typename&quot;:&quot;Image&quot;},&quot;maxWidth&quot;:60,&quot;visibility&quot;:null,&quot;__typename&quot;:&quot;HeaderLogoCustomizations&quot;},&quot;banner&quot;:{&quot;image&quot;:null,&quot;__typename&quot;:&quot;HeaderBannerCustomizations&quot;},&quot;cartLink&quot;:null,&quot;__typename&quot;:&quot;HeaderCustomizations&quot;},&quot;footer&quot;:{&quot;alignment&quot;:null,&quot;position&quot;:null,&quot;background&quot;:null,&quot;colorScheme&quot;:null,&quot;padding&quot;:null,&quot;divided&quot;:null,&quot;content&quot;:{&quot;visibility&quot;:&quot;VISIBLE&quot;,&quot;__typename&quot;:&quot;FooterContent&quot;},&quot;__typename&quot;:&quot;FooterCustomizations&quot;},&quot;cartLink&quot;:null,&quot;buyerJourney&quot;:null,&quot;headingLevel1&quot;:{&quot;typography&quot;:{&quot;size&quot;:&quot;EXTRA_EXTRA_LARGE&quot;,&quot;letterCase&quot;:&quot;NONE&quot;,&quot;fonts&quot;:&quot;SECONDARY&quot;,&quot;weight&quot;:&quot;BOLD&quot;,&quot;kerning&quot;:&quot;BASE&quot;,&quot;__typename&quot;:&quot;TypographyStyleCustomizations&quot;},&quot;__typename&quot;:&quot;HeadingLevel1Customizations&quot;},&quot;headingLevel2&quot;:{&quot;typography&quot;:{&quot;size&quot;:&quot;LARGE&quot;,&quot;letterCase&quot;:&quot;NONE&quot;,&quot;fonts&quot;:&quot;PRIMARY&quot;,&quot;weight&quot;:&quot;BOLD&quot;,&quot;kerning&quot;:&quot;BASE&quot;,&quot;__typename&quot;:&quot;TypographyStyleCustomizations&quot;},&quot;__typename&quot;:&quot;HeadingLevel2Customizations&quot;},&quot;headingLevel3&quot;:{&quot;typography&quot;:{&quot;size&quot;:&quot;SMALL&quot;,&quot;letterCase&quot;:&quot;NONE&quot;,&quot;fonts&quot;:&quot;PRIMARY&quot;,&quot;weight&quot;:&quot;BOLD&quot;,&quot;kerning&quot;:&quot;BASE&quot;,&quot;__typename&quot;:&quot;TypographyStyleCustomizations&quot;},&quot;__typename&quot;:&quot;HeadingLevel3Customizations&quot;},&quot;headingLevel4&quot;:null,&quot;control&quot;:{&quot;backgroundColor&quot;:&quot;COLOR1&quot;,&quot;border&quot;:&quot;FULL&quot;,&quot;cornerRadius&quot;:&quot;BASE&quot;,&quot;labelPosition&quot;:&quot;INSIDE&quot;,&quot;__typename&quot;:&quot;ControlCustomizations&quot;},&quot;label&quot;:null,&quot;select&quot;:{&quot;border&quot;:&quot;FULL&quot;,&quot;typography&quot;:{&quot;size&quot;:&quot;BASE&quot;,&quot;letterCase&quot;:&quot;TITLE&quot;,&quot;fonts&quot;:&quot;PRIMARY&quot;,&quot;weight&quot;:&quot;BASE&quot;,&quot;kerning&quot;:&quot;BASE&quot;,&quot;__typename&quot;:&quot;TypographyStyleCustomizations&quot;},&quot;__typename&quot;:&quot;SelectCustomizations&quot;},&quot;textField&quot;:{&quot;border&quot;:&quot;FULL&quot;,&quot;typography&quot;:{&quot;size&quot;:&quot;BASE&quot;,&quot;letterCase&quot;:&quot;NONE&quot;,&quot;fonts&quot;:&quot;PRIMARY&quot;,&quot;weight&quot;:&quot;BASE&quot;,&quot;kerning&quot;:&quot;BASE&quot;,&quot;__typename&quot;:&quot;TypographyStyleCustomizations&quot;},&quot;__typename&quot;:&quot;TextFieldCustomizations&quot;},&quot;checkbox&quot;:{&quot;cornerRadius&quot;:&quot;BASE&quot;,&quot;__typename&quot;:&quot;CheckboxCustomizations&quot;},&quot;choiceList&quot;:null,&quot;primaryButton&quot;:{&quot;background&quot;:&quot;SOLID&quot;,&quot;border&quot;:&quot;FULL&quot;,&quot;blockPadding2&quot;:&quot;BASE&quot;,&quot;inlinePadding2&quot;:&quot;BASE&quot;,&quot;cornerRadius&quot;:&quot;BASE&quot;,&quot;typography&quot;:{&quot;size&quot;:&quot;BASE&quot;,&quot;letterCase&quot;:&quot;NONE&quot;,&quot;fonts&quot;:&quot;PRIMARY&quot;,&quot;weight&quot;:&quot;BASE&quot;,&quot;kerning&quot;:&quot;BASE&quot;,&quot;__typename&quot;:&quot;TypographyStyleCustomizations&quot;},&quot;__typename&quot;:&quot;ButtonCustomizations&quot;},&quot;secondaryButton&quot;:{&quot;background&quot;:&quot;SOLID&quot;,&quot;border&quot;:&quot;FULL&quot;,&quot;blockPadding2&quot;:&quot;BASE&quot;,&quot;inlinePadding2&quot;:&quot;BASE&quot;,&quot;cornerRadius&quot;:&quot;BASE&quot;,&quot;typography&quot;:{&quot;size&quot;:&quot;BASE&quot;,&quot;letterCase&quot;:&quot;NONE&quot;,&quot;fonts&quot;:&quot;PRIMARY&quot;,&quot;weight&quot;:&quot;BASE&quot;,&quot;kerning&quot;:&quot;BASE&quot;,&quot;__typename&quot;:&quot;TypographyStyleCustomizations&quot;},&quot;__typename&quot;:&quot;ButtonCustomizations&quot;},&quot;merchandiseThumbnail&quot;:{&quot;border&quot;:&quot;FULL&quot;,&quot;cornerRadius&quot;:&quot;LARGE&quot;,&quot;__typename&quot;:&quot;MerchandiseThumbnailCustomizations&quot;},&quot;__typename&quot;:&quot;CheckoutCustomizations&quot;},&quot;__typename&quot;:&quot;CheckoutShopConfig&quot;}},&quot;9232c1bcdfd4e70f6138b0c1b7d90d3b67eb2143892260da2fa02507f691108b{}&quot;:{&quot;shop&quot;:{&quot;hostedFieldsUrl&quot;:&quot;https://checkout.shopifycs.com/dist/card_fields.js&quot;,&quot;domain&quot;:&quot;nrml.ca&quot;,&quot;name&quot;:&quot;NRML&quot;,&quot;id&quot;:&quot;gid://shopify/Shop/13343831&quot;,&quot;allowExtensionDevelopment&quot;:false,&quot;storefrontDomains&quot;:[&quot;nrmlstreetwear.myshopify.com&quot;,&quot;www.nrml.ca&quot;,&quot;nrml.ca&quot;,&quot;www.shopselect.ca&quot;,&quot;shopselect.ca&quot;,&quot;nrmlstreetwear.account.myshopify.com&quot;],&quot;merchantPolicies&quot;:[{&quot;handle&quot;:&quot;refund-policy&quot;,&quot;url&quot;:&quot;https://nrml.ca/13343831/policies/refund-policy.html?locale=en-CA&quot;,&quot;__typename&quot;:&quot;MerchantPolicy&quot;},{&quot;handle&quot;:&quot;privacy-policy&quot;,&quot;url&quot;:&quot;https://nrml.ca/13343831/policies/privacy-policy.html?locale=en-CA&quot;,&quot;__typename&quot;:&quot;MerchantPolicy&quot;},{&quot;handle&quot;:&quot;terms-of-service&quot;,&quot;url&quot;:&quot;https://nrml.ca/13343831/policies/terms-of-service.html?locale=en-CA&quot;,&quot;__typename&quot;:&quot;MerchantPolicy&quot;}],&quot;country&quot;:{&quot;code&quot;:&quot;CA&quot;,&quot;name&quot;:&quot;Canada&quot;,&quot;localizationKeys&quot;:{&quot;address2&quot;:&quot;apt_unit_number_label&quot;,&quot;postalCode&quot;:null,&quot;zone&quot;:&quot;province_label&quot;,&quot;neighborhood&quot;:null,&quot;__typename&quot;:&quot;AddressLocalizationKeys&quot;},&quot;labels&quot;:{&quot;firstName&quot;:&quot;First name&quot;,&quot;lastName&quot;:&quot;Last name&quot;,&quot;company&quot;:&quot;Company&quot;,&quot;address1&quot;:&quot;Address&quot;,&quot;address2&quot;:&quot;Apartment, suite, etc&quot;,&quot;city&quot;:&quot;City&quot;,&quot;country&quot;:&quot;Country/region&quot;,&quot;zone&quot;:&quot;Province&quot;,&quot;postalCode&quot;:&quot;Postal code&quot;,&quot;phone&quot;:&quot;Phone&quot;,&quot;__typename&quot;:&quot;AddressLabels&quot;},&quot;zones&quot;:[{&quot;code&quot;:&quot;AB&quot;,&quot;name&quot;:&quot;Alberta&quot;,&quot;nameWithAlternates&quot;:[&quot;Alberta&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;BC&quot;,&quot;name&quot;:&quot;British Columbia&quot;,&quot;nameWithAlternates&quot;:[&quot;British Columbia&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;MB&quot;,&quot;name&quot;:&quot;Manitoba&quot;,&quot;nameWithAlternates&quot;:[&quot;Manitoba&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NB&quot;,&quot;name&quot;:&quot;New Brunswick&quot;,&quot;nameWithAlternates&quot;:[&quot;New Brunswick&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NL&quot;,&quot;name&quot;:&quot;Newfoundland and Labrador&quot;,&quot;nameWithAlternates&quot;:[&quot;Newfoundland and Labrador&quot;,&quot;Newfoundland&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NT&quot;,&quot;name&quot;:&quot;Northwest Territories&quot;,&quot;nameWithAlternates&quot;:[&quot;Northwest Territories&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NS&quot;,&quot;name&quot;:&quot;Nova Scotia&quot;,&quot;nameWithAlternates&quot;:[&quot;Nova Scotia&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;NU&quot;,&quot;name&quot;:&quot;Nunavut&quot;,&quot;nameWithAlternates&quot;:[&quot;Nunavut&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;ON&quot;,&quot;name&quot;:&quot;Ontario&quot;,&quot;nameWithAlternates&quot;:[&quot;Ontario&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;PE&quot;,&quot;name&quot;:&quot;Prince Edward Island&quot;,&quot;nameWithAlternates&quot;:[&quot;Prince Edward Island&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;QC&quot;,&quot;name&quot;:&quot;Quebec&quot;,&quot;nameWithAlternates&quot;:[&quot;Quebec&quot;,&quot;QuÃ©bec&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;SK&quot;,&quot;name&quot;:&quot;Saskatchewan&quot;,&quot;nameWithAlternates&quot;:[&quot;Saskatchewan&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;},{&quot;code&quot;:&quot;YT&quot;,&quot;name&quot;:&quot;Yukon&quot;,&quot;nameWithAlternates&quot;:[&quot;Yukon&quot;],&quot;__typename&quot;:&quot;AddressZone&quot;}],&quot;formatting&quot;:{&quot;edit&quot;:&quot;{country}_{firstName}{lastName}_{company}_{address1}_{address2}_{city}{province}{zip}_{phone}&quot;,&quot;show&quot;:&quot;{firstName} {lastName}_{company}_{address1}_{address2}_{city} {province} {zip}_{country}_{phone}&quot;,&quot;__typename&quot;:&quot;AddressFormat&quot;},&quot;extendedFormatting&quot;:null,&quot;autocompletionField&quot;:&quot;ADDRESS1&quot;,&quot;neighborhoodRequired&quot;:false,&quot;streetNumberRequired&quot;:false,&quot;buildingNumberRequired&quot;:true,&quot;buildingNumberMayBeInAddress2&quot;:false,&quot;pureNumericPostalCode&quot;:false,&quot;postalCodeRequired&quot;:true,&quot;__typename&quot;:&quot;Country&quot;},&quot;popularBillingCountries&quot;:[{&quot;value&quot;:&quot;US&quot;,&quot;label&quot;:&quot;United States&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;CA&quot;,&quot;label&quot;:&quot;Canada&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;IN&quot;,&quot;label&quot;:&quot;India&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;MX&quot;,&quot;label&quot;:&quot;Mexico&quot;,&quot;__typename&quot;:&quot;Country&quot;}],&quot;popularShippingCountries&quot;:[{&quot;value&quot;:&quot;US&quot;,&quot;label&quot;:&quot;United States&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;CA&quot;,&quot;label&quot;:&quot;Canada&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;MX&quot;,&quot;label&quot;:&quot;Mexico&quot;,&quot;__typename&quot;:&quot;Country&quot;},{&quot;value&quot;:&quot;GB&quot;,&quot;label&quot;:&quot;United Kingdom&quot;,&quot;__typename&quot;:&quot;Country&quot;}],&quot;storefront&quot;:{&quot;url&quot;:&quot;https://nrml.ca&quot;,&quot;hasStorefront&quot;:true,&quot;__typename&quot;:&quot;CheckoutStorefrontConfig&quot;},&quot;theme&quot;:{&quot;id&quot;:&quot;127285854274&quot;,&quot;cityhash&quot;:&quot;17990210759287014&quot;,&quot;__typename&quot;:&quot;ThemeConfig&quot;},&quot;trackingPixels&quot;:[{&quot;pixelId&quot;:&quot;G-02C9D7MKWJ&quot;,&quot;pixelType&quot;:&quot;GOOGLE_TAG_MANAGER&quot;,&quot;pixelConfig&quot;:{&quot;target_country&quot;:&quot;CA&quot;,&quot;gtag_events&quot;:[{&quot;type&quot;:&quot;search&quot;,&quot;action_label&quot;:[&quot;G-02C9D7MKWJ&quot;,&quot;AW-11041478253/EuIeCPLKlYUYEO2s_pAp&quot;]},{&quot;type&quot;:&quot;begin_checkout&quot;,&quot;action_label&quot;:[&quot;G-02C9D7MKWJ&quot;,&quot;AW-11041478253/eY_oCO_KlYUYEO2s_pAp&quot;]},{&quot;type&quot;:&quot;view_item&quot;,&quot;action_label&quot;:[&quot;G-02C9D7MKWJ&quot;,&quot;AW-11041478253/HhlmCOnKlYUYEO2s_pAp&quot;,&quot;MC-DZJW59T17R&quot;]},{&quot;type&quot;:&quot;purchase&quot;,&quot;action_label&quot;:[&quot;G-02C9D7MKWJ&quot;,&quot;AW-11041478253/i9tGCObKlYUYEO2s_pAp&quot;,&quot;MC-DZJW59T17R&quot;]},{&quot;type&quot;:&quot;page_view&quot;,&quot;action_label&quot;:[&quot;G-02C9D7MKWJ&quot;,&quot;AW-11041478253/CsrcCOPKlYUYEO2s_pAp&quot;,&quot;MC-DZJW59T17R&quot;]},{&quot;type&quot;:&quot;add_payment_info&quot;,&quot;action_label&quot;:[&quot;G-02C9D7MKWJ&quot;,&quot;AW-11041478253/fnteCPXKlYUYEO2s_pAp&quot;]},{&quot;type&quot;:&quot;add_to_cart&quot;,&quot;action_label&quot;:[&quot;G-02C9D7MKWJ&quot;,&quot;AW-11041478253/A_q4COzKlYUYEO2s_pAp&quot;]}]},&quot;__typename&quot;:&quot;TrackingPixel&quot;},{&quot;pixelId&quot;:&quot;C3B1BDL63S9GKU7MH5IG&quot;,&quot;pixelType&quot;:&quot;TIK_TOK&quot;,&quot;pixelConfig&quot;:null,&quot;__typename&quot;:&quot;TrackingPixel&quot;},{&quot;pixelId&quot;:&quot;170845836304917&quot;,&quot;pixelType&quot;:&quot;FACEBOOK&quot;,&quot;pixelConfig&quot;:null,&quot;__typename&quot;:&quot;TrackingPixel&quot;}],&quot;onlineStoreChat&quot;:null,&quot;facebookAppPixelId&quot;:null,&quot;facebookCapiEnabled&quot;:true,&quot;myshopifyDomain&quot;:&quot;nrmlstreetwear.myshopify.com&quot;,&quot;translations&quot;:&quot;{}&quot;,&quot;analyticsAccount&quot;:&quot;UA-12032218-1&quot;,&quot;enhancedEcommerceEnabled&quot;:true,&quot;customerAccountRequirement&quot;:&quot;OPTIONAL&quot;,&quot;emailMarketing&quot;:&quot;CHECKED&quot;,&quot;smsMarketing&quot;:&quot;UNCHECKED&quot;,&quot;shippingRatesReloadStrategy&quot;:{&quot;CA&quot;:{&quot;ON&quot;:5,&quot;BC&quot;:5,&quot;MB&quot;:5,&quot;AB&quot;:5,&quot;NB&quot;:5,&quot;NL&quot;:5,&quot;NS&quot;:5,&quot;QC&quot;:5,&quot;YT&quot;:5,&quot;PE&quot;:5,&quot;NU&quot;:5,&quot;SK&quot;:5,&quot;NT&quot;:5},&quot;AD&quot;:5,&quot;AM&quot;:5,&quot;AU&quot;:{&quot;ACT&quot;:5,&quot;NSW&quot;:5,&quot;NT&quot;:5,&quot;QLD&quot;:5,&quot;SA&quot;:5,&quot;TAS&quot;:5,&quot;VIC&quot;:5,&quot;WA&quot;:5},&quot;AT&quot;:5,&quot;BY&quot;:5,&quot;BE&quot;:5,&quot;BA&quot;:5,&quot;HR&quot;:5,&quot;CZ&quot;:5,&quot;DK&quot;:5,&quot;EE&quot;:5,&quot;FI&quot;:5,&quot;GE&quot;:5,&quot;DE&quot;:5,&quot;HU&quot;:5,&quot;IS&quot;:5,&quot;IT&quot;:{&quot;AG&quot;:5,&quot;AL&quot;:5,&quot;AN&quot;:5,&quot;AO&quot;:5,&quot;AR&quot;:5,&quot;AP&quot;:5,&quot;AT&quot;:5,&quot;AV&quot;:5,&quot;BA&quot;:5,&quot;BT&quot;:5,&quot;BL&quot;:5,&quot;BN&quot;:5,&quot;BG&quot;:5,&quot;BI&quot;:5,&quot;BO&quot;:5,&quot;BZ&quot;:5,&quot;BS&quot;:5,&quot;BR&quot;:5,&quot;CA&quot;:5,&quot;CL&quot;:5,&quot;CB&quot;:5,&quot;CI&quot;:5,&quot;CE&quot;:5,&quot;CT&quot;:5,&quot;CZ&quot;:5,&quot;CH&quot;:5,&quot;CO&quot;:5,&quot;CS&quot;:5,&quot;CR&quot;:5,&quot;KR&quot;:5,&quot;CN&quot;:5,&quot;EN&quot;:5,&quot;FM&quot;:5,&quot;FE&quot;:5,&quot;FI&quot;:5,&quot;FG&quot;:5,&quot;FC&quot;:5,&quot;FR&quot;:5,&quot;GE&quot;:5,&quot;GO&quot;:5,&quot;GR&quot;:5,&quot;IM&quot;:5,&quot;IS&quot;:5,&quot;AQ&quot;:5,&quot;SP&quot;:5,&quot;LT&quot;:5,&quot;LE&quot;:5,&quot;LC&quot;:5,&quot;LI&quot;:5,&quot;LO&quot;:5,&quot;LU&quot;:5,&quot;MC&quot;:5,&quot;MN&quot;:5,&quot;MS&quot;:5,&quot;MT&quot;:5,&quot;VS&quot;:5,&quot;ME&quot;:5,&quot;MI&quot;:5,&quot;MO&quot;:5,&quot;MB&quot;:5,&quot;NA&quot;:5,&quot;NO&quot;:5,&quot;NU&quot;:5,&quot;OG&quot;:5,&quot;OT&quot;:5,&quot;OR&quot;:5,&quot;PD&quot;:5,&quot;PA&quot;:5,&quot;PR&quot;:5,&quot;PV&quot;:5,&quot;PG&quot;:5,&quot;PU&quot;:5,&quot;PE&quot;:5,&quot;PC&quot;:5,&quot;PI&quot;:5,&quot;PT&quot;:5,&quot;PN&quot;:5,&quot;PZ&quot;:5,&quot;PO&quot;:5,&quot;RG&quot;:5,&quot;RA&quot;:5,&quot;RC&quot;:5,&quot;RE&quot;:5,&quot;RI&quot;:5,&quot;RN&quot;:5,&quot;RM&quot;:5,&quot;RO&quot;:5,&quot;SA&quot;:5,&quot;SS&quot;:5,&quot;SV&quot;:5,&quot;SI&quot;:5,&quot;SR&quot;:5,&quot;SO&quot;:5,&quot;TA&quot;:5,&quot;TE&quot;:5,&quot;TR&quot;:5,&quot;TO&quot;:5,&quot;TP&quot;:5,&quot;TN&quot;:5,&quot;TV&quot;:5,&quot;TS&quot;:5,&quot;UD&quot;:5,&quot;VA&quot;:5,&quot;VE&quot;:5,&quot;VB&quot;:5,&quot;VC&quot;:5,&quot;VR&quot;:5,&quot;VV&quot;:5,&quot;VI&quot;:5,&quot;VT&quot;:5},&quot;JE&quot;:5,&quot;LI&quot;:5,&quot;LT&quot;:5,&quot;LU&quot;:5,&quot;MT&quot;:5,&quot;ME&quot;:5,&quot;MK&quot;:5,&quot;NO&quot;:5,&quot;PL&quot;:5,&quot;PT&quot;:{&quot;PT-20&quot;:5,&quot;PT-01&quot;:5,&quot;PT-02&quot;:5,&quot;PT-03&quot;:5,&quot;PT-04&quot;:5,&quot;PT-05&quot;:5,&quot;PT-06&quot;:5,&quot;PT-07&quot;:5,&quot;PT-08&quot;:5,&quot;PT-09&quot;:5,&quot;PT-10&quot;:5,&quot;PT-11&quot;:5,&quot;PT-30&quot;:5,&quot;PT-12&quot;:5,&quot;PT-13&quot;:5,&quot;PT-14&quot;:5,&quot;PT-15&quot;:5,&quot;PT-16&quot;:5,&quot;PT-17&quot;:5,&quot;PT-18&quot;:5},&quot;RS&quot;:5,&quot;ES&quot;:{&quot;C&quot;:5,&quot;VI&quot;:5,&quot;AB&quot;:5,&quot;A&quot;:5,&quot;AL&quot;:5,&quot;O&quot;:5,&quot;AV&quot;:5,&quot;BA&quot;:5,&quot;PM&quot;:5,&quot;B&quot;:5,&quot;BU&quot;:5,&quot;CC&quot;:5,&quot;CA&quot;:5,&quot;S&quot;:5,&quot;CS&quot;:5,&quot;CE&quot;:5,&quot;CR&quot;:5,&quot;CO&quot;:5,&quot;CU&quot;:5,&quot;GI&quot;:5,&quot;GR&quot;:5,&quot;GU&quot;:5,&quot;SS&quot;:5,&quot;H&quot;:5,&quot;HU&quot;:5,&quot;J&quot;:5,&quot;LO&quot;:5,&quot;GC&quot;:5,&quot;LE&quot;:5,&quot;L&quot;:5,&quot;LU&quot;:5,&quot;M&quot;:5,&quot;MA&quot;:5,&quot;ML&quot;:5,&quot;MU&quot;:5,&quot;NA&quot;:5,&quot;OR&quot;:5,&quot;P&quot;:5,&quot;PO&quot;:5,&quot;SA&quot;:5,&quot;TF&quot;:5,&quot;SG&quot;:5,&quot;SE&quot;:5,&quot;SO&quot;:5,&quot;T&quot;:5,&quot;TE&quot;:5,&quot;TO&quot;:5,&quot;V&quot;:5,&quot;VA&quot;:5,&quot;BI&quot;:5,&quot;ZA&quot;:5,&quot;Z&quot;:5},&quot;SE&quot;:5,&quot;CH&quot;:5,&quot;TR&quot;:5,&quot;GB&quot;:{&quot;BFP&quot;:5,&quot;ENG&quot;:5,&quot;NIR&quot;:5,&quot;SCT&quot;:5,&quot;WLS&quot;:5},&quot;NL&quot;:5,&quot;BB&quot;:5,&quot;US&quot;:{&quot;AL&quot;:5,&quot;AS&quot;:5,&quot;AZ&quot;:5,&quot;AR&quot;:5,&quot;AA&quot;:5,&quot;AE&quot;:5,&quot;AP&quot;:5,&quot;CA&quot;:5,&quot;CO&quot;:5,&quot;CT&quot;:5,&quot;DE&quot;:5,&quot;DC&quot;:5,&quot;FM&quot;:5,&quot;FL&quot;:5,&quot;GA&quot;:5,&quot;GU&quot;:5,&quot;ID&quot;:5,&quot;IL&quot;:5,&quot;IN&quot;:5,&quot;IA&quot;:5,&quot;KS&quot;:5,&quot;KY&quot;:5,&quot;LA&quot;:5,&quot;ME&quot;:5,&quot;MH&quot;:5,&quot;MD&quot;:5,&quot;MA&quot;:5,&quot;MI&quot;:5,&quot;MN&quot;:5,&quot;MS&quot;:5,&quot;MO&quot;:5,&quot;MT&quot;:5,&quot;NE&quot;:5,&quot;NV&quot;:5,&quot;NH&quot;:5,&quot;NJ&quot;:5,&quot;NM&quot;:5,&quot;NY&quot;:5,&quot;NC&quot;:5,&quot;ND&quot;:5,&quot;MP&quot;:5,&quot;OH&quot;:5,&quot;OK&quot;:5,&quot;OR&quot;:5,&quot;PW&quot;:5,&quot;PA&quot;:5,&quot;RI&quot;:5,&quot;SC&quot;:5,&quot;SD&quot;:5,&quot;TN&quot;:5,&quot;TX&quot;:5,&quot;UT&quot;:5,&quot;VT&quot;:5,&quot;VI&quot;:5,&quot;VA&quot;:5,&quot;WA&quot;:5,&quot;WV&quot;:5,&quot;WI&quot;:5,&quot;WY&quot;:5,&quot;AK&quot;:5,&quot;HI&quot;:5,&quot;PR&quot;:5},&quot;MX&quot;:{&quot;AGS&quot;:5,&quot;BC&quot;:5,&quot;BCS&quot;:5,&quot;CAMP&quot;:5,&quot;CHIS&quot;:5,&quot;CHIH&quot;:5,&quot;DF&quot;:5,&quot;COAH&quot;:5,&quot;COL&quot;:5,&quot;DGO&quot;:5,&quot;GTO&quot;:5,&quot;GRO&quot;:5,&quot;HGO&quot;:5,&quot;JAL&quot;:5,&quot;MEX&quot;:5,&quot;MICH&quot;:5,&quot;MOR&quot;:5,&quot;NAY&quot;:5,&quot;NL&quot;:5,&quot;OAX&quot;:5,&quot;PUE&quot;:5,&quot;QRO&quot;:5,&quot;Q ROO&quot;:5,&quot;SLP&quot;:5,&quot;SIN&quot;:5,&quot;SON&quot;:5,&quot;TAB&quot;:5,&quot;TAMPS&quot;:5,&quot;TLAX&quot;:5,&quot;VER&quot;:5,&quot;YUC&quot;:5,&quot;ZAC&quot;:5},&quot;SA&quot;:5,&quot;MA&quot;:5,&quot;IE&quot;:{&quot;CW&quot;:5,&quot;CN&quot;:5,&quot;CE&quot;:5,&quot;CO&quot;:5,&quot;DL&quot;:5,&quot;D&quot;:5,&quot;G&quot;:5,&quot;KY&quot;:5,&quot;KE&quot;:5,&quot;KK&quot;:5,&quot;LS&quot;:5,&quot;LM&quot;:5,&quot;LK&quot;:5,&quot;LD&quot;:5,&quot;LH&quot;:5,&quot;MO&quot;:5,&quot;MH&quot;:5,&quot;MN&quot;:5,&quot;OY&quot;:5,&quot;RN&quot;:5,&quot;SO&quot;:5,&quot;TA&quot;:5,&quot;WD&quot;:5,&quot;WH&quot;:5,&quot;WX&quot;:5,&quot;WW&quot;:5}},&quot;billingAddressFormSettings&quot;:{&quot;address2&quot;:{&quot;mode&quot;:&quot;OPTIONAL&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;company&quot;:{&quot;mode&quot;:&quot;IGNORED&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;firstName&quot;:{&quot;mode&quot;:&quot;REQUIRED&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;phone&quot;:{&quot;mode&quot;:&quot;OPTIONAL&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;addressAutocompletion&quot;:true,&quot;__typename&quot;:&quot;BillingAddressFormSettings&quot;},&quot;shopConfigurations&quot;:{&quot;defaultConfiguration&quot;:{&quot;contactInfoOptions&quot;:[&quot;EMAIL&quot;],&quot;addressFormSettings&quot;:{&quot;address2&quot;:{&quot;mode&quot;:&quot;OPTIONAL&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;company&quot;:{&quot;mode&quot;:&quot;IGNORED&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;firstName&quot;:{&quot;mode&quot;:&quot;REQUIRED&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;phone&quot;:{&quot;mode&quot;:&quot;REQUIRED&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;addressAutocompletion&quot;:true,&quot;addressValidation&quot;:true,&quot;__typename&quot;:&quot;AddressFormSettings&quot;},&quot;__typename&quot;:&quot;CountryConfiguration&quot;},&quot;countrySpecificConfigurations&quot;:[{&quot;countries&quot;:[&quot;AD&quot;,&quot;AM&quot;,&quot;AU&quot;,&quot;AT&quot;,&quot;BB&quot;,&quot;BY&quot;,&quot;BE&quot;,&quot;BA&quot;,&quot;CA&quot;,&quot;HR&quot;,&quot;CZ&quot;,&quot;DK&quot;,&quot;EE&quot;,&quot;FI&quot;,&quot;GE&quot;,&quot;DE&quot;,&quot;HU&quot;,&quot;IS&quot;,&quot;IE&quot;,&quot;IT&quot;,&quot;JE&quot;,&quot;LI&quot;,&quot;LT&quot;,&quot;LU&quot;,&quot;MT&quot;,&quot;MX&quot;,&quot;ME&quot;,&quot;MA&quot;,&quot;NL&quot;,&quot;MK&quot;,&quot;NO&quot;,&quot;PL&quot;,&quot;PT&quot;,&quot;SA&quot;,&quot;RS&quot;,&quot;ES&quot;,&quot;SE&quot;,&quot;CH&quot;,&quot;TR&quot;,&quot;GB&quot;,&quot;US&quot;],&quot;configuration&quot;:{&quot;contactInfoOptions&quot;:[&quot;EMAIL&quot;],&quot;addressFormSettings&quot;:{&quot;address2&quot;:{&quot;mode&quot;:&quot;OPTIONAL&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;company&quot;:{&quot;mode&quot;:&quot;IGNORED&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;firstName&quot;:{&quot;mode&quot;:&quot;REQUIRED&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;phone&quot;:{&quot;mode&quot;:&quot;REQUIRED&quot;,&quot;__typename&quot;:&quot;AddressFormField&quot;},&quot;addressAutocompletion&quot;:true,&quot;__typename&quot;:&quot;AddressFormSettings&quot;},&quot;__typename&quot;:&quot;CountryConfiguration&quot;},&quot;__typename&quot;:&quot;CountrySpecificConfiguration&quot;}],&quot;__typename&quot;:&quot;ShopConfigurations&quot;},&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;timeZone&quot;:&quot;America/New_York&quot;,&quot;enabledFlags&quot;:[&quot;5c25655c&quot;,&quot;8466ea4f&quot;,&quot;778675f5&quot;,&quot;8a6b1e5d&quot;,&quot;e2c263c1&quot;,&quot;a4e96e06&quot;,&quot;1c4d1d98&quot;,&quot;33f084e7&quot;,&quot;d04dc9f4&quot;,&quot;4735909c&quot;,&quot;5de24938&quot;],&quot;enabledDeliveryMethods&quot;:[&quot;SHIPPING&quot;,&quot;PICK_UP&quot;],&quot;giftCardsEnabled&quot;:true,&quot;discountCodesEnabled&quot;:true,&quot;contactEmail&quot;:&quot;help@nrml.ca&quot;,&quot;acceptTipPayments&quot;:false,&quot;showTipPayments&quot;:true,&quot;postPurchaseExtensionAvailable&quot;:false,&quot;postPurchaseDevelopmentModeAvailable&quot;:false,&quot;postPurchaseAdditionalTrackingScript&quot;:null,&quot;confirmationPageEnabled&quot;:false,&quot;hasAdditionalGoogleAnalyticsScript&quot;:false,&quot;customerAccountLocationsUrl&quot;:&quot;https://shopify.com/13343831/account/locations?return_to=https%3A%2F%2Fnrml.ca%2Fcheckouts%2Fcn%2FZ2NwLXVzLWVhc3QxOjAxSjdURE5RUDM2S0ZEMEE1WE1ERDFEOFE0%3Fauto_redirect%3Dfalse%26edge_redirect%3Dtrue%26locale%3Den-CA%26skip_shop_pay%3Dtrue&quot;,&quot;loginLinkVisible&quot;:true,&quot;shopPayEnabled&quot;:true,&quot;storeVaultEnabled&quot;:false,&quot;storeVaultCvvVerificationAtGuestCheckoutEnabled&quot;:false,&quot;webPixelConfigurations&quot;:[{&quot;idTmp&quot;:&quot;4063298&quot;,&quot;configuration&quot;:&quot;{\&quot;pixelId\&quot;:\&quot;79666b35-a6c1-4e58-8d51-ed9a1fcdfe4e\&quot;}&quot;,&quot;eventPayloadVersion&quot;:&quot;v1&quot;,&quot;runtimeContext&quot;:&quot;STRICT&quot;,&quot;scriptVersion&quot;:&quot;bb41bf091d86ec09beb5141ead6fafc0&quot;,&quot;type&quot;:&quot;APP&quot;,&quot;apiClientId&quot;:&quot;2556259&quot;,&quot;purposes&quot;:[&quot;ANALYTICS&quot;,&quot;MARKETING&quot;,&quot;SALE_OF_DATA&quot;],&quot;name&quot;:null,&quot;__typename&quot;:&quot;WebPixelConfiguration&quot;},{&quot;idTmp&quot;:&quot;21069890&quot;,&quot;configuration&quot;:&quot;{\&quot;data\&quot;:\&quot;{\\\&quot;shop\\\&quot;:\\\&quot;nrmlstreetwear.myshopify.com\\\&quot;}\&quot;}&quot;,&quot;eventPayloadVersion&quot;:&quot;v1&quot;,&quot;runtimeContext&quot;:&quot;STRICT&quot;,&quot;scriptVersion&quot;:&quot;c0372b5297d54c0a2ee10d2a808c242c&quot;,&quot;type&quot;:&quot;APP&quot;,&quot;apiClientId&quot;:&quot;53356724225&quot;,&quot;purposes&quot;:[&quot;ANALYTICS&quot;,&quot;MARKETING&quot;,&quot;SALE_OF_DATA&quot;],&quot;name&quot;:null,&quot;__typename&quot;:&quot;WebPixelConfiguration&quot;},{&quot;idTmp&quot;:&quot;126255170&quot;,&quot;configuration&quot;:&quot;{\&quot;environment\&quot;:\&quot;production\&quot;,\&quot;isPlusUser\&quot;:\&quot;true\&quot;,\&quot;siteId\&quot;:\&quot;64aa580e\&quot;}&quot;,&quot;eventPayloadVersion&quot;:&quot;v1&quot;,&quot;runtimeContext&quot;:&quot;OPEN&quot;,&quot;scriptVersion&quot;:&quot;8f50100b4507da0cb1b5517ff7b85872&quot;,&quot;type&quot;:&quot;APP&quot;,&quot;apiClientId&quot;:&quot;187969&quot;,&quot;purposes&quot;:[&quot;ANALYTICS&quot;,&quot;MARKETING&quot;,&quot;SALE_OF_DATA&quot;],&quot;name&quot;:null,&quot;__typename&quot;:&quot;WebPixelConfiguration&quot;},{&quot;idTmp&quot;:&quot;151748674&quot;,&quot;configuration&quot;:&quot;{\&quot;pixel_id\&quot;:\&quot;195883441693770\&quot;,\&quot;pixel_type\&quot;:\&quot;facebook_pixel\&quot;,\&quot;metaapp_system_user_token\&quot;:\&quot;-\&quot;}&quot;,&quot;eventPayloadVersion&quot;:&quot;v1&quot;,&quot;runtimeContext&quot;:&quot;OPEN&quot;,&quot;scriptVersion&quot;:&quot;8b3843af2d71780cfb83fdde884ce168&quot;,&quot;type&quot;:&quot;APP&quot;,&quot;apiClientId&quot;:&quot;2329312&quot;,&quot;purposes&quot;:[&quot;ANALYTICS&quot;,&quot;MARKETING&quot;,&quot;SALE_OF_DATA&quot;],&quot;name&quot;:null,&quot;__typename&quot;:&quot;WebPixelConfiguration&quot;},{&quot;idTmp&quot;:&quot;300810306&quot;,&quot;configuration&quot;:&quot;{\&quot;config\&quot;:\&quot;{\\\&quot;pixel_id\\\&quot;:\\\&quot;G-02C9D7MKWJ\\\&quot;,\\\&quot;target_country\\\&quot;:\\\&quot;CA\\\&quot;,\\\&quot;gtag_events\\\&quot;:[{\\\&quot;type\\\&quot;:\\\&quot;search\\\&quot;,\\\&quot;action_label\\\&quot;:[\\\&quot;G-02C9D7MKWJ\\\&quot;,\\\&quot;AW-11041478253\\/EuIeCPLKlYUYEO2s_pAp\\\&quot;]},{\\\&quot;type\\\&quot;:\\\&quot;begin_checkout\\\&quot;,\\\&quot;action_label\\\&quot;:[\\\&quot;G-02C9D7MKWJ\\\&quot;,\\\&quot;AW-11041478253\\/eY_oCO_KlYUYEO2s_pAp\\\&quot;]},{\\\&quot;type\\\&quot;:\\\&quot;view_item\\\&quot;,\\\&quot;action_label\\\&quot;:[\\\&quot;G-02C9D7MKWJ\\\&quot;,\\\&quot;AW-11041478253\\/HhlmCOnKlYUYEO2s_pAp\\\&quot;,\\\&quot;MC-DZJW59T17R\\\&quot;]},{\\\&quot;type\\\&quot;:\\\&quot;purchase\\\&quot;,\\\&quot;action_label\\\&quot;:[\\\&quot;G-02C9D7MKWJ\\\&quot;,\\\&quot;AW-11041478253\\/i9tGCObKlYUYEO2s_pAp\\\&quot;,\\\&quot;MC-DZJW59T17R\\\&quot;]},{\\\&quot;type\\\&quot;:\\\&quot;page_view\\\&quot;,\\\&quot;action_label\\\&quot;:[\\\&quot;G-02C9D7MKWJ\\\&quot;,\\\&quot;AW-11041478253\\/CsrcCOPKlYUYEO2s_pAp\\\&quot;,\\\&quot;MC-DZJW59T17R\\\&quot;]},{\\\&quot;type\\\&quot;:\\\&quot;add_payment_info\\\&quot;,\\\&quot;action_label\\\&quot;:[\\\&quot;G-02C9D7MKWJ\\\&quot;,\\\&quot;AW-11041478253\\/fnteCPXKlYUYEO2s_pAp\\\&quot;]},{\\\&quot;type\\\&quot;:\\\&quot;add_to_cart\\\&quot;,\\\&quot;action_label\\\&quot;:[\\\&quot;G-02C9D7MKWJ\\\&quot;,\\\&quot;AW-11041478253\\/A_q4COzKlYUYEO2s_pAp\\\&quot;]}],\\\&quot;enable_monitoring_mode\\\&quot;:true}\&quot;}&quot;,&quot;eventPayloadVersion&quot;:&quot;v1&quot;,&quot;runtimeContext&quot;:&quot;OPEN&quot;,&quot;scriptVersion&quot;:&quot;a46b87f88a4ff97a9490f9aa4799ba7b&quot;,&quot;type&quot;:&quot;APP&quot;,&quot;apiClientId&quot;:&quot;1780363&quot;,&quot;purposes&quot;:[],&quot;name&quot;:null,&quot;__typename&quot;:&quot;WebPixelConfiguration&quot;},{&quot;idTmp&quot;:&quot;shopify-app-pixel&quot;,&quot;configuration&quot;:&quot;{}&quot;,&quot;eventPayloadVersion&quot;:&quot;v1&quot;,&quot;runtimeContext&quot;:&quot;STRICT&quot;,&quot;scriptVersion&quot;:&quot;0210&quot;,&quot;type&quot;:&quot;APP&quot;,&quot;apiClientId&quot;:&quot;shopify-pixel&quot;,&quot;purposes&quot;:[&quot;ANALYTICS&quot;,&quot;MARKETING&quot;],&quot;name&quot;:null,&quot;__typename&quot;:&quot;WebPixelConfiguration&quot;},{&quot;idTmp&quot;:&quot;shopify-custom-pixel&quot;,&quot;configuration&quot;:null,&quot;eventPayloadVersion&quot;:&quot;v1&quot;,&quot;runtimeContext&quot;:&quot;LAX&quot;,&quot;scriptVersion&quot;:&quot;0210&quot;,&quot;type&quot;:&quot;CUSTOM&quot;,&quot;apiClientId&quot;:&quot;shopify-pixel&quot;,&quot;purposes&quot;:[&quot;ANALYTICS&quot;,&quot;MARKETING&quot;],&quot;name&quot;:null,&quot;__typename&quot;:&quot;WebPixelConfiguration&quot;}],&quot;webPixelManagerVersion&quot;:&quot;cf908aa8w6a914e0fp35e0eae0mbbffc440&quot;,&quot;linkToArriveApp&quot;:true,&quot;sameBillingAndShippingAddress&quot;:true,&quot;requireMatchingShippingAndBilling&quot;:false,&quot;prefetchShippingRatesEnabled&quot;:true,&quot;captureAtFulfillmentEnabled&quot;:false,&quot;developmentShop&quot;:false,&quot;customerAccountDomain&quot;:&quot;shopify.com&quot;,&quot;checkoutPublicAccessToken&quot;:&quot;NmY1NWY4Yzc1NTc3YzEwNjNkODQ4OWM5NGQ5YWIxMjI6\n&quot;,&quot;asyncDeliveryPromiseExperienceEnabled&quot;:false,&quot;paymentMethodAutoSelectionDisabled&quot;:false,&quot;__typename&quot;:&quot;CheckoutShopConfig&quot;},&quot;checkoutProfile&quot;:{&quot;id&quot;:&quot;gid://shopify/CheckoutProfile/8519746&quot;,&quot;activatedExtensions&quot;:[{&quot;id&quot;:&quot;gid://shopify/ActivatedUiExtension/75724062786&quot;,&quot;publicIdentifier&quot;:&quot;01HE0N4DWMQ2P6MYYZBC4HJBJR&quot;,&quot;settings&quot;:&quot;{\&quot;position\&quot;:\&quot;WALLETS1\&quot;}&quot;,&quot;behaviors&quot;:{&quot;alwaysReveal&quot;:false,&quot;blockProgress&quot;:false,&quot;showInExpressCheckout&quot;:false,&quot;__typename&quot;:&quot;ActivatedUiExtensionBehaviors&quot;},&quot;apiTokens&quot;:{&quot;storefrontApi&quot;:{&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzaG9waWZ5Iiwic3ViIjo1MzM1NjcyNDIyNSwianRpIjoiMTMxOGQ3OGMtNDFjYy00NDA1LTgwMDItODNhZWIyYjNkYTcyIiwiaWF0IjoxNzI2Mzg5ODcxLCJleHAiOjE3MjYzOTM0NzEsImNpZCI6NTgwMTExLCJzaWQiOjEzMzQzODMxfQ.FUoRep-MPP8qgcD8V1zImtLaAbI8abZBYW6Y61jBNG4&quot;,&quot;expiresAt&quot;:&quot;2024-09-15T09:44:31Z&quot;,&quot;__typename&quot;:&quot;CheckoutExtensionStorefrontApiToken&quot;},&quot;__typename&quot;:&quot;CheckoutExtensionApiTokens&quot;},&quot;targets&quot;:[{&quot;publicIdentifier&quot;:&quot;01HY1MJFX6DMQ927ZEDG5BCA5R&quot;,&quot;target&quot;:&quot;Checkout::Dynamic::Render&quot;,&quot;placementReference&quot;:&quot;ORDER_SUMMARY2&quot;,&quot;position&quot;:0,&quot;extensionSkeletons&quot;:{&quot;mobile&quot;:{&quot;height&quot;:98,&quot;__typename&quot;:&quot;SkeletonData&quot;},&quot;desktop&quot;:{&quot;height&quot;:98,&quot;__typename&quot;:&quot;SkeletonData&quot;},&quot;__typename&quot;:&quot;ExtensionSkeleton&quot;},&quot;__typename&quot;:&quot;ExtensionTarget&quot;}],&quot;extension&quot;:{&quot;approvalScopes&quot;:[{&quot;handle&quot;:&quot;read_checkout_external_data&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_address&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_personal_data&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;}],&quot;capabilities&quot;:{&quot;apiAccess&quot;:true,&quot;networkAccess&quot;:true,&quot;blockProgress&quot;:false,&quot;collectBuyerConsent&quot;:{&quot;smsMarketing&quot;:false,&quot;customerPrivacy&quot;:false,&quot;__typename&quot;:&quot;CollectBuyerConsentCapability&quot;},&quot;iframe&quot;:{&quot;sources&quot;:[],&quot;__typename&quot;:&quot;IframeCapability&quot;},&quot;__typename&quot;:&quot;Capabilities&quot;},&quot;apiVersion&quot;:&quot;2024-01&quot;,&quot;appId&quot;:&quot;gid://shopify/App/53356724225&quot;,&quot;appName&quot;:&quot;Checkout Builder&quot;,&quot;extensionLocale&quot;:&quot;en&quot;,&quot;extensionPoints&quot;:[&quot;Checkout::Dynamic::Render&quot;,&quot;Checkout::ShippingMethodDetails::RenderAfter&quot;,&quot;purchase.checkout.footer.render-after&quot;,&quot;purchase.checkout.header.render-after&quot;,&quot;Checkout::Actions::RenderBefore&quot;,&quot;Checkout::ThankYou::Dynamic::Render&quot;,&quot;Checkout::OrderStatus::Dynamic::Render&quot;],&quot;name&quot;:&quot;Custom Sections&quot;,&quot;registrationUuid&quot;:&quot;72e1c5db-eaae-410d-9aec-95a0da696b72&quot;,&quot;scriptUrl&quot;:&quot;https://extensions.shopifycdn.com/partners-extensions-scripts-bucket/ui_extension/handle/custom-sections/version/checkout-builder-36/2c47c9da-3011-460e-b789-c43a1889ab48/d93f425917c6669fd8fd5843b6e54661.js&quot;,&quot;translations&quot;:&quot;{\&quot;welcome\&quot;:\&quot;Welcome to the {{target}} extension!\&quot;}&quot;,&quot;uuid&quot;:&quot;2c47c9da-3011-460e-b789-c43a1889ab48&quot;,&quot;version&quot;:&quot;checkout-builder-36&quot;,&quot;__typename&quot;:&quot;UiExtension&quot;},&quot;__typename&quot;:&quot;ActivatedUiExtension&quot;},{&quot;id&quot;:&quot;gid://shopify/ActivatedUiExtension/75724095554&quot;,&quot;publicIdentifier&quot;:&quot;01HE0PMSB81W9P58FCW05C8BSH&quot;,&quot;settings&quot;:&quot;null&quot;,&quot;behaviors&quot;:{&quot;alwaysReveal&quot;:false,&quot;blockProgress&quot;:false,&quot;showInExpressCheckout&quot;:false,&quot;__typename&quot;:&quot;ActivatedUiExtensionBehaviors&quot;},&quot;apiTokens&quot;:{&quot;storefrontApi&quot;:{&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzaG9waWZ5Iiwic3ViIjo2MzczMTEzODU2MSwianRpIjoiYTU4M2QyNjgtNzE0Ny00NTIxLWFmMjctZmE2ODE4YTBiNTU1IiwiaWF0IjoxNzI2Mzg5ODcxLCJleHAiOjE3MjYzOTM0NzEsImNpZCI6NTgwMTExLCJzaWQiOjEzMzQzODMxfQ.ugbNUIhm9kCM40JYXDf2yUUBg7h0rR0OHgP192eTdCA&quot;,&quot;expiresAt&quot;:&quot;2024-09-15T09:44:31Z&quot;,&quot;__typename&quot;:&quot;CheckoutExtensionStorefrontApiToken&quot;},&quot;__typename&quot;:&quot;CheckoutExtensionApiTokens&quot;},&quot;targets&quot;:[{&quot;publicIdentifier&quot;:&quot;01HY1MJFYSEBJT68AVF9WTMV8K&quot;,&quot;target&quot;:&quot;Checkout::CartLines::RenderAfter&quot;,&quot;placementReference&quot;:null,&quot;position&quot;:0,&quot;extensionSkeletons&quot;:{&quot;mobile&quot;:{&quot;height&quot;:0,&quot;__typename&quot;:&quot;SkeletonData&quot;},&quot;desktop&quot;:{&quot;height&quot;:0,&quot;__typename&quot;:&quot;SkeletonData&quot;},&quot;__typename&quot;:&quot;ExtensionSkeleton&quot;},&quot;__typename&quot;:&quot;ExtensionTarget&quot;}],&quot;extension&quot;:{&quot;approvalScopes&quot;:[{&quot;handle&quot;:&quot;read_customer_address&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_email&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_name&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_personal_data&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_phone&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;}],&quot;capabilities&quot;:{&quot;apiAccess&quot;:true,&quot;networkAccess&quot;:false,&quot;blockProgress&quot;:false,&quot;collectBuyerConsent&quot;:{&quot;smsMarketing&quot;:false,&quot;customerPrivacy&quot;:false,&quot;__typename&quot;:&quot;CollectBuyerConsentCapability&quot;},&quot;iframe&quot;:{&quot;sources&quot;:[],&quot;__typename&quot;:&quot;IframeCapability&quot;},&quot;__typename&quot;:&quot;Capabilities&quot;},&quot;apiVersion&quot;:&quot;2023-10&quot;,&quot;appId&quot;:&quot;gid://shopify/App/63731138561&quot;,&quot;appName&quot;:&quot;nrmlneeds&quot;,&quot;extensionLocale&quot;:&quot;en&quot;,&quot;extensionPoints&quot;:[&quot;Checkout::CartLines::RenderAfter&quot;],&quot;name&quot;:&quot;final-sale-banner&quot;,&quot;registrationUuid&quot;:&quot;8de2f754-986d-4685-a923-024b097524b3&quot;,&quot;scriptUrl&quot;:&quot;https://extensions.shopifycdn.com/partners-extensions-scripts-bucket/ui_extension/30859755521/version/nrmlneeds-5.js&quot;,&quot;translations&quot;:&quot;{\&quot;welcome\&quot;:\&quot;Welcome to the {{target}} extension!\&quot;}&quot;,&quot;uuid&quot;:&quot;368b5249-aa09-4605-bab5-c25a9f5b1a35&quot;,&quot;version&quot;:&quot;nrmlneeds-5&quot;,&quot;__typename&quot;:&quot;UiExtension&quot;},&quot;__typename&quot;:&quot;ActivatedUiExtension&quot;},{&quot;id&quot;:&quot;gid://shopify/ActivatedUiExtension/75724128322&quot;,&quot;publicIdentifier&quot;:&quot;01HE0NS738A96XPADC41N4HC16&quot;,&quot;settings&quot;:&quot;{\&quot;position\&quot;:\&quot;INFORMATION1\&quot;}&quot;,&quot;behaviors&quot;:{&quot;alwaysReveal&quot;:false,&quot;blockProgress&quot;:false,&quot;showInExpressCheckout&quot;:true,&quot;__typename&quot;:&quot;ActivatedUiExtensionBehaviors&quot;},&quot;apiTokens&quot;:{&quot;storefrontApi&quot;:{&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzaG9waWZ5Iiwic3ViIjo1MzM1NjcyNDIyNSwianRpIjoiOTQyZmFiYjctNGZjZi00ZTllLWJmMDMtOWRlN2IyYjdlNDE5IiwiaWF0IjoxNzI2Mzg5ODcxLCJleHAiOjE3MjYzOTM0NzEsImNpZCI6NTgwMTExLCJzaWQiOjEzMzQzODMxfQ.hUdmPiFaT93pHHkNsQYed2PjQ0LtEUkSkwqs4A8dto8&quot;,&quot;expiresAt&quot;:&quot;2024-09-15T09:44:31Z&quot;,&quot;__typename&quot;:&quot;CheckoutExtensionStorefrontApiToken&quot;},&quot;__typename&quot;:&quot;CheckoutExtensionApiTokens&quot;},&quot;targets&quot;:[{&quot;publicIdentifier&quot;:&quot;01HY1MJG066JFDPSW7ADPDRWYA&quot;,&quot;target&quot;:&quot;Checkout::Dynamic::Render&quot;,&quot;placementReference&quot;:&quot;ORDER_SUMMARY3&quot;,&quot;position&quot;:0,&quot;extensionSkeletons&quot;:{&quot;mobile&quot;:{&quot;height&quot;:382,&quot;__typename&quot;:&quot;SkeletonData&quot;},&quot;desktop&quot;:{&quot;height&quot;:0,&quot;__typename&quot;:&quot;SkeletonData&quot;},&quot;__typename&quot;:&quot;ExtensionSkeleton&quot;},&quot;__typename&quot;:&quot;ExtensionTarget&quot;}],&quot;extension&quot;:{&quot;approvalScopes&quot;:[{&quot;handle&quot;:&quot;read_checkout_external_data&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_address&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_personal_data&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;}],&quot;capabilities&quot;:{&quot;apiAccess&quot;:true,&quot;networkAccess&quot;:true,&quot;blockProgress&quot;:false,&quot;collectBuyerConsent&quot;:{&quot;smsMarketing&quot;:false,&quot;customerPrivacy&quot;:false,&quot;__typename&quot;:&quot;CollectBuyerConsentCapability&quot;},&quot;iframe&quot;:{&quot;sources&quot;:[],&quot;__typename&quot;:&quot;IframeCapability&quot;},&quot;__typename&quot;:&quot;Capabilities&quot;},&quot;apiVersion&quot;:&quot;2023-10&quot;,&quot;appId&quot;:&quot;gid://shopify/App/53356724225&quot;,&quot;appName&quot;:&quot;Checkout Builder&quot;,&quot;extensionLocale&quot;:&quot;en&quot;,&quot;extensionPoints&quot;:[&quot;Checkout::Dynamic::Render&quot;],&quot;name&quot;:&quot;Upsell&quot;,&quot;registrationUuid&quot;:&quot;f78fe021-337e-4d66-82e1-ba6c232fec65&quot;,&quot;scriptUrl&quot;:&quot;https://extensions.shopifycdn.com/partners-extensions-scripts-bucket/ui_extension/handle/upsell/version/checkout-builder-36/e4eeadf4-b088-4d98-b440-8376f48505c6/1f75145813902345e772fdd3785b29b0.js&quot;,&quot;translations&quot;:&quot;{\&quot;welcome\&quot;:\&quot;Welcome to the {{target}} extension!\&quot;}&quot;,&quot;uuid&quot;:&quot;e4eeadf4-b088-4d98-b440-8376f48505c6&quot;,&quot;version&quot;:&quot;checkout-builder-36&quot;,&quot;__typename&quot;:&quot;UiExtension&quot;},&quot;__typename&quot;:&quot;ActivatedUiExtension&quot;},{&quot;id&quot;:&quot;gid://shopify/ActivatedUiExtension/75814207554&quot;,&quot;publicIdentifier&quot;:&quot;01HWWMTW1VXKRB8MB1942APKEA&quot;,&quot;settings&quot;:&quot;{\&quot;disclaimerTextSetting\&quot;:null,\&quot;disclaimerVisibility\&quot;:null}&quot;,&quot;behaviors&quot;:{&quot;alwaysReveal&quot;:false,&quot;blockProgress&quot;:false,&quot;showInExpressCheckout&quot;:true,&quot;__typename&quot;:&quot;ActivatedUiExtensionBehaviors&quot;},&quot;apiTokens&quot;:{&quot;storefrontApi&quot;:{&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzaG9waWZ5Iiwic3ViIjo0MTk2NDE5LCJqdGkiOiI0MmQyMWUyOC1mM2Q2LTRiYWYtOTUzZS1jOTQ3ZjEyMzY3NDMiLCJpYXQiOjE3MjYzODk4NzEsImV4cCI6MTcyNjM5MzQ3MSwiY2lkIjo1ODAxMTEsInNpZCI6MTMzNDM4MzF9.A7n4EWuVeeHrzU7fA5SkG8FxzibXd5gua5BVaZP0Jmw&quot;,&quot;expiresAt&quot;:&quot;2024-09-15T09:44:31Z&quot;,&quot;__typename&quot;:&quot;CheckoutExtensionStorefrontApiToken&quot;},&quot;__typename&quot;:&quot;CheckoutExtensionApiTokens&quot;},&quot;targets&quot;:[{&quot;publicIdentifier&quot;:&quot;01HY1MN0FW9FRD03G8B438R4DY&quot;,&quot;target&quot;:&quot;Checkout::Dynamic::Render&quot;,&quot;placementReference&quot;:&quot;DELIVERY1&quot;,&quot;position&quot;:0,&quot;extensionSkeletons&quot;:{&quot;mobile&quot;:{&quot;height&quot;:51,&quot;__typename&quot;:&quot;SkeletonData&quot;},&quot;desktop&quot;:{&quot;height&quot;:51,&quot;__typename&quot;:&quot;SkeletonData&quot;},&quot;__typename&quot;:&quot;ExtensionSkeleton&quot;},&quot;__typename&quot;:&quot;ExtensionTarget&quot;}],&quot;extension&quot;:{&quot;approvalScopes&quot;:[{&quot;handle&quot;:&quot;read_checkout_external_data&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_address&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_email&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_name&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_personal_data&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;},{&quot;handle&quot;:&quot;read_customer_phone&quot;,&quot;__typename&quot;:&quot;AccessScope&quot;}],&quot;capabilities&quot;:{&quot;apiAccess&quot;:true,&quot;networkAccess&quot;:true,&quot;blockProgress&quot;:false,&quot;collectBuyerConsent&quot;:{&quot;smsMarketing&quot;:false,&quot;customerPrivacy&quot;:false,&quot;__typename&quot;:&quot;CollectBuyerConsentCapability&quot;},&quot;iframe&quot;:{&quot;sources&quot;:[],&quot;__typename&quot;:&quot;IframeCapability&quot;},&quot;__typename&quot;:&quot;Capabilities&quot;},&quot;apiVersion&quot;:&quot;2023-04&quot;,&quot;appId&quot;:&quot;gid://shopify/App/4196419&quot;,&quot;appName&quot;:&quot;Guide&quot;,&quot;extensionLocale&quot;:&quot;en&quot;,&quot;extensionPoints&quot;:[&quot;Checkout::Dynamic::Render&quot;],&quot;name&quot;:&quot;Guide Shipping Protection Widget&quot;,&quot;registrationUuid&quot;:&quot;14958e0d-1d96-48c9-89a3-3e7bcd7c4b60&quot;,&quot;scriptUrl&quot;:&quot;https://extensions.shopifycdn.com/partners-extensions-scripts-bucket/checkout_ui_extension/28336521217/version/guide-76.js&quot;,&quot;translations&quot;:&quot;{\&quot;welcome\&quot;:\&quot;Welcome to the {{extensionPoint}} extension!\&quot;}&quot;,&quot;uuid&quot;:&quot;ed731669-f3f8-4eab-b6ed-736306af331f&quot;,&quot;version&quot;:&quot;guide-76&quot;,&quot;__typename&quot;:&quot;UiExtension&quot;},&quot;__typename&quot;:&quot;ActivatedUiExtension&quot;}],&quot;__typename&quot;:&quot;CheckoutProfile&quot;},&quot;globalCheckoutUiExtensions&quot;:[],&quot;cardsinkUrl&quot;:&quot;https://deposit.us.shopifycs.com/sessions&quot;,&quot;extensionsAssetsPath&quot;:&quot;https://extensions.shopifycdn.com/shopifycloud/checkout-web/assets/&quot;},&quot;4cb809f1e9288f63c279682d0c998d796b4242b2ea320670e95c42b87f58fe9a{\&quot;checkpointData\&quot;:null,\&quot;queueToken\&quot;:null}&quot;:{&quot;session&quot;:{&quot;context&quot;:{&quot;session&quot;:[],&quot;policies&quot;:{&quot;fees&quot;:[],&quot;payment&quot;:[],&quot;buyerIdentity&quot;:[],&quot;tax&quot;:[],&quot;duty&quot;:[],&quot;landedCostDetails&quot;:[],&quot;discount&quot;:[],&quot;merchandise&quot;:[],&quot;tip&quot;:[],&quot;delivery&quot;:[],&quot;__typename&quot;:&quot;PolicyFactSet&quot;},&quot;__typename&quot;:&quot;NegotiationContext&quot;},&quot;sessionType&quot;:&quot;CART_API&quot;,&quot;sourceId&quot;:&quot;Z2NwLXVzLWVhc3QxOjAxSjdURUswUldOWEtIM0pZTlZGMFdZQzFI&quot;,&quot;sourceVersion&quot;:null,&quot;checkoutSessionIdentifier&quot;:&quot;42a3399e14b508b96e24ca67d8787a50&quot;,&quot;storefrontAnalyticsStartedOrderEventId&quot;:null,&quot;cartReturnUrl&quot;:&quot;https://nrml.ca/cart&quot;,&quot;headerLogoUrl&quot;:&quot;https://nrml.ca&quot;,&quot;previewScript&quot;:null,&quot;negotiate&quot;:{&quot;result&quot;:{&quot;checkpointData&quot;:null,&quot;queueToken&quot;:&quot;A3KpRkulRlZB8bBVgNjvJjWU40ZJH6szqw2eFtQwt2VArJhdgoKGlPzRAFsxOwfD8HKYzDMTLNp2LwwnpP_Ev3kqYmBLgY396bXazNHqd58KC_RvJw==&quot;,&quot;buyerProposal&quot;:{&quot;buyerIdentity&quot;:{&quot;email&quot;:null,&quot;phone&quot;:null,&quot;contactInfoV2&quot;:null,&quot;customer&quot;:{&quot;__typename&quot;:&quot;GuestProfile&quot;},&quot;__typename&quot;:&quot;FilledBuyerIdentityTerms&quot;},&quot;merchandiseDiscount&quot;:{&quot;__typename&quot;:&quot;FilledDiscountTerms&quot;,&quot;acceptUnexpectedDiscounts&quot;:true,&quot;lines&quot;:[]},&quot;deliveryDiscount&quot;:{&quot;__typename&quot;:&quot;FilledDiscountTerms&quot;,&quot;acceptUnexpectedDiscounts&quot;:true,&quot;lines&quot;:[]},&quot;delivery&quot;:{&quot;__typename&quot;:&quot;FilledDeliveryTerms&quot;,&quot;intermediateRates&quot;:false,&quot;progressiveRatesEstimatedTimeUntilCompletion&quot;:0,&quot;shippingRatesStatusToken&quot;:&quot;&quot;,&quot;deliveryLines&quot;:[{&quot;destinationAddress&quot;:{&quot;name&quot;:&quot;&quot;,&quot;firstName&quot;:null,&quot;lastName&quot;:&quot;&quot;,&quot;company&quot;:null,&quot;address1&quot;:&quot;&quot;,&quot;address2&quot;:null,&quot;city&quot;:&quot;&quot;,&quot;countryCode&quot;:&quot;CA&quot;,&quot;zoneCode&quot;:&quot;QC&quot;,&quot;postalCode&quot;:&quot;J4W3J2&quot;,&quot;phone&quot;:null,&quot;oneTimeUse&quot;:false,&quot;coordinates&quot;:null,&quot;__typename&quot;:&quot;PartialStreetAddress&quot;},&quot;targetMerchandise&quot;:{&quot;linesV2&quot;:[{&quot;stableId&quot;:&quot;1a7b42bd-22b2-47c9-97ac-5100ec423525&quot;,&quot;quantity&quot;:{&quot;items&quot;:{&quot;value&quot;:1,&quot;__typename&quot;:&quot;IntValueConstraint&quot;},&quot;__typename&quot;:&quot;ProposalMerchandiseQuantityByItem&quot;},&quot;merchandise&quot;:{&quot;__typename&quot;:&quot;ProductVariantMerchandise&quot;,&quot;requiresShipping&quot;:true},&quot;totalAmount&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;__typename&quot;:&quot;MerchandiseLine&quot;}],&quot;__typename&quot;:&quot;FilledMerchandiseLineTargetCollection&quot;},&quot;groupType&quot;:&quot;ONE_TIME_PURCHASE&quot;,&quot;deliveryMethodTypes&quot;:[&quot;SHIPPING&quot;],&quot;selectedDeliveryStrategy&quot;:{&quot;handle&quot;:&quot;42a3399e14b508b96e24ca67d8787a50-a05a84aaa60c4b15734f59a296014fc0&quot;,&quot;__typename&quot;:&quot;DeliveryStrategyReference&quot;},&quot;availableDeliveryStrategies&quot;:[],&quot;__typename&quot;:&quot;DeliveryLine&quot;}]},&quot;merchandise&quot;:{&quot;taxesIncluded&quot;:false,&quot;merchandiseLines&quot;:[{&quot;stableId&quot;:&quot;1a7b42bd-22b2-47c9-97ac-5100ec423525&quot;,&quot;merchandise&quot;:{&quot;__typename&quot;:&quot;ProductVariantMerchandise&quot;,&quot;id&quot;:&quot;gid://shopify/ProductVariantMerchandise/41622033432642&quot;,&quot;digest&quot;:&quot;b678c160423f3848d99633cb0f36bbf2&quot;,&quot;variantId&quot;:&quot;gid://shopify/ProductVariant/41622033432642&quot;,&quot;title&quot;:&quot;AIR FOAMPOSITE ONE DARK NEON ROYAL&quot;,&quot;untranslatedTitle&quot;:&quot;AIR FOAMPOSITE ONE DARK NEON ROYAL&quot;,&quot;subtitle&quot;:&quot;10 / BLUE / FQ8181-511&quot;,&quot;untranslatedSubtitle&quot;:&quot;10 / BLUE / FQ8181-511&quot;,&quot;product&quot;:{&quot;id&quot;:&quot;gid://shopify/Product/7341298974786&quot;,&quot;vendor&quot;:&quot;NIKE&quot;,&quot;productType&quot;:&quot;MENS FOOTWEAR&quot;,&quot;__typename&quot;:&quot;Product&quot;},&quot;productUrl&quot;:&quot;/products/air-foamposite-one-dark-neon-royal&quot;,&quot;image&quot;:{&quot;altText&quot;:null,&quot;one&quot;:&quot;https://cdn.shopify.com/s/files/1/1334/3831/files/royalfoa_64x64.jpg?v=1725034489&quot;,&quot;two&quot;:&quot;https://cdn.shopify.com/s/files/1/1334/3831/files/royalfoa_128x128.jpg?v=1725034489&quot;,&quot;four&quot;:&quot;https://cdn.shopify.com/s/files/1/1334/3831/files/royalfoa_256x256.jpg?v=1725034489&quot;,&quot;__typename&quot;:&quot;Image&quot;},&quot;properties&quot;:[],&quot;requiresShipping&quot;:true,&quot;options&quot;:[{&quot;name&quot;:&quot;Size&quot;,&quot;value&quot;:&quot;10&quot;,&quot;__typename&quot;:&quot;ProductVariantOption&quot;},{&quot;name&quot;:&quot;Color&quot;,&quot;value&quot;:&quot;BLUE&quot;,&quot;__typename&quot;:&quot;ProductVariantOption&quot;},{&quot;name&quot;:&quot;Style&quot;,&quot;value&quot;:&quot;FQ8181-511&quot;,&quot;__typename&quot;:&quot;ProductVariantOption&quot;}],&quot;sellingPlan&quot;:null,&quot;giftCard&quot;:false},&quot;quantity&quot;:{&quot;items&quot;:{&quot;value&quot;:1,&quot;__typename&quot;:&quot;IntValueConstraint&quot;},&quot;__typename&quot;:&quot;ProposalMerchandiseQuantityByItem&quot;},&quot;totalAmount&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;recurringTotal&quot;:null,&quot;lineAllocations&quot;:[{&quot;stableId&quot;:&quot;2bcac8c218889d225661622470cf5ae6&quot;,&quot;quantity&quot;:1,&quot;totalAmountBeforeReductions&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;totalAmountAfterDiscounts&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;totalAmountAfterLineDiscounts&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;checkoutPriceAfterDiscounts&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;checkoutPriceAfterLineDiscounts&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;checkoutPriceBeforeReductions&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;unitPrice&quot;:null,&quot;allocations&quot;:[],&quot;__typename&quot;:&quot;LineAllocation&quot;}],&quot;lineComponentsSource&quot;:null,&quot;lineComponents&quot;:[],&quot;legacyFee&quot;:false,&quot;__typename&quot;:&quot;MerchandiseLine&quot;}],&quot;__typename&quot;:&quot;FilledMerchandiseTerms&quot;},&quot;runningTotal&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;330.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;total&quot;:{&quot;__typename&quot;:&quot;AnyConstraint&quot;},&quot;checkoutTotalBeforeTaxesAndShipping&quot;:null,&quot;checkoutTotalTaxes&quot;:null,&quot;checkoutTotal&quot;:{&quot;__typename&quot;:&quot;AnyConstraint&quot;},&quot;deferredTotal&quot;:null,&quot;hasOnlyDeferredShipping&quot;:false,&quot;subtotalBeforeTaxesAndShipping&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;legacySubtotalBeforeTaxesShippingAndFees&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;legacyAggregatedMerchandiseTermsAsFees&quot;:[],&quot;attribution&quot;:{&quot;attributions&quot;:[],&quot;__typename&quot;:&quot;Attribution&quot;},&quot;saleAttributions&quot;:{&quot;attributions&quot;:[],&quot;__typename&quot;:&quot;SaleAttributions&quot;},&quot;__typename&quot;:&quot;Proposal&quot;},&quot;sellerProposal&quot;:{&quot;merchandiseDiscount&quot;:{&quot;__typename&quot;:&quot;FilledDiscountTerms&quot;,&quot;acceptUnexpectedDiscounts&quot;:true,&quot;lines&quot;:[]},&quot;deliveryDiscount&quot;:{&quot;__typename&quot;:&quot;FilledDiscountTerms&quot;,&quot;acceptUnexpectedDiscounts&quot;:true,&quot;lines&quot;:[]},&quot;deliveryExpectations&quot;:{&quot;__typename&quot;:&quot;PendingTerms&quot;,&quot;pollDelay&quot;:500,&quot;taskId&quot;:&quot;delivery-policy-Z2NwLXVzLWVhc3QxOjAxSjdURUswUldOWEtIM0pZTlZGMFdZQzFI&quot;},&quot;availableRedeemables&quot;:{&quot;availableRedeemables&quot;:[],&quot;__typename&quot;:&quot;AvailableRedeemables&quot;},&quot;availableDeliveryAddresses&quot;:[],&quot;mustSelectProvidedAddress&quot;:false,&quot;delivery&quot;:{&quot;pollDelay&quot;:500,&quot;taskId&quot;:&quot;delivery-policy-Z2NwLXVzLWVhc3QxOjAxSjdURUswUldOWEtIM0pZTlZGMFdZQzFI&quot;,&quot;__typename&quot;:&quot;PendingTerms&quot;},&quot;payment&quot;:{&quot;availablePaymentLines&quot;:[{&quot;placements&quot;:[&quot;PAYMENT_METHOD&quot;],&quot;paymentMethod&quot;:{&quot;__typename&quot;:&quot;AnyGiftCardPaymentMethod&quot;},&quot;__typename&quot;:&quot;AvailablePaymentLine&quot;},{&quot;placements&quot;:[&quot;PAYMENT_METHOD&quot;],&quot;paymentMethod&quot;:{&quot;paymentMethodIdentifier&quot;:&quot;c75dc74591849abebee2f2ef70dc1bf8&quot;,&quot;name&quot;:&quot;shopify_payments&quot;,&quot;brands&quot;:[&quot;VISA&quot;,&quot;MASTERCARD&quot;,&quot;AMEX&quot;,&quot;DISCOVER&quot;,&quot;DINERS_CLUB&quot;,&quot;JCB&quot;,&quot;UNIONPAY&quot;],&quot;paymentBrands&quot;:[&quot;VISA&quot;,&quot;MASTERCARD&quot;,&quot;AMEX&quot;,&quot;DISCOVER&quot;,&quot;DINERS_CLUB&quot;,&quot;INTERAC&quot;,&quot;JCB&quot;,&quot;UNIONPAY&quot;],&quot;orderingIndex&quot;:2,&quot;displayName&quot;:null,&quot;extensibilityDisplayName&quot;:&quot;Shopify Payments&quot;,&quot;availablePresentmentCurrencies&quot;:[&quot;CAD&quot;],&quot;paymentMethodUiExtension&quot;:null,&quot;checkoutHostedFields&quot;:null,&quot;alternative&quot;:false,&quot;__typename&quot;:&quot;PaymentProvider&quot;},&quot;__typename&quot;:&quot;AvailablePaymentLine&quot;},{&quot;placements&quot;:[&quot;PAYMENT_METHOD&quot;,&quot;ACCELERATED_CHECKOUT&quot;],&quot;paymentMethod&quot;:{&quot;__typename&quot;:&quot;PaypalWalletConfig&quot;,&quot;name&quot;:&quot;PAYPAL_EXPRESS&quot;,&quot;clientId&quot;:null,&quot;merchantId&quot;:&quot;PGH3RGZFP35LS&quot;,&quot;venmoEnabled&quot;:false,&quot;payflow&quot;:false,&quot;paymentIntent&quot;:&quot;AUTHORIZE&quot;,&quot;paymentMethodIdentifier&quot;:&quot;608e8b87fc81980aac846006876887a5&quot;,&quot;orderingIndex&quot;:3},&quot;__typename&quot;:&quot;AvailablePaymentLine&quot;},{&quot;placements&quot;:[&quot;ACCELERATED_CHECKOUT&quot;],&quot;paymentMethod&quot;:{&quot;__typename&quot;:&quot;ApplePayWalletConfig&quot;,&quot;name&quot;:&quot;APPLE_PAY&quot;,&quot;supportedNetworks&quot;:[&quot;visa&quot;,&quot;masterCard&quot;,&quot;amex&quot;,&quot;discover&quot;,&quot;interac&quot;,&quot;jcb&quot;],&quot;walletAuthenticationToken&quot;:&quot;eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMzODQifQ.eyJjaGVja291dF90b2tlbiI6IjQyYTMzOTllMTRiNTA4Yjk2ZTI0Y2E2N2Q4Nzg3YTUwIiwib3JkZXJfdHlwZV9pZCI6Im9yZGVyLmNvbS5zaG9waWZ5LnNob3AiLCJpc3MiOiJzaG9waWZ5IiwiaWF0IjoxNzI2MzkwODMzLCJleHAiOjE3NDE5NDI4MzN9.K3b3LpTiU4KH7-PNrFS3Q99MrmjPfAJUwvb-2OOD0Ugpu8RATy-5kJRW56AdAhka&quot;,&quot;walletOrderTypeIdentifier&quot;:&quot;order.com.shopify.shop&quot;,&quot;walletServiceUrl&quot;:&quot;https://wallet-order-service.shopifyapps.com&quot;,&quot;paymentMethodIdentifier&quot;:&quot;910594ffd7ebd0d23aaa34dc6bbf0b3a&quot;,&quot;orderingIndex&quot;:4},&quot;__typename&quot;:&quot;AvailablePaymentLine&quot;},{&quot;placements&quot;:[&quot;ACCELERATED_CHECKOUT&quot;],&quot;paymentMethod&quot;:{&quot;__typename&quot;:&quot;GooglePayWalletConfig&quot;,&quot;name&quot;:&quot;GOOGLE_PAY&quot;,&quot;allowedAuthMethods&quot;:[&quot;PAN_ONLY&quot;,&quot;CRYPTOGRAM_3DS&quot;],&quot;allowedCardNetworks&quot;:[&quot;VISA&quot;,&quot;MASTERCARD&quot;,&quot;AMEX&quot;,&quot;DISCOVER&quot;,&quot;JCB&quot;],&quot;gateway&quot;:&quot;shopify&quot;,&quot;gatewayMerchantId&quot;:&quot;13343831&quot;,&quot;merchantId&quot;:&quot;16708973830884969730&quot;,&quot;authJwt&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJtZXJjaGFudElkIjoiMTY3MDg5NzM4MzA4ODQ5Njk3MzAiLCJtZXJjaGFudE9yaWdpbiI6Im5ybWwuY2EiLCJpYXQiOjE3MjYzOTA4MzN9.pvt5kzuuZBa4kIe5GQam8oOdS5tor4H5wxc15ZAc36VLpsHCgexg1HMbjQerYs7k4BgEnIibaBtaXCvOfRzr8w&quot;,&quot;environment&quot;:&quot;PRODUCTION&quot;,&quot;paymentMethodIdentifier&quot;:&quot;be708f1becfce855b01bd774c6256f98&quot;,&quot;orderingIndex&quot;:5},&quot;__typename&quot;:&quot;AvailablePaymentLine&quot;},{&quot;placements&quot;:[&quot;PAYMENT_METHOD&quot;,&quot;ACCELERATED_CHECKOUT&quot;],&quot;paymentMethod&quot;:{&quot;__typename&quot;:&quot;ShopPayWalletConfig&quot;,&quot;name&quot;:&quot;SHOP_PAY&quot;,&quot;storefrontUrl&quot;:&quot;https://nrml.ca/&quot;,&quot;paymentMethodIdentifier&quot;:&quot;a20fab24d015915866ecaba1930126e1&quot;,&quot;orderingIndex&quot;:6},&quot;__typename&quot;:&quot;AvailablePaymentLine&quot;},{&quot;placements&quot;:[&quot;PAYMENT_METHOD&quot;],&quot;paymentMethod&quot;:{&quot;__typename&quot;:&quot;AnyRedeemablePaymentMethod&quot;,&quot;availableRedemptionConfigs&quot;:[{&quot;__typename&quot;:&quot;ShopCashRedemptionConfig&quot;}],&quot;orderingIndex&quot;:7},&quot;__typename&quot;:&quot;AvailablePaymentLine&quot;},{&quot;placements&quot;:[&quot;PAYMENT_METHOD&quot;],&quot;paymentMethod&quot;:{&quot;__typename&quot;:&quot;OffsiteProvider&quot;,&quot;paymentMethodIdentifier&quot;:&quot;6bf795cae4abacf2f6ee66a0b1d1208c&quot;,&quot;name&quot;:&quot;Buy Now, Pay Later with Sezzle&quot;,&quot;paymentBrands&quot;:[&quot;sezzle&quot;],&quot;orderingIndex&quot;:8,&quot;showRedirectionNotice&quot;:true,&quot;availablePresentmentCurrencies&quot;:[&quot;CAD&quot;]},&quot;__typename&quot;:&quot;AvailablePaymentLine&quot;},{&quot;placements&quot;:[&quot;PAYMENT_METHOD&quot;],&quot;paymentMethod&quot;:{&quot;__typename&quot;:&quot;OffsiteProvider&quot;,&quot;paymentMethodIdentifier&quot;:&quot;66aab6562e7f831a22c93659a59688db&quot;,&quot;name&quot;:&quot;Klarna - Flexible payments&quot;,&quot;paymentBrands&quot;:[&quot;klarna&quot;],&quot;orderingIndex&quot;:9,&quot;showRedirectionNotice&quot;:true,&quot;availablePresentmentCurrencies&quot;:[&quot;CAD&quot;]},&quot;__typename&quot;:&quot;AvailablePaymentLine&quot;}],&quot;paymentLines&quot;:[],&quot;billingAddress&quot;:null,&quot;paymentFlexibilityPaymentTermsTemplate&quot;:null,&quot;__typename&quot;:&quot;FilledPaymentTerms&quot;},&quot;poNumber&quot;:null,&quot;merchandise&quot;:{&quot;taxesIncluded&quot;:false,&quot;merchandiseLines&quot;:[{&quot;stableId&quot;:&quot;1a7b42bd-22b2-47c9-97ac-5100ec423525&quot;,&quot;merchandise&quot;:{&quot;__typename&quot;:&quot;ContextualizedProductVariantMerchandise&quot;,&quot;id&quot;:&quot;gid://shopify/ProductVariantMerchandise/41622033432642&quot;,&quot;digest&quot;:&quot;b678c160423f3848d99633cb0f36bbf2&quot;,&quot;variantId&quot;:&quot;gid://shopify/ProductVariant/41622033432642&quot;,&quot;title&quot;:&quot;AIR FOAMPOSITE ONE DARK NEON ROYAL&quot;,&quot;untranslatedTitle&quot;:&quot;AIR FOAMPOSITE ONE DARK NEON ROYAL&quot;,&quot;subtitle&quot;:&quot;10 / BLUE / FQ8181-511&quot;,&quot;untranslatedSubtitle&quot;:&quot;10 / BLUE / FQ8181-511&quot;,&quot;sku&quot;:&quot;197602598698&quot;,&quot;price&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;product&quot;:{&quot;id&quot;:&quot;gid://shopify/Product/7341298974786&quot;,&quot;vendor&quot;:&quot;NIKE&quot;,&quot;productType&quot;:&quot;MENS FOOTWEAR&quot;,&quot;__typename&quot;:&quot;Product&quot;},&quot;productUrl&quot;:&quot;/products/air-foamposite-one-dark-neon-royal&quot;,&quot;image&quot;:{&quot;altText&quot;:null,&quot;one&quot;:&quot;https://cdn.shopify.com/s/files/1/1334/3831/files/royalfoa_64x64.jpg?v=1725034489&quot;,&quot;two&quot;:&quot;https://cdn.shopify.com/s/files/1/1334/3831/files/royalfoa_128x128.jpg?v=1725034489&quot;,&quot;four&quot;:&quot;https://cdn.shopify.com/s/files/1/1334/3831/files/royalfoa_256x256.jpg?v=1725034489&quot;,&quot;__typename&quot;:&quot;Image&quot;},&quot;properties&quot;:[],&quot;requiresShipping&quot;:true,&quot;options&quot;:[{&quot;name&quot;:&quot;Size&quot;,&quot;value&quot;:&quot;10&quot;,&quot;__typename&quot;:&quot;ProductVariantOption&quot;},{&quot;name&quot;:&quot;Color&quot;,&quot;value&quot;:&quot;BLUE&quot;,&quot;__typename&quot;:&quot;ProductVariantOption&quot;},{&quot;name&quot;:&quot;Style&quot;,&quot;value&quot;:&quot;FQ8181-511&quot;,&quot;__typename&quot;:&quot;ProductVariantOption&quot;}],&quot;sellingPlan&quot;:null,&quot;giftCard&quot;:false,&quot;deferredAmount&quot;:{&quot;amount&quot;:&quot;0.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;}},&quot;quantity&quot;:{&quot;items&quot;:{&quot;value&quot;:1,&quot;__typename&quot;:&quot;IntValueConstraint&quot;},&quot;__typename&quot;:&quot;ProposalMerchandiseQuantityByItem&quot;},&quot;totalAmount&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;recurringTotal&quot;:null,&quot;lineAllocations&quot;:[{&quot;stableId&quot;:&quot;2bcac8c218889d225661622470cf5ae6&quot;,&quot;quantity&quot;:1,&quot;totalAmountBeforeReductions&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;totalAmountAfterDiscounts&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;totalAmountAfterLineDiscounts&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;checkoutPriceAfterDiscounts&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;checkoutPriceAfterLineDiscounts&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;checkoutPriceBeforeReductions&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;unitPrice&quot;:null,&quot;allocations&quot;:[{&quot;__typename&quot;:&quot;LineComponentTaxAllocation&quot;}],&quot;__typename&quot;:&quot;LineAllocation&quot;}],&quot;lineComponentsSource&quot;:null,&quot;lineComponents&quot;:[],&quot;legacyFee&quot;:false,&quot;__typename&quot;:&quot;MerchandiseLine&quot;}],&quot;__typename&quot;:&quot;FilledMerchandiseTerms&quot;},&quot;note&quot;:{&quot;customAttributes&quot;:[],&quot;message&quot;:&quot;&quot;,&quot;__typename&quot;:&quot;Note&quot;},&quot;scriptFingerprint&quot;:{&quot;signature&quot;:null,&quot;signatureUuid&quot;:null,&quot;lineItemScriptChanges&quot;:[],&quot;paymentScriptChanges&quot;:[],&quot;shippingScriptChanges&quot;:[],&quot;__typename&quot;:&quot;ScriptFingerprint&quot;},&quot;transformerFingerprintV2&quot;:null,&quot;buyerIdentity&quot;:{&quot;customer&quot;:{&quot;presentmentCurrency&quot;:&quot;CAD&quot;,&quot;countryCode&quot;:&quot;CA&quot;,&quot;market&quot;:{&quot;id&quot;:&quot;gid://shopify/Market/1355120706&quot;,&quot;handle&quot;:&quot;ca&quot;,&quot;__typename&quot;:&quot;Market&quot;},&quot;shippingAddresses&quot;:[{&quot;firstName&quot;:null,&quot;lastName&quot;:&quot;&quot;,&quot;address1&quot;:&quot;&quot;,&quot;address2&quot;:null,&quot;phone&quot;:null,&quot;postalCode&quot;:&quot;J4W3J2&quot;,&quot;city&quot;:&quot;&quot;,&quot;company&quot;:null,&quot;zoneCode&quot;:&quot;QC&quot;,&quot;countryCode&quot;:&quot;CA&quot;,&quot;label&quot;:&quot;&quot;,&quot;__typename&quot;:&quot;StreetAddress&quot;}],&quot;__typename&quot;:&quot;GuestProfile&quot;},&quot;purchasingCompany&quot;:null,&quot;phone&quot;:null,&quot;email&quot;:null,&quot;contactInfoV2&quot;:null,&quot;marketingConsent&quot;:[],&quot;shopPayOptInPhone&quot;:null,&quot;__typename&quot;:&quot;FilledBuyerIdentityTerms&quot;},&quot;checkoutCompletionTarget&quot;:&quot;ORDER&quot;,&quot;recurringTotals&quot;:[],&quot;subtotalBeforeTaxesAndShipping&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;legacySubtotalBeforeTaxesShippingAndFees&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;310.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;legacyAggregatedMerchandiseTermsAsFees&quot;:[],&quot;legacyRepresentProductsAsFees&quot;:false,&quot;totalSavings&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;0.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;runningTotal&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;325.5&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;total&quot;:{&quot;__typename&quot;:&quot;AnyConstraint&quot;},&quot;checkoutTotalBeforeTaxesAndShipping&quot;:null,&quot;checkoutTotalTaxes&quot;:null,&quot;checkoutTotal&quot;:{&quot;__typename&quot;:&quot;AnyConstraint&quot;},&quot;deferredTotal&quot;:null,&quot;hasOnlyDeferredShipping&quot;:false,&quot;subtotalBeforeReductions&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;325.5&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;duty&quot;:{&quot;totalDutyAmount&quot;:null,&quot;totalTaxAndDutyAmount&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;15.5&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;totalAdditionalFeesAmount&quot;:null,&quot;__typename&quot;:&quot;FilledDutyTerms&quot;},&quot;tax&quot;:{&quot;totalTaxAmount&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;15.5&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;totalTaxAndDutyAmount&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;15.5&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;},&quot;totalAmountIncludedInTarget&quot;:null,&quot;exemptions&quot;:[],&quot;__typename&quot;:&quot;FilledTaxTerms&quot;},&quot;tip&quot;:{&quot;tipSuggestions&quot;:[{&quot;__typename&quot;:&quot;TipSuggestion&quot;,&quot;percentage&quot;:0.15,&quot;amount&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;46.5&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;}},{&quot;__typename&quot;:&quot;TipSuggestion&quot;,&quot;percentage&quot;:0.18,&quot;amount&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;55.8&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;}},{&quot;__typename&quot;:&quot;TipSuggestion&quot;,&quot;percentage&quot;:0.2,&quot;amount&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;62.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;}},{&quot;__typename&quot;:&quot;TipSuggestion&quot;,&quot;percentage&quot;:0,&quot;amount&quot;:{&quot;value&quot;:{&quot;amount&quot;:&quot;0.0&quot;,&quot;currencyCode&quot;:&quot;CAD&quot;,&quot;__typename&quot;:&quot;Money&quot;},&quot;__typename&quot;:&quot;MoneyValueConstraint&quot;}}],&quot;terms&quot;:{&quot;tipLines&quot;:[],&quot;__typename&quot;:&quot;FilledTipTerms&quot;},&quot;__typename&quot;:&quot;TipWrapper&quot;},&quot;localizationExtension&quot;:{&quot;fields&quot;:[],&quot;__typename&quot;:&quot;LocalizationExtension&quot;},&quot;landedCostDetails&quot;:{&quot;incotermInformation&quot;:null,&quot;__typename&quot;:&quot;LandedCostDetails&quot;},&quot;dutiesIncluded&quot;:false,&quot;nonNegotiableTerms&quot;:null,&quot;optionalDuties&quot;:{&quot;buyerRefusesDuties&quot;:false,&quot;refuseDutiesPermitted&quot;:false,&quot;__typename&quot;:&quot;OptionalDuties&quot;},&quot;attribution&quot;:{&quot;attributions&quot;:[],&quot;__typename&quot;:&quot;Attribution&quot;},&quot;saleAttributions&quot;:{&quot;attributions&quot;:[],&quot;__typename&quot;:&quot;SaleAttributions&quot;},&quot;managedByMarketsPro&quot;:false,&quot;captcha&quot;:null,&quot;cartCheckoutValidation&quot;:null,&quot;alternativePaymentCurrency&quot;:null,&quot;isShippingRequired&quot;:true,&quot;__typename&quot;:&quot;Proposal&quot;},&quot;__typename&quot;:&quot;NegotiationResultAvailable&quot;},&quot;errors&quot;:[{&quot;code&quot;:&quot;BUYER_IDENTITY_MISSING_CONTACT_METHOD&quot;,&quot;localizedMessage&quot;:&quot;Missing a valid contact method.&quot;,&quot;nonLocalizedMessage&quot;:&quot;Missing a valid contact method.&quot;,&quot;localizedMessageHtml&quot;:&quot;Missing a valid contact method.&quot;,&quot;target&quot;:&quot;$.buyerIdentity&quot;,&quot;__typename&quot;:&quot;UnprocessableTermViolation&quot;},{&quot;code&quot;:&quot;DELIVERY_FIRST_NAME_REQUIRED&quot;,&quot;localizedMessage&quot;:&quot;Enter a first name&quot;,&quot;nonLocalizedMessage&quot;:&quot;Shop configuration specifies that the first name is required in order to continue.&quot;,&quot;localizedMessageHtml&quot;:&quot;Enter a first name&quot;,&quot;target&quot;:&quot;$.delivery.deliveryLines[0]&quot;,&quot;__typename&quot;:&quot;UnprocessableTermViolation&quot;},{&quot;code&quot;:&quot;DELIVERY_LAST_NAME_REQUIRED&quot;,&quot;localizedMessage&quot;:&quot;Enter a last name&quot;,&quot;nonLocalizedMessage&quot;:&quot;A last name is required in order to continue.&quot;,&quot;localizedMessageHtml&quot;:&quot;Enter a last name&quot;,&quot;target&quot;:&quot;$.delivery.deliveryLines[0]&quot;,&quot;__typename&quot;:&quot;UnprocessableTermViolation&quot;},{&quot;code&quot;:&quot;DELIVERY_ADDRESS1_REQUIRED&quot;,&quot;localizedMessage&quot;:&quot;Enter an address&quot;,&quot;nonLocalizedMessage&quot;:&quot;An address is required in order to continue.&quot;,&quot;localizedMessageHtml&quot;:&quot;Enter an address&quot;,&quot;target&quot;:&quot;$.delivery.deliveryLines[0]&quot;,&quot;__typename&quot;:&quot;UnprocessableTermViolation&quot;},{&quot;code&quot;:&quot;DELIVERY_PHONE_NUMBER_REQUIRED&quot;,&quot;localizedMessage&quot;:&quot;Enter a phone number to use this delivery method&quot;,&quot;nonLocalizedMessage&quot;:&quot;Shop configuration specifies that the phone number is required in order to continue.&quot;,&quot;localizedMessageHtml&quot;:&quot;Enter a phone number to use this delivery method&quot;,&quot;target&quot;:&quot;$.delivery.deliveryLines[0]&quot;,&quot;__typename&quot;:&quot;UnprocessableTermViolation&quot;},{&quot;code&quot;:&quot;DELIVERY_CITY_REQUIRED&quot;,&quot;localizedMessage&quot;:&quot;Enter a city&quot;,&quot;nonLocalizedMessage&quot;:&quot;A city is required in order to continue.&quot;,&quot;localizedMessageHtml&quot;:&quot;Enter a city&quot;,&quot;target&quot;:&quot;$.delivery.deliveryLines[0]&quot;,&quot;__typename&quot;:&quot;UnprocessableTermViolation&quot;},{&quot;code&quot;:&quot;TAX_NEW_TAX_MUST_BE_ACCEPTED&quot;,&quot;localizedMessage&quot;:&quot;A new tax line in the seller proposal must be accepted in order to continue.&quot;,&quot;nonLocalizedMessage&quot;:&quot;A new tax line in the seller proposal must be accepted in order to continue.&quot;,&quot;localizedMessageHtml&quot;:&quot;A new tax line in the seller proposal must be accepted in order to continue.&quot;,&quot;target&quot;:&quot;$&quot;,&quot;__typename&quot;:&quot;AcceptNewTermViolation&quot;},{&quot;code&quot;:&quot;PAYMENTS_UNACCEPTABLE_PAYMENT_AMOUNT&quot;,&quot;localizedMessage&quot;:&quot;Your order total has changed. Review and try again.&quot;,&quot;nonLocalizedMessage&quot;:&quot;The sum of proposed payments cannot cover the total amount to be paid.&quot;,&quot;localizedMessageHtml&quot;:&quot;Your order total has changed. Review and try again.&quot;,&quot;target&quot;:&quot;$.payment&quot;,&quot;__typename&quot;:&quot;UnprocessableTermViolation&quot;},{&quot;code&quot;:&quot;WAITING_PENDING_TERMS&quot;,&quot;localizedMessage&quot;:&quot;&quot;,&quot;nonLocalizedMessage&quot;:&quot;Waiting for pending terms to complete.&quot;,&quot;localizedMessageHtml&quot;:null,&quot;__typename&quot;:&quot;PendingTermViolation&quot;}],&quot;__typename&quot;:&quot;NegotiationResultPayload&quot;},&quot;__typename&quot;:&quot;Session&quot;}}}"/><meta name="serialized-graphql-endpoint" content="&quot;https://nrml.ca/checkouts/unstable/graphql&quot;"/><meta name="serialized-shop-pay-config" content="{&quot;authorization&quot;:null,&quot;pre_select_installments&quot;:false,&quot;redirect_source&quot;:null,&quot;callback_token&quot;:&quot;eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaWQ6XC9cL3Nob3BpZnlcL1Nob3BcLzEzMzQzODMxIiwibmJmIjoxNzI2MzkwODMzLCJzZXNzaW9uX3Rva2VuIjoiT1RrNFRuRlRSRW8yVTFCMGNUSk5TRGxqV0cxVVIwVlhWRUY2TWpnelJXeHlaMFZzTjBwUlVTczFXamt5YUZOelRFMUJaVmxhTW01U2FUY3ZhbVl5ZUVKdVdIWnhRblZRT1VGM1pXUmxTMjVIY0Vwb1dsaDNjVGN6V2xKVGJXaHlVM1pLVnlzcmIyVlhPVEU1UTNKSFEwOW9lbXBOU1dKb2MyZG9ZM0JUZUUxYVVETldWa0Z5YTA5dGFVRlZSWGRKWnl0dFZWWm9NWFJUYzFoa1VqTkhORGxFVEhSVGF6TXdiV1p1V2l0SGEyVXdiVTF5TDFOd1ZYbFhhRUptUlVKSlFWazBTeTkyTkZCTU5FVk5TMms1ZDNnM2NuWlJVbGxaVkdGdFpVeExlVGc0Y200MU5tOUxXVkphU0V4YVlXbFFhR05FUjFwdWVYWTNXRmRRTVd3MWNFMHlTblpGVWpKVWN6RlVNQzB0U0V4TFZFVXlNbVpCTTBkR2Iya3lSaTB0ZGpKc2VubDVRbEJTTmtnMVVsaHBZalZJYzFrcmR6MDkiLCJzZXNzaW9uX2N1c3RvbWVyX2lkIjpudWxsLCJsb2dpbl93aXRoX3Nob3BfY3VzdG9tZXJfaWQiOm51bGwsInNob3BfYWNjb3VudF91dWlkIjpudWxsLCJpZGVudGl0eV9jdXN0b21lcl9pZCI6bnVsbCwiY3VzdG9tZXJfYXV0aGVudGljYXRpb25fYXV0aF9wcm92aWRlciI6bnVsbCwic3RvcmVmcm9udF9kaWdlc3QiOm51bGwsImV4cCI6MTcyNjQxMjQzMywibGFuZGluZ19wYWdlIjpudWxsfQ.GZL_0y4me37OuauVaCraRpNpAxBUFszT5EBxS15EuQo&quot;,&quot;checkout_as_guest_url&quot;:&quot;https://nrml.ca/checkouts/cn/Z2NwLXVzLWVhc3QxOjAxSjdURUswUldOWEtIM0pZTlZGMFdZQzFI?locale=en-CA&amp;skip_shop_pay=true&quot;,&quot;from_classic&quot;:false,&quot;iframe_token&quot;:&quot;SjFvb1RDK0xYeXc3QlJGZTNCaHZMcmVmYjE1NkpwMWt3VG5ma2hSVnZVTT0tLXd1K3lnZTlER1hRbm1QVmRwcTkrR3c9PQ==--72348a4c02cc048981a94a773811e4937e2b27b3&quot;,&quot;redirect_url&quot;:&quot;bWM5eE9SZ2lid29YaSs2WXlzSkVjZ052bHZRNmFBem1HcEN3OWJMRTBaZ2ltQ2ZZZGxybGwrMTczZHZYejZMcHlrT0RxcWNCOTgyV0ZSUkt6NXZZbUo0aU8zTlNpeURSc01HaElDR1kvSXRFYVk3eXAwcTA3Z1NBYmRSMDI5b0xaZk1vZUFaQ0k2UTNyanRKZmpsaDIxT2xoVUZpV2k1L3k4Wm5vS1JYVk5zbHdiZXFLaUsxL3R5TGZ4VjdzOEk0UzdTR3VoTnYzdU1BakoxNHdDajFkUCtVbzcrR3BobUhkSitaaG02T2ZXbHUzWnY1d3dBYWo1Vzg4Ti9mYy9NRW5IT1huVnhUWXZWaS9yQ0RubjJoK2l5V3ZwaXMxSi9ucUFTWndScGcwdTFLY0I1R3FGNU1Ud2phK1hNQnZwWFpCWlBlUHJCUm9nd1VKWllKd2RobEZNRU85S0pyMlRGNjlwODZLMWI3NXZNbW8wUGJKaFVHcnNoaTdVYjdzZlA1enFjdERHbVJCRVVoSXVSZzNYUkI1ZlNwVFliaUJGR3FRZ0h6NGFYNEk5UGZVanVnTkl3dUYxSDh0M09vejU5NzV0b0RvOTYrbFlaK2FPK1RVR01YQmh5SnNpM21GUG45dDlkN3QxaFlhbTR4QndhOFVSQlNHeEFycm5aQTA0S3lEU1dGNEZLKzk3L2h2Z2l2c0V2Q3oyQnRFTTBXK3kzSWRMdkJsbDhUYW92Y09mSk1UdGRuT1hIVC9ZZ2tZUmw1K3pQQlROczJLMUNrczhwMy94ODlFUmx1MGtaRlBiZEZTcFBjWVc4Ylp0ODJmU0hvT0NWNmRhenRwUU5TY3Zwd3V1NEdnRkZsVUIrS2FsVmI4YjFrc0FJZzh6SHFjRjZmcEpUckVoaUdkdlFneEYwems1c1VTcThLOHhsTFk5TEdnSjFpblhRaXU1cVdBaFl4SFN4bml0emxkcGR4QXd3SzVjTjZFY3g3Yk4xb2o5TkoyVjZ2UExDUlZFS2RTeC93QmJnR3FOcUhLSFo3T2txWnU2NXloNi9GUk14bUxhaEpET1hYSno2eWRyZUcrSzdhNXN6ZnlHWk9CNlk1TkRreGNKR3ZvL3d5STVmUFhNaWNCcGh0R2NPazN6U2hycVhkNTYvTnRuSFhNZWRZZjJOQVc1MGdWTWtlUjY2TllqVTJnVXF4QmZIU2ltNTd5UVFVSzZZNUxTU0JlRkUyL0VPUk1DZVlsdFdTOENhcm5ieVkydzBnTXVjUEFRbWo2cjFTdko1OGRhdk5sd1c3U2JDdmRvWlhjdW5lM0d2WHRCR2FKbWtJTTdBclM1cjM5YTBzWFBOWS8zNTJWMFpVWGR3cnd4Y0JLQWlXc2hhaHNjZmhSa0ZaZlBYRnNZNTA1dDBHQlNrWGZGdzRCTkpqSTMwODZ2VW9BNE5MZ3FxWjU4cC8wMDN5SGhGNGxySmxDKzVUbDBZZDNQL3dsVkdxS1QyMHI0OE5CbjcvSVZHOXZjellLVWE2UWx0ZXZzOE4wZWxYVUxoSlJNeDdQdWhLdjBTOWIrRm1Oek51Y2hhVCtub09WK2k0M0h1ODBHc0wyN3BNMGJnakhIUkZnMklkNC96Q2Y3NjQrM0xEZjBMeE83eVZ0bVVBL2p0NXI5MFVOZ2E0enRiWlNxZHBxMkk3RUp5OEhNakN0UGtXdjZUV1JONk11NHVGc1dXSVhVb3VMRHMwTHZmSldtOFY0Q1pFc1BXV2NSa3ozUDlJUnBYcm9SMUNXUUJBZlRWcm93SE1mT01FclVFTDl4ZERuZFpyaFVvbG1TVThQcEZ1UmI5cjd6dHdNNkp0UnZZaGVmLzEyWTJHeDRaVUcwY3h1YWt5b3E5YzdIYnlsaUgvUEtqa1E3YndKWHNXS1VMcnZhbXIzdXMyTHFGSWtCc3pMSmV0ZkplTUx4R1lyMldEUnZncW1nQ09xckNkQXVZSUliM0RyUHhYKzkyTWtyMzFCMm9uZXpkUnc5Y0NNUTFpVE1renVBeDd2UWo0cXRoakdOZE16aW8rN0FydXlGVXR4OFdVYVAyTm56OE9hek1vMVV5SnBtQVRYOEREUUp0NDVhK1p3S2didGdqYXRjRUFPenVGTDhFT0JRMnpHaUp2MU9VazYwQ29qRDdRMUdUd3g1NE5kM1BKRDl4UThYMGNLNHQwQnZuM2xLWG50RnBJREtaajNSU29zRDk4UGViSVVhUFliaWh3d0xrTzBQZ1loVkZMTTZyeklqOUtPaWlLRDAwPS0tdlEvdEpHSHNXRWZBTno2SVhZQVRpdz09--68021d8536dc00e41771ef2ea81e9287af10591a&quot;,&quot;tracking_unique&quot;:&quot;f37a39a3-caaa-4497-9d17-371c194618aa&quot;,&quot;tracking_visit&quot;:&quot;651d12d0-fbe7-49e4-86ff-01ef80a9e678&quot;,&quot;transaction_params&quot;:&quot;encrypted_params=L1BOL0JjTVR5Z29iY0ZJa2pqNkpMQ3BKSzh2cU9DRWVSeFRJaDBGQWxtd0hIc0V2cGNzcGtVZjR3ZjZEZXNpK2ZQdjl4V1hOUnhOdXI3R0VaRDI1azZzK0Z4MU50eGtvOW0vMC9NTXNMbzhldkd3QjRaa21yVDIwMTlPZ2RyOWktLU04UlZZR0UyQ0o5d0Fac1lKYTRqc1E9PQ%3D%3D--e96826fc1da77dc561fa2aaf88b8bd2b3e7857d3&quot;,&quot;web_url&quot;:&quot;https://nrml.ca/checkouts/cn/Z2NwLXVzLWVhc3QxOjAxSjdURUswUldOWEtIM0pZTlZGMFdZQzFI?locale=en-CA&amp;skip_shop_pay=true&quot;}"/><meta name="serialized-deploy-stage" content="&quot;production&quot;"/><meta name="serialized-client-bundle-variant" content="{&quot;browsers&quot;:&quot;baseline&quot;,&quot;bundler&quot;:&quot;vite&quot;,&quot;locale&quot;:&quot;en&quot;}"/><meta name="serialized-public-path" content="&quot;https://cdn.shopify.com/shopifycloud/checkout-web/assets/&quot;"/><meta name="serialized-receipt" content="{&quot;id&quot;:null,&quot;exists&quot;:false,&quot;inProgress&quot;:false,&quot;orderStatusPageUrl&quot;:null,&quot;shopPay&quot;:false,&quot;processingErrorFailure&quot;:null,&quot;purchaseOrder&quot;:null}"/><meta name="serialized-request-id" content="&quot;8c376d524eca066c&quot;"/><meta name="serialized-server-handling" content="&quot;fast&quot;"/><meta name="serialized-worker-version" content="&quot;fast&quot;"/><meta name="serialized-session-finished" content="false"/><meta name="serialized-api-client-id" content="580111"/><meta name="serialized-redesign-enabled" content="true"/><meta name="serialized-shop" content="{&quot;id&quot;:&quot;gid://shopify/Shop/13343831&quot;,&quot;name&quot;:&quot;NRML&quot;,&quot;domain&quot;:&quot;nrml.ca&quot;,&quot;myshopifyDomain&quot;:&quot;nrmlstreetwear.myshopify.com&quot;,&quot;origins&quot;:[&quot;https://nrmlstreetwear.myshopify.com&quot;,&quot;https://www.nrml.ca&quot;,&quot;https://nrml.ca&quot;,&quot;https://www.shopselect.ca&quot;,&quot;https://shopselect.ca&quot;,&quot;https://nrmlstreetwear.account.myshopify.com&quot;]}"/><meta name="serialized-login-url" content="&quot;https://nrml.ca/account/login?checkout_url=%2Fcheckouts%2Fcn%2FZ2NwLXVzLWVhc3QxOjAxSjdURUswUldOWEtIM0pZTlZGMFdZQzFI%3Fcompany_location_id%26locale%3Den-CA&quot;"/><meta name="serialized-logout-url" content="&quot;https://nrml.ca/account/logout?return_url=%2Fcheckouts%2Fcn%2FZ2NwLXVzLWVhc3QxOjAxSjdURUswUldOWEtIM0pZTlZGMFdZQzFI%3Flocale%3Den-CA&quot;"/><meta name="serialized-invoice-login-type" content="null"/><meta name="serialized-experiments" content="[{&quot;clientHandle&quot;:&quot;e_eccde098c1cf79b2d26753ae14a4e9e4&quot;,&quot;variant&quot;:&quot;blocking&quot;},{&quot;clientHandle&quot;:&quot;e_931c027b1ee83a024852b0a2739810e0&quot;,&quot;variant&quot;:null},{&quot;clientHandle&quot;:&quot;e_984cd26513100b9086b1b432f6c58db8&quot;,&quot;variant&quot;:null}]"/><meta name="serialized-extensions-assets-path" content="&quot;https://extensions.shopifycdn.com/shopifycloud/checkout-web/assets/&quot;"/><meta name="serialized-server-render" content="&quot;no&quot;"/><div id="app"></div></body></html>
