@@ -1,41 +1,37 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import styles from "./layout.module.css"; // Assuming you have layout.css for global styles
+import styles from "./layout.module.css";
 
 const Layout = () => {
-  const [key, setKey] = useState(""); // State for the API key input
-  const [api_uuid, setAPIUUID] = useState(""); // State for the API key input
+  const [key, setKey] = useState("");
+  const [api_uuid, setAPIUUID] = useState("");
+  const [schema, setSchema] = useState("");
+  const [boxes, setBoxes] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState(0);
 
-  const [schema, setSchema] = useState(""); // State for the schema/keywords input
-  const [boxes, setBoxes] = useState([]); // State to store API boxes
-
-  // fetch("http://127.0.0.1:5000/schema/insert", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({ website_url: key, schema_string: schema }),
-  // })
-  //   .then((response) => {
-  //     console.log(response);
-  //   })
-  //   .catch((error) => console.error("Error:", error));
-
-  // Handle input changes for API key
   const handleKeyChange = (event) => {
     setKey(event.target.value);
   };
 
-  // Handle input changes for schema/keywords
   const handleSchemaChange = (event) => {
     setSchema(event.target.value);
   };
 
-  // Handle adding new box when submit button is clicked
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("User submitted:");
     console.log("schema:", key);
+
+    setIsLoading(true);
+    setLoadingProgress(0);
+
+    const loadingInterval = setInterval(() => {
+      setLoadingProgress((prevProgress) => {
+        const newProgress = prevProgress + 2; // Increase by 2% every second (50 seconds total)
+        return newProgress > 100 ? 100 : newProgress;
+      });
+    }, 1000);
 
     fetch("http://127.0.0.1:5000/scrape", {
       method: "POST",
@@ -44,20 +40,27 @@ const Layout = () => {
       },
       body: JSON.stringify({ website_url: key, schema_string: schema }),
     })
-      .then((response) => {
-        setAPIUUID(response["api_endpoint"]);
-        console.log(response);
+      .then((response) => response.json())
+      .then((data) => {
+        clearInterval(loadingInterval);
+        setIsLoading(false);
+        setLoadingProgress(100);
+        setAPIUUID(data.api_endpoint);
+        if (key.trim() !== "" && schema.trim() !== "") {
+          setBoxes((prevBoxes) => [...prevBoxes, { key, schema, api_endpoint: data.api_endpoint }]);
+          setKey("");
+          setSchema("");
+        }
       })
-      .catch((error) => console.error("Error:", error));
-    if (key.trim() !== "" && schema.trim() !== "") {
-      setBoxes((prevBoxes) => [...prevBoxes, { key, schema }]);
-      setKey(""); // Clear API key input after adding
-      setSchema(""); // Clear schema input after adding
-    }
+      .catch((error) => {
+        console.error("Error:", error);
+        clearInterval(loadingInterval);
+        setIsLoading(false);
+        setLoadingProgress(0);
+      });
   };
 
-  // API Box Component with Expand/Collapse Feature
-  const ApiBox = ({ url, schema }) => {
+  const ApiBox = ({ url, schema, api_endpoint }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const schemaRef = useRef(null);
     const [isCopied, setIsCopied] = useState(false);
@@ -68,10 +71,10 @@ const Layout = () => {
 
     const copyToClipboard = () => {
       navigator.clipboard
-        .writeText(`https://127.0.0.1/${url}`)
+        .writeText(`http://127.0.0.1:5000${api_endpoint}`)
         .then(() => {
           setIsCopied(true);
-          setTimeout(() => setIsCopied(false), 1500); // Reset the "Copied!" state after 1.5 seconds
+          setTimeout(() => setIsCopied(false), 1500);
         })
         .catch((err) => console.error("Failed to copy!", err));
     };
@@ -80,7 +83,7 @@ const Layout = () => {
       <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full">
         <div className="flex items-center">
           <p>
-            <strong>PermaURL:</strong> https://127.0.0.1/{api_uuid}
+            <strong>PermaURL:</strong> http://127.0.0.1:5000/{api_endpoint}
           </p>
           <button
             onClick={copyToClipboard}
@@ -118,7 +121,6 @@ const Layout = () => {
 
   return (
     <div className={styles.containerspecial}>
-      {/* Top Header */}
       <header
         style={{
           marginTop: "-80px",
@@ -146,7 +148,6 @@ const Layout = () => {
         </div>
       </header>
 
-      {/* Main Section */}
       <div className={styles.mainSection}>
         <header className={styles.header}>
           <div className={styles.headerContent}>
@@ -183,21 +184,30 @@ const Layout = () => {
               <button
                 style={{
                   marginTop: "10px",
-                  marginBottom: "50px",
+                  marginBottom: "10px",
                   width: "20%",
                 }}
                 className={styles.createButton}
                 onClick={handleSubmit}
+                disabled={isLoading}
               >
-                Create new <span className={styles.arrow}>→</span>
+                {isLoading ? "Loading..." : "Create new"} <span className={styles.arrow}>→</span>
               </button>
+
+              {isLoading && (
+                <div className="w-full bg-gray-800 rounded-full h-2.5 mt-4">
+                  <div
+                    className="bg-white h-2.5 rounded-full"
+                    style={{ width: `${loadingProgress}%` }}
+                  ></div>
+                </div>
+              )}
             </div>
           </div>
 
-          {/* Grid Section for displaying API boxes */}
           <div className="w-full max-w-4xl mt-8">
             {boxes.map((box, index) => (
-              <ApiBox key={index} url={box.key} schema={box.schema} />
+              <ApiBox key={index} url={box.key} schema={box.schema} api_endpoint={box.api_endpoint} />
             ))}
           </div>
         </header>
