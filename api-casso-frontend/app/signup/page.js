@@ -58,7 +58,6 @@ export default function Signup() {
       <h1 style={{ marginTop: "-100px" }} className="text-4xl font-bold mb-8">
         Create an account ⬇️
       </h1>
-      <h1 className="text-4xl font-bold mb-8">Create Your Account</h1>
       <form
         onSubmit={handleSignUp}
         id="signUpForm"
