@@ -20,6 +20,7 @@ def signUp():
         'email_redirect_to': "http://localhost:3000",
       },
     })
+    print("SUPABASE USER ID")
     print(supabase.auth.get_user().user.id)
 
     return Response(
