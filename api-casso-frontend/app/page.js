@@ -19,7 +19,7 @@ export default function Home() {
           >
             Dashboard
           </a>
-          <a href="/info" className="text-gray-400 hover:text-white underline">
+          <a href="https://devpost.com/software/apicasso" className="text-gray-400 hover:text-white underline">
             Information
           </a>
         </div>
@@ -53,7 +53,7 @@ export default function Home() {
           Levesque for Hack the North 2024.
         </p>
         <a
-          href="/info"
+          href="https://devpost.com/software/apicasso"
           className="text-sm text-gray-400 hover:text-white underline"
         >
           Project Information →

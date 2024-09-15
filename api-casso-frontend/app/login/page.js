@@ -77,7 +77,23 @@ export default function Login() {
         </a>
       </p>
 
-      {/* ... existing footer ... */}
+      {/* Footer */}
+      <footer className="w-full p-4 fixed bottom-0 left-0 justify-center items-center text-center text-white bg-gradient-to-b from-transparent via-gray-900 to-black">
+        <p
+          style={{ marginBottom: "0px" }}
+          className="text-sm text-gray-400 mb-2"
+        >
+          Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary
+          Levesque for Hack the North 2024.
+        </p>
+        <a
+          href="https://devpost.com/software/apicasso"
+          style={{ marginBottom: "20px" }}
+          className="text-sm text-gray-400 hover:text-white underline"
+        >
+          Project Information →
+        </a>
+      </footer>
     </div>
   );
 }

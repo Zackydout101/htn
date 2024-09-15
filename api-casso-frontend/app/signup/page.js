@@ -116,7 +116,7 @@ export default function Signup() {
           Levesque for Hack the North 2024.
         </p>
         <a
-          href="/info"
+          href="https://devpost.com/software/apicasso"
           style={{ marginBottom: "20px" }}
           className="text-sm text-gray-400 hover:text-white underline"
         >

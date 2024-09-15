@@ -333,7 +333,7 @@ const Layout = () => {
           >
             Dashboard
           </a>
-          <a href="./" className="text-gray-400 hover:text-white underline">
+          <a href="https://devpost.com/software/apicasso" className="text-gray-400 hover:text-white underline">
             Information
           </a>
           <div className="flex items-center bg-gray-700 rounded-full p-1">
@@ -462,7 +462,7 @@ const Layout = () => {
               Levesque for Hack the North 2024.
             </p>
             <a
-              href="/info"
+              href="https://devpost.com/software/apicasso"
               className="text-sm text-gray-400 hover:text-white underline"
             >
               Project Information →
