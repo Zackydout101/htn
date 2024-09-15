@@ -114,17 +114,3 @@ class Scraper():
             connectors=[{"id": "web-search"}],
         )
         return response.text
-
-
-scraper = Scraper()
-result = scraper.scrape("https://www.ycombinator.com/companies", '{"company": str, "batch": str, "description": str, "tags": {}}')
-print("Raw API response:")
-print(result)
-
-# parsed_result = scraper.parse_json_response(result)
-
-# if parsed_result:
-#     print("\nParsed JSON result:")
-#     print(json.dumps(parsed_result, indent=2))
-# else:
-#     print("Failed to extract valid JSON from the response.")

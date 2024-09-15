@@ -1,40 +1,51 @@
 from supabase import create_client, Client
 import json
-import constants, query_constants
-from flask import Flask, request, Response
-from run import app
+from app.database import constants, query_constants
+from app import app
+from flask import request, Response, jsonify
 
 url: str = constants.SUPABASE_URL
 key: str = constants.SUPABASE_KEY
 
 supabase: Client = create_client(url, key)
 
+def get_schema_by_website_and_user(website_url: str, user_id: str) -> dict:
+    response = supabase.table(query_constants.RESPONSE_SCHEMA_TABLE).select("*").eq(query_constants.WEBSITE_URL_COLUMN, website_url).eq(query_constants.USER_ID_COLUMN, user_id).execute()
+    if response.data:
+        return response.data[0]['json_schema']
+    return None
+
+def insert_schema(website_url: str, user_id: str, schema_string: str) -> bool:
+    try:
+        schema = json.loads(schema_string)
+        response = supabase.table(query_constants.RESPONSE_SCHEMA_TABLE).insert({
+            query_constants.WEBSITE_URL_COLUMN: website_url,
+            query_constants.USER_ID_COLUMN: user_id,
+            query_constants.RESPONSE_SCHEMA_COLUMN: schema
+        }).execute()
+        return True
+    except Exception as e:
+        print(e)
+        return False
+
 @app.route('/schema/website', methods=['POST'])
-def getSchemaByWebsiteAndUser() -> dict:
-  data = request.json  # Get the JSON data sent in the request
-  website_url = data["website_url"]
-  user_id = supabase.auth.get_user().user.id
-  response = supabase.table(query_constants.RESPONSE_SCHEMA_TABLE).select("*").eq(query_constants.WEBSITE_URL_COLUMN, website_url).eq(query_constants.USER_ID_COLUMN, user_id).execute()
-  if response.data:
-    return response.data[0]['json_schema']
-  return None
+def get_schema_by_website_and_user_route():
+    data = request.json
+    website_url = data["website_url"]
+    user_id = supabase.auth.get_user().user.id
+    schema = get_schema_by_website_and_user(website_url, user_id)
+    if schema:
+        return jsonify(schema)
+    return jsonify({"error": "No schema found"}), 404
 
 @app.route('/schema/insert', methods=['POST'])
-def insertSchema() -> bool:
-  data = request.json  # Get the JSON data sent in the request
-  website_url = data["website_url"]
-  user_id = supabase.auth.get_user().user.id
-  schema_string = data["schema_string"]
-  try:
-    schema = json.loads(schema_string)
-    response = supabase.table(query_constants.RESPONSE_SCHEMA_TABLE).insert({
-      query_constants.WEBSITE_URL_COLUMN: website_url,
-      query_constants.USER_ID_COLUMN: user_id,
-      query_constants.RESPONSE_SCHEMA_COLUMN: schema
-    }).execute()
-    return Response("Success", status=200)
-  except Exception as e:
-    print(e)
+def insert_schema_route():
+    data = request.json
+    website_url = data["website_url"]
+    user_id = supabase.auth.get_user().user.id
+    schema_string = data["schema_string"]
+    if insert_schema(website_url, user_id, schema_string):
+        return Response("Success", status=200)
     return Response("Database error", status=400)
 
 # testschema = '{"name": "John", "age"": 30, "city": "New York"}'

@@ -1,8 +1,7 @@
 from supabase import create_client, Client
 from flask import Flask, request, jsonify, Response
-from run import app
-
-import constants
+from app import app
+from app.database import constants, query_constants
 
 url: str = constants.SUPABASE_URL
 key: str = constants.SUPABASE_KEY
