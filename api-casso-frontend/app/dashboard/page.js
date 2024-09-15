@@ -30,14 +30,32 @@ const Layout = () => {
   const ApiBox = ({ url, schema }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const schemaRef = useRef(null);
-
+    const [isCopied, setIsCopied] = useState(false);
+  
     const toggleExpand = () => {
       setIsExpanded(!isExpanded);
     };
-
+  
+    const copyToClipboard = () => {
+      navigator.clipboard.writeText(`https://api.permaurl.com/${url}`)
+        .then(() => {
+          setIsCopied(true);
+          setTimeout(() => setIsCopied(false), 1500); // Reset the "Copied!" state after 1.5 seconds
+        })
+        .catch(err => console.error('Failed to copy!', err));
+    };
+  
     return (
       <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full">
-        <p><strong>PermaURL:</strong> https://example.com/{url}</p> {/* Added PermaURL */}
+        <div className="flex items-center">
+          <p><strong>PermaURL:</strong> https://api.permaurl.com/{url}</p>
+          <button
+            onClick={copyToClipboard}
+            className="ml-2 text-sm text-blue-400 hover:underline bg-transparent border-none cursor-pointer"
+          >
+            {isCopied ? 'Copied!' : 'Copy'}
+          </button>
+        </div>
         <p><strong>URL:</strong> {url}</p>
         <div
           ref={schemaRef}
