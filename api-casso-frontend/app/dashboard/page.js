@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./layout.module.css";
+import Image from 'next/image';
 
 const Layout = () => {
   const [key, setKey] = useState("");
@@ -114,12 +115,11 @@ const Layout = () => {
 
     const loadingInterval = setInterval(() => {
       setLoadingProgress((prevProgress) => {
-        const newProgress = prevProgress + 2;
+        const newProgress = prevProgress + 10; // Increase by 10% every 100ms (1 second total)
         return newProgress > 100 ? 100 : newProgress;
       });
-    }, 1000);
+    }, 100);
 
-    // Replace this with your actual API endpoint for automations
     fetch("http://127.0.0.1:5000/automate", {
       method: "POST",
       headers: {
@@ -139,10 +139,10 @@ const Layout = () => {
           setAutomations((prevAutomations) => [
             ...prevAutomations,
             {
+              title: "New Automation", // You can set a default title or generate one based on the prompt
               url: automationUrl,
-              prompt: automationPrompt,
-              api_endpoint: data.api_endpoint,
-            },
+              api_endpoint: data.api_endpoint
+            }
           ]);
           setAutomationUrl("");
           setAutomationPrompt("");
@@ -237,8 +237,9 @@ const Layout = () => {
     );
   };
 
-  const AutomationBox = ({ url, prompt, api_endpoint }) => {
+  const AutomationBox = ({ title, url, api_endpoint }) => {
     const [isCopied, setIsCopied] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const copyToClipboard = () => {
       navigator.clipboard
@@ -250,8 +251,39 @@ const Layout = () => {
         .catch((err) => console.error("Failed to copy!", err));
     };
 
+    const handleAutomate = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`http://127.0.0.1:5000${api_endpoint}`, {
+          method: "POST",
+        });
+        if (response.ok) {
+          // Handle successful automation
+          console.log("Automation successful");
+        } else {
+          console.error("Automation failed");
+        }
+      } catch (error) {
+        console.error("Error during automation:", error);
+      }
+      setIsLoading(false);
+    };
+
     return (
       <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full">
+        <div className="flex justify-between items-center mb-4">
+          <div className="flex items-center">
+            <Image src="/shopify-logo.png" alt="Shopify Logo" width={24} height={24} />
+            <h3 className="ml-2 text-xl font-bold">{title}</h3>
+          </div>
+          <button
+            onClick={handleAutomate}
+            className={`px-4 py-2 rounded ${isLoading ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'} transition-colors duration-200`}
+            disabled={isLoading}
+          >
+            {isLoading ? 'Automating...' : 'Automate'}
+          </button>
+        </div>
         <table className="w-full border-collapse">
           <tbody>
             <tr className="border-b border-gray-700">
@@ -271,18 +303,6 @@ const Layout = () => {
                   {isCopied ? "Copied!" : "Copy"}
                 </button>
               </td>
-            </tr>
-            <tr className="border-b border-gray-700">
-              <td className="py-2 pr-4 font-bold whitespace-nowrap">URL:</td>
-              <td className="py-2">
-                <div className="max-h-20 overflow-y-auto">
-                  <span className="break-all">{url}</span>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td className="py-2 pr-4 font-bold whitespace-nowrap">Prompt:</td>
-              <td className="py-2 break-words">{prompt}</td>
             </tr>
           </tbody>
         </table>
@@ -425,13 +445,9 @@ const Layout = () => {
                   />
                 ))
               : automations.map((automation, index) => (
-                  <AutomationBox
-                    key={index}
-                    url={automation.url}
-                    prompt={automation.prompt}
-                    api_endpoint={automation.api_endpoint}
-                  />
-                ))}
+                  <AutomationBox key={index} title={automation.title} url={automation.url} api_endpoint={automation.api_endpoint} />
+                ))
+            }
           </div>
         </header>
 
