@@ -37,6 +37,7 @@ const Layout = () => {
 
     return (
       <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full">
+        <p><strong>PermaURL:</strong> https://example.com/{url}</p> {/* Added PermaURL */}
         <p><strong>URL:</strong> {url}</p>
         <div
           ref={schemaRef}
