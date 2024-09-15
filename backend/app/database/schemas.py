@@ -4,10 +4,8 @@ from app.database import constants, query_constants
 from app import app
 from flask import request, Response, jsonify
 
-url: str = constants.SUPABASE_URL
-key: str = constants.SUPABASE_KEY
+from app.database.user_auth import supabase as supabaseCli
 
-supabaseCli: Client = create_client(url, key)
 
 def get_schema_by_website_and_user(website_url: str, user_id: str) -> dict:
     response = supabaseCli.table(query_constants.RESPONSE_SCHEMA_TABLE).select("*").eq(query_constants.WEBSITE_URL_COLUMN, website_url).eq(query_constants.USER_ID_COLUMN, user_id).execute()

@@ -3,11 +3,8 @@ from app.database import constants, query_constants
 from typing import List
 from app import app
 from flask import Flask, request, Response
+from app.database.user_auth import supabase
 
-url: str = constants.SUPABASE_URL
-key: str = constants.SUPABASE_KEY
-
-supabase: Client = create_client(url, key)
 
 @app.route('/apis/api', methods=['POST'])
 def getAPI() -> str:
@@ -22,14 +19,14 @@ def getAPI() -> str:
 @app.route('/apis/user', methods=['GET'])
 def getAPIsForUser() -> List[str]:
   try:
-    user_id = "deb8250e-4af7-4e10-ace0-0d38a7424941"
+    user_id = supabase.auth.get_user().user.id
     response = supabase.table(query_constants.API_ENDPOINTS_TABLE).select("*").eq(query_constants.USER_ID_COLUMN, user_id).execute()
     pageData = []
     print(response.data[0].keys(), flush=True)
     print(response.data[0]["website_url"], flush=True)
     for data in response.data:
 
-      pageData.append([data["website_url"], data["json_schema"], data["api_endpoint"]])
+      pageData.append([data["website_url"], str(data["json_schema"]), data["api_endpoint"]])
     res = dict()
     res["data"] = pageData
 

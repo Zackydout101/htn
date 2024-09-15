@@ -3,11 +3,8 @@ from app.database import constants, query_constants
 from typing import List
 from app import app
 from flask import request, Response, jsonify
+from app.database.user_auth import supabase
 
-url: str = constants.SUPABASE_URL
-key: str = constants.SUPABASE_KEY
-
-supabase: Client = create_client(url, key)
 
 def get_page_data_by_website(website_url: str, user_id: str) -> str:
     response = supabase.table(query_constants.PAGE_DATA_TABLE).select("*").eq(query_constants.WEBSITE_URL_COLUMN, website_url).eq(query_constants.USER_ID_COLUMN, user_id).execute()
