@@ -7,6 +7,18 @@ const Layout = () => {
   const [schema, setSchema] = useState(""); // State for the schema/keywords input
   const [boxes, setBoxes] = useState([]); // State to store API boxes
 
+  // fetch("http://127.0.0.1:5000/schema/insert", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({ website_url: key, schema_string: schema }),
+  // })
+  //   .then((response) => {
+  //     console.log(response);
+  //   })
+  //   .catch((error) => console.error("Error:", error));
+
   // Handle input changes for API key
   const handleKeyChange = (event) => {
     setKey(event.target.value);
@@ -18,7 +30,22 @@ const Layout = () => {
   };
 
   // Handle adding new box when submit button is clicked
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("User submitted:");
+    console.log("schema:", key);
+
+    fetch("http://127.0.0.1:5000/scrape", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ website_url: key, schema_string: schema }),
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => console.error("Error:", error));
     if (key.trim() !== "" && schema.trim() !== "") {
       setBoxes((prevBoxes) => [...prevBoxes, { key, schema }]);
       setKey(""); // Clear API key input after adding
@@ -31,47 +58,56 @@ const Layout = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const schemaRef = useRef(null);
     const [isCopied, setIsCopied] = useState(false);
-  
+
     const toggleExpand = () => {
       setIsExpanded(!isExpanded);
     };
-  
+
     const copyToClipboard = () => {
-      navigator.clipboard.writeText(`https://api.permaurl.com/${url}`)
+      navigator.clipboard
+        .writeText(`https://api.permaurl.com/${url}`)
         .then(() => {
           setIsCopied(true);
           setTimeout(() => setIsCopied(false), 1500); // Reset the "Copied!" state after 1.5 seconds
         })
-        .catch(err => console.error('Failed to copy!', err));
+        .catch((err) => console.error("Failed to copy!", err));
     };
-  
+
     return (
       <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full">
         <div className="flex items-center">
-          <p><strong>PermaURL:</strong> https://api.permaurl.com/{url}</p>
+          <p>
+            <strong>PermaURL:</strong> https://api.permaurl.com/{url}
+          </p>
           <button
             onClick={copyToClipboard}
             className="ml-2 text-sm text-blue-400 hover:underline bg-transparent border-none cursor-pointer"
           >
-            {isCopied ? 'Copied!' : 'Copy'}
+            {isCopied ? "Copied!" : "Copy"}
           </button>
         </div>
-        <p><strong>URL:</strong> {url}</p>
+        <p>
+          <strong>URL:</strong> {url}
+        </p>
         <div
           ref={schemaRef}
           style={{
-            maxHeight: isExpanded ? `${schemaRef.current.scrollHeight}px` : "80px",
+            maxHeight: isExpanded
+              ? `${schemaRef.current.scrollHeight}px`
+              : "80px",
             overflow: "hidden",
-            transition: "max-height 0.3s ease-in-out"
+            transition: "max-height 0.3s ease-in-out",
           }}
         >
-          <p><strong>Schema:</strong> {schema}</p>
+          <p>
+            <strong>Schema:</strong> {schema}
+          </p>
         </div>
         <button
           onClick={toggleExpand}
           className="mt-2 text-sm text-blue-400 hover:underline"
         >
-          {isExpanded ? 'Show Less' : 'Show More'}
+          {isExpanded ? "Show Less" : "Show More"}
         </button>
       </div>
     );
@@ -142,7 +178,11 @@ const Layout = () => {
               />
 
               <button
-                style={{ marginTop: "10px", marginBottom: "50px", width: "20%" }}
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "50px",
+                  width: "20%",
+                }}
                 className={styles.createButton}
                 onClick={handleSubmit}
               >

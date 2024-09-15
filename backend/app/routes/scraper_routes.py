@@ -1,5 +1,7 @@
 from flask import request, jsonify
 from app import app
+from supabase import create_client, Client
+from app.database.user_auth import supabase
 from app.scraper.scraper import Scraper
 from app.database import page_data, schemas, api_endpoints
 
@@ -9,12 +11,16 @@ scraper = Scraper()
 def scrape_website():
     data = request.json
     website_url = data.get('website_url')
-    schema = data.get('schema')
+    print("check")
+
+    schema = data.get('schema_string')
 
     if not website_url or not schema:
         return jsonify({"error": "Missing website_url or schema"}), 400
+    
+    print("check")
 
-    user_id = request.headers.get('Authorization')  # Assuming you're passing user ID in the Authorization header
+    user_id = supabase.auth.get_user().user.id  # Assuming you're passing user ID in the Authorization header
     if not user_id:
         return jsonify({"error": "User not authenticated"}), 401
 
