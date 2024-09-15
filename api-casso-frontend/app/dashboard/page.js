@@ -4,6 +4,8 @@ import styles from "./layout.module.css"; // Assuming you have layout.css for gl
 
 const Layout = () => {
   const [key, setKey] = useState(""); // State for the API key input
+  const [api_uuid, setAPIUUID] = useState(""); // State for the API key input
+
   const [schema, setSchema] = useState(""); // State for the schema/keywords input
   const [boxes, setBoxes] = useState([]); // State to store API boxes
 
@@ -43,6 +45,7 @@ const Layout = () => {
       body: JSON.stringify({ website_url: key, schema_string: schema }),
     })
       .then((response) => {
+        setAPIUUID(response["api_endpoint"]);
         console.log(response);
       })
       .catch((error) => console.error("Error:", error));
@@ -65,7 +68,7 @@ const Layout = () => {
 
     const copyToClipboard = () => {
       navigator.clipboard
-        .writeText(`https://api.permaurl.com/${url}`)
+        .writeText(`https://127.0.0.1/${url}`)
         .then(() => {
           setIsCopied(true);
           setTimeout(() => setIsCopied(false), 1500); // Reset the "Copied!" state after 1.5 seconds
@@ -77,7 +80,7 @@ const Layout = () => {
       <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full">
         <div className="flex items-center">
           <p>
-            <strong>PermaURL:</strong> https://api.permaurl.com/{url}
+            <strong>PermaURL:</strong> https://127.0.0.1/{api_uuid}
           </p>
           <button
             onClick={copyToClipboard}
