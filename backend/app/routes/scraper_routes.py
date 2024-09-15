@@ -48,7 +48,7 @@ def scrape_website():
             return jsonify({"error": "Failed to store schema"}), 500
 
     # Generate API endpoint for the scraped data
-    api_endpoint = api_endpoints.create_api_endpoint(website_url, user_id, result)
+    api_endpoint = api_endpoints.create_api_endpoint(website_url, user_id, result, schema)
     if api_endpoint:
         return jsonify({"api_endpoint": f"/api/{api_endpoint}"})
     else:
@@ -62,7 +62,7 @@ def get_schema():
     if not website_url:
         return jsonify({"error": "Missing website_url"}), 400
 
-    user_id = request.headers.get('Authorization')  # Assuming you're passing user ID in the Authorization header
+    user_id = supabase.auth.get_user().user.id  # Assuming you're passing user ID in the Authorization header
     if not user_id:
         return jsonify({"error": "User not authenticated"}), 401
 

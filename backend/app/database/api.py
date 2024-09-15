@@ -1,7 +1,7 @@
 from supabase import create_client, Client
-import constants, query_constants
+from app.database import constants, query_constants
 from typing import List
-from run import app
+from app import app
 from flask import Flask, request, Response
 
 url: str = constants.SUPABASE_URL
@@ -14,7 +14,7 @@ def getAPI() -> str:
   data = request.json  # Get the JSON data sent in the request
   api_name = data["api_name"]
   user_id = supabase.auth.get_user().user.id
-  response = supabase.table(query_constants.API_TABLE).select("*").eq(query_constants.API_NAME_COLUMN, api_name).eq(query_constants.USER_ID_COLUMN, user_id).execute()
+  response = supabase.table(query_constants.API_ENDPOINTS_TABLE).select("*").eq(query_constants.API_NAME_COLUMN, api_name).eq(query_constants.USER_ID_COLUMN, user_id).execute()
   if response.data:
       return response.data[0][query_constants.API_JSON_COLUMN]
   return None
@@ -22,16 +22,22 @@ def getAPI() -> str:
 @app.route('/apis/user', methods=['GET'])
 def getAPIsForUser() -> List[str]:
   try:
-    user_id = supabase.auth.get_user().user.id
-    response = supabase.table(query_constants.API_TABLE).select("*").eq(query_constants.USER_ID_COLUMN, user_id).execute()
-    pageData = dict()
-
+    user_id = "deb8250e-4af7-4e10-ace0-0d38a7424941"
+    response = supabase.table(query_constants.API_ENDPOINTS_TABLE).select("*").eq(query_constants.USER_ID_COLUMN, user_id).execute()
+    pageData = []
+    print(response.data[0].keys(), flush=True)
+    print(response.data[0]["website_url"], flush=True)
     for data in response.data:
-      pageData[data[query_constants.WEBSITE_URL_COLUMN]] = data[query_constants.PAGE_DATA_COLUMN]
-    print(pageData)
-    return pageData
+
+      pageData.append([data["website_url"], data["json_schema"], data["api_endpoint"]])
+    res = dict()
+    res["data"] = pageData
+
+    return res
   except Exception as e:
     print(e)
+    print("c", flush=True)
+
     return Response(
         "database error",
         status=400,
@@ -44,7 +50,7 @@ def insertGeneratedAPI() -> bool:
   api_name = data["api_name"]
   json_data = data["json_data"]
   try:
-    response = supabase.table(query_constants.API_TABLE).insert({query_constants.API_NAME_COLUMN:api_name, query_constants.API_JSON_COLUMN: json_data, query_constants.USER_ID_COLUMN:user_id}).execute()
+    response = supabase.table(query_constants.API_ENDPOINTS_TABLE).insert({query_constants.API_NAME_COLUMN:api_name, query_constants.API_JSON_COLUMN: json_data, query_constants.USER_ID_COLUMN:user_id}).execute()
     return Response("Success", status=200)
   except Exception as e:
     print(e)
