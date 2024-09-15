@@ -1,6 +1,6 @@
 from supabase import create_client, Client
-import constants, query_constants
-from run import app
+from . import constants, query_constants
+from ..run import app
 from flask import request, Response, jsonify
 import uuid
 

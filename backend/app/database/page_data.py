@@ -1,8 +1,8 @@
 from supabase import create_client, Client
-import constants, query_constants
+from . import constants, query_constants
 from typing import List
-from run import app
-from flask import Flask, request, Response
+from ..run import app
+from flask import request, Response
 
 url: str = constants.SUPABASE_URL
 key: str = constants.SUPABASE_KEY
