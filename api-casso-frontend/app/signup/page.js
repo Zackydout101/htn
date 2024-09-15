@@ -55,8 +55,9 @@ export default function Signup() {
         </div>
       </header>
 
-      <h1 style={{marginTop: "-100px"}} className="text-4xl font-bold mb-8">Create an account ⬇️</h1>
-      <form className="flex flex-col space-y-4 w-80">
+      <h1 style={{ marginTop: "-100px" }} className="text-4xl font-bold mb-8">
+        Create an account ⬇️
+      </h1>
       <h1 className="text-4xl font-bold mb-8">Create Your Account</h1>
       <form
         onSubmit={handleSignUp}
@@ -100,10 +101,18 @@ export default function Signup() {
 
       {/* Footer */}
       <footer className="w-full p-4 fixed bottom-0 left-0 justify-center items-center text-center text-white bg-gradient-to-b from-transparent via-gray-900 to-black">
-        <p style={{ marginBottom: "0px" }} className="text-sm text-gray-400 mb-2">
-          Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary Levesque for Hack the North 2024.
+        <p
+          style={{ marginBottom: "0px" }}
+          className="text-sm text-gray-400 mb-2"
+        >
+          Created by Bhav Grewal, Karolina Dubiel, Kevin Li, and Zachary
+          Levesque for Hack the North 2024.
         </p>
-        <a href="/info" style={{ marginBottom: "20px" }} className="text-sm text-gray-400 hover:text-white underline">
+        <a
+          href="/info"
+          style={{ marginBottom: "20px" }}
+          className="text-sm text-gray-400 hover:text-white underline"
+        >
           Project Information →
         </a>
       </footer>
