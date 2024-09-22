@@ -25,7 +25,6 @@ def getAPIsForUser() -> List[str]:
     print(response.data[0].keys(), flush=True)
     print(response.data[0]["website_url"], flush=True)
     for data in response.data:
-
       pageData.append([data["website_url"], str(data["json_schema"]), data["api_endpoint"]])
     res = dict()
     res["data"] = pageData
@@ -33,8 +32,6 @@ def getAPIsForUser() -> List[str]:
     return res
   except Exception as e:
     print(e)
-    print("c", flush=True)
-
     return Response(
         "database error",
         status=400,

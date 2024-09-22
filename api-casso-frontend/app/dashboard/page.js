@@ -136,14 +136,7 @@ const Layout = () => {
         setIsLoading(false);
         setLoadingProgress(100);
         if (automationUrl.trim() !== "" && automationPrompt.trim() !== "") {
-          setAutomations((prevAutomations) => [
-            ...prevAutomations,
-            {
-              title: "New Automation", // You can set a default title or generate one based on the prompt
-              url: automationUrl,
-              api_endpoint: data.api_endpoint
-            }
-          ]);
+          setAutomations((prevAutomations) => [...prevAutomations, { url: automationUrl, api_endpoint: data.api_endpoint }]);
           setAutomationUrl("");
           setAutomationPrompt("");
         }
@@ -237,7 +230,7 @@ const Layout = () => {
     );
   };
 
-  const AutomationBox = ({ title, url, api_endpoint }) => {
+  const AutomationBox = ({ url, api_endpoint }) => {
     const [isCopied, setIsCopied] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -272,10 +265,7 @@ const Layout = () => {
     return (
       <div className="bg-black text-white p-4 rounded-lg shadow-md mb-4 w-full">
         <div className="flex justify-between items-center mb-4">
-          <div className="flex items-center">
-            <Image src="/shopify-logo.png" alt="Shopify Logo" width={24} height={24} />
-            <h3 className="ml-2 text-xl font-bold">{title}</h3>
-          </div>
+          <Image src="/shopify-logo.png" alt="Shopify Logo" width={100} height={100} />
           <button
             onClick={handleAutomate}
             className={`px-4 py-2 rounded ${isLoading ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'} transition-colors duration-200`}
@@ -333,7 +323,7 @@ const Layout = () => {
           >
             Dashboard
           </a>
-          <a href="https://devpost.com/software/apicasso" className="text-gray-400 hover:text-white underline">
+          <a href="./" className="text-gray-400 hover:text-white underline">
             Information
           </a>
           <div className="flex items-center bg-gray-700 rounded-full p-1">
@@ -445,7 +435,7 @@ const Layout = () => {
                   />
                 ))
               : automations.map((automation, index) => (
-                  <AutomationBox key={index} title={automation.title} url={automation.url} api_endpoint={automation.api_endpoint} />
+                  <AutomationBox key={index} title="Shopify" url={automation.url} api_endpoint={automation.api_endpoint} />
                 ))
             }
           </div>
@@ -462,7 +452,7 @@ const Layout = () => {
               Levesque for Hack the North 2024.
             </p>
             <a
-              href="https://devpost.com/software/apicasso"
+              href="/info"
               className="text-sm text-gray-400 hover:text-white underline"
             >
               Project Information →
